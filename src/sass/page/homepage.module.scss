@@ -1,0 +1,60 @@
+@import "../variables";
+@keyframes anime {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.homepage {
+  width: 60%;
+  flex: 1 0 auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  flex: 0 1 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: anime 0.5s linear;
+  > div {
+    > h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.5em;
+      margin-bottom: 1em;
+      > span {
+        color: $title-color;
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+.mouse {
+  width: 50px;
+  flex: 0 1 10vh;
+  margin-bottom: 15em;
+  animation: move 1s 10 linear;
+  position: relative;
+  > img {
+    width: 100%;
+  }
+}

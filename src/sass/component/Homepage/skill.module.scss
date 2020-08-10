@@ -1,0 +1,47 @@
+.skill {
+  width: 100%;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10em;
+}
+.tool {
+  width: 50%;
+  flex: 0 1 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  > div {
+    flex: 0 1 100px;
+    > img {
+      width: 100%;
+    }
+  }
+}
+.info {
+  width: 50%;
+  margin: 2em auto;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 2;
+  display: flex;
+  justify-content: center;
+  .left {
+    margin: 0 1em;
+    flex: 0 1 50%;
+  }
+
+  .right {
+    margin: 0 1em;
+    flex: 0 1 50%;
+  }
+}
+
+.list {
+  > li::before {
+    content: "\27A4";
+    font-size: 0.8rem;
+    margin: 0 1em;
+  }
+}

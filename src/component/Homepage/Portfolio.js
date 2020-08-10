@@ -17,8 +17,8 @@ const Portfolio = () => {
               <li>首頁模板</li>
               <li>查詢頁面模板</li>
             </ul>
-            <Link to="/" className={style.linkBtn}>
-              前往網站
+            <Link to="/portfolio" className={style.linkBtn}>
+              作品集列表
             </Link>
           </div>
         </div>
@@ -32,8 +32,8 @@ const Portfolio = () => {
               <li>React Hook</li>
               <li>styled components</li>
             </ul>
-            <Link to="/" className={style.linkBtn}>
-              前往網站
+            <Link to="/portfolio" className={style.linkBtn}>
+              作品集列表
             </Link>
           </div>
           <div className={style.cardImg}>

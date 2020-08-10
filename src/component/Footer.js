@@ -5,8 +5,8 @@ import style from '../sass/component/footer.module.scss';
 const Footer = () => {
   return (
     <div className={style.mainFooter}>
-      <h3>此網站由陳毅旻設計以及研發</h3>
-      <a href="https://github.com/yiminprogram">
+      <h3>此網站由陳毅旻設計以及研發。</h3>
+      <a href="https://github.com/yiminprogram/portfolio">
         <img src={GitHub} alt="error" />
       </a>
     </div>

@@ -140,23 +140,11 @@ html {
   font-size: calc(0.75rem + 1vmin);
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 400;
-  overflow-y: hidden;
 }
-body {
-  padding-top: 50px;
-}
+
 #root {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
-  scrollbar-color: $font-color transparent;
-}
-::-webkit-scrollbar {
-  width: 15px;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: $font-color;
 }

@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Photo from '../../image/user-photo.png';
 import style from '../../sass/component/Homepage/about.module.scss';
 
 const About = () => {
+  const about = useRef();
+  const [obstate, setObstate] = useState(false);
+  const scrollCallback = (e) => {
+    if (e[0].isIntersecting) {
+      setObstate(true);
+    }
+  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(scrollCallback);
+    observer.observe(about.current);
+  }, []);
   return (
-    <div className={style.about}>
+    <div className={`${style.about} ${obstate ? style.slide : ''}`} ref={about}>
       <div className={style.info}>
         <h2>關於</h2>
         <p>

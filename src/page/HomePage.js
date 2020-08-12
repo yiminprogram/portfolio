@@ -11,7 +11,7 @@ const HomePage = () => {
       <div className={style.title}>
         <div>
           <h1>
-            Hi，我是<span>陳毅旻</span>
+            Hi，我是<span className={style.name}>陳毅旻</span>
           </h1>
           <h1>歡迎瀏覽我的作品集網站</h1>
         </div>

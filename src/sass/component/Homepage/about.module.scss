@@ -2,9 +2,13 @@
 .about {
   width: 100%;
   flex: 0 1 auto;
-  margin-bottom: 15em;
+  margin-bottom: 13em;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  transition: 1s;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 .info {
@@ -54,4 +58,9 @@
       background-color: transparent;
     }
   }
+}
+
+.slide {
+  transform: translateY(0);
+  opacity: 1;
 }

@@ -1,14 +1,16 @@
 import React from 'react';
-import style from '../../sass/component/Portfoliio/card.module.scss';
 import III from '../../image/HomePage1.jpg';
 import Search from '../../image/SpaceSearch.jpg';
 import AQI from '../../image/AQISearch.jpg';
+import style from '../../sass/component/Portfoliio/card.module.scss';
+
 const Card = () => {
   return (
     <div className={style.container}>
       <a href="https://yiminprogram.github.io/ProjectWebSite/src/Homepage.html" className={style.card}>
         <div className={style.content}>
           <h1>結訓專案(首頁)</h1>
+
           <div className={style.bgImg} style={{ backgroundImage: `url(${III})` }}></div>
         </div>
       </a>

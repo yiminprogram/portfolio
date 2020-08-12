@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Tool from '../../image/iconfinder-tool.svg';
 import style from '../../sass/component/Homepage/skill.module.scss';
 
 const Skill = () => {
+  const skill = useRef();
+  const [obstate, setObstate] = useState(false);
+  const scrollCallback = (e) => {
+    if (e[0].isIntersecting) {
+      setObstate(true);
+    }
+  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(scrollCallback);
+    observer.observe(skill.current);
+  }, []);
   return (
-    <div className={style.skill}>
+    <div className={`${style.skill} ${obstate ? style.slide : ''}`} ref={skill}>
       <div className={style.tool}>
         <div>
           <img src={Tool} alt="error" />

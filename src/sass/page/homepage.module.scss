@@ -2,9 +2,11 @@
 @keyframes anime {
   from {
     transform: translateY(100px);
+    opacity: 0;
   }
   to {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 @keyframes move {
@@ -39,6 +41,7 @@
       font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: 0.5em;
+      line-height: 2;
       margin-bottom: 1em;
       > span {
         color: $title-color;
@@ -51,10 +54,20 @@
 .mouse {
   width: 50px;
   flex: 0 1 10vh;
-  margin-bottom: 15em;
+  margin-bottom: 8em;
   animation: move 1s 10 linear;
   position: relative;
   > img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homepage {
+    width: 90%;
+  }
+  .name {
+    display: block;
+    margin: 1em 0;
   }
 }

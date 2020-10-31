@@ -1,14 +1,13 @@
-import 'react-app-polyfill/ie11';
-import 'react-app-polyfill/stable';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
-import App from './App';
-import './sass/global.scss';
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import GlobalStyle from './theme/GlobalStyle';
+import Project from './Project';
 
-ReactDOM.render(
-  <HashRouter>
-    <App />
-  </HashRouter>,
-  document.querySelector('#root')
+render(
+  <BrowserRouter>
+    <GlobalStyle />
+    <Project />
+  </BrowserRouter>,
+  document.querySelector('#root'),
 );

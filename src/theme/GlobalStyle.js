@@ -26,43 +26,43 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* ============================================== */
+
+body,html{
+  width:100%;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
 *,*::before,*::after{
   box-sizing:border-box;
 }
-*:focus{
-	outline:none;
-}
-
-body,html{
-	color:#2399b4;
-	background-color:#041216;
-  height:100%;
-  font-size: calc(0.75rem + 1vmin);
-  font-family: "Microsoft JhengHei";
-}
 
 #root{
-  height:100%;
-	display:flex;
-	flex-direction:column;
+  width:100%;
 }
 `;
 

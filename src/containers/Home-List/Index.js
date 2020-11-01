@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Card from '../../components/Card/Index';
+import listData from '../../assets/data/portfolio.json';
 
 const List = styled.div`
   width: 80%;
@@ -13,17 +14,16 @@ const List = styled.div`
 `;
 
 const Index = () => {
+  const [list, setList] = useState();
+
+  useEffect(() => {
+    setList(listData);
+  }, []);
+
   return (
     <List>
-      <Card to="/todolist" />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {list &&
+        list.map((ele) => <Card key={ele.id} {...ele} />)}
     </List>
   );
 };

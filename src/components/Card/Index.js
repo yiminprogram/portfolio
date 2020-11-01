@@ -34,14 +34,14 @@ const Title = styled.h1`
   font-weight: 700;
 `;
 
-const Index = ({ to }) => {
+const Index = ({ path, project }) => {
   return (
     <Card>
-      <CardLink to={to}>
+      <CardLink to={path}>
         <Image>
           <img src={Img} alt="error" />
         </Image>
-        <Title>CARD TITLE</Title>
+        <Title>{project}</Title>
       </CardLink>
     </Card>
   );

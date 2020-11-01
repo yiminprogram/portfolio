@@ -5,6 +5,7 @@ import Theme from './theme/Theme';
 import Header from './containers/Header/Index';
 import Home from './pages/Home/Index';
 import TodoList from './pages/Todo_List/Index';
+import Login from './pages/Login/Index';
 import Footer from './containers/Footer/Index';
 
 const Project = () => {
@@ -12,12 +13,9 @@ const Project = () => {
     <ThemeProvider theme={Theme}>
       <Header />
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route
-          exact
-          path="/todolist"
-          component={TodoList}
-        />
+        <Route exact path="/portfolio" component={Home} />
+        <Route path="/todolist" component={TodoList} />
+        <Route path="/login" component={Login} />
       </Switch>
 
       <Footer />

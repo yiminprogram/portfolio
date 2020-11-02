@@ -17,7 +17,6 @@ const Project = () => {
         <Route path="/todolist" component={TodoList} />
         <Route path="/login" component={Login} />
       </Switch>
-
       <Footer />
     </ThemeProvider>
   );

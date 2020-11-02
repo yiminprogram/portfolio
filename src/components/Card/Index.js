@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Img from '../../assets/image/screenshot/Todo-List.png';
+import LoginImg from '../../assets/image/screenshot/Login.png';
 
 const Card = styled.article`
   margin: 2rem 1rem;
@@ -39,7 +39,7 @@ const Index = ({ path, project }) => {
     <Card>
       <CardLink to={path}>
         <Image>
-          <img src={Img} alt="error" />
+          <img src={LoginImg} alt="error" />
         </Image>
         <Title>{project}</Title>
       </CardLink>

@@ -34,7 +34,7 @@ const Title = styled.h1`
   font-weight: 700;
 `;
 
-const Index = ({ path, project }) => {
+const Index = ({ path, project, screenshot }) => {
   return (
     <Card>
       <CardLink to={path}>

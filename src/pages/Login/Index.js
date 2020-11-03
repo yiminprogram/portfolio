@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+//components
+import Wellcome from '../../containers/Login-user-info/Index';
+import {
+  ToastsError,
+  ToastsSuccess,
+} from '../../components/Toasts/Index';
+//material-ui
 import Checkbox from '@material-ui/core/Checkbox';
 
 const color = {
@@ -9,6 +16,22 @@ const color = {
   hoverSignUp: '#2e7d32',
 };
 
+const userInfo = {
+  email: 'test@email.com',
+  password: 'test',
+};
+
+const toastsShow = (e) => {
+  switch (e) {
+    case true:
+      return <ToastsSuccess>登入成功</ToastsSuccess>;
+    case false:
+      return <ToastsError>信箱或密碼輸入錯誤</ToastsError>;
+    default:
+      return null;
+  }
+};
+
 const Container = styled.div`
   ${(props) => props.theme.mixin.page};
   display: flex;
@@ -16,16 +39,14 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Form = styled.div`
+const Card = styled.div`
   flex: 0 1 400px;
   height: 450px;
   perspective: 1000px;
   position: relative;
 `;
 
-const SignIn = styled.form`
-  display: flex;
-  flex-flow: column nowrap;
+const CardSignIn = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -38,23 +59,9 @@ const SignIn = styled.form`
     p.flip ? 'none' : 'rotateY(180deg)'};
   transform-style: preserve-3d;
   backface-visibility: hidden;
-
-  > input {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 10px;
-  }
-
-  > label,
-  input {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
 `;
 
-const SignUp = styled.form`
-  display: flex;
-  flex-flow: column nowrap;
+const CardSignUp = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -67,18 +74,6 @@ const SignUp = styled.form`
     p.flip ? 'rotateY(180deg)' : 'rotateY(360deg)'};
   transform-style: preserve-3d;
   backface-visibility: hidden;
-
-  > input {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 10px;
-  }
-
-  > label,
-  input {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
 `;
 
 const Nav = styled.div`
@@ -101,6 +96,7 @@ const NavBtn = styled.button`
 `;
 
 const Submit = styled.button`
+  cursor: pointer;
   padding: 0.6rem 0;
   font-size: 1.2rem;
   color: #fff;
@@ -115,8 +111,30 @@ const CheckGroup = styled.div`
   margin-bottom: 1rem;
 `;
 
+const Form = styled.form`
+  display: flex;
+  flex-flow: column nowrap;
+  > input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 10px;
+  }
+
+  > label,
+  input {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+`;
+
 const Index = () => {
   const [state, setState] = useState(true);
+  const [toast, setToast] = useState(null);
+  const [login, setLogin] = useState(false);
+  const signInEmail = useRef();
+  const signInPassword = useRef();
+  const signUpEmail = useRef();
+  const signUpPassword = useRef();
   const flipSignIn = (e) => {
     e.preventDefault();
     setState(true);
@@ -125,54 +143,122 @@ const Index = () => {
     e.preventDefault();
     setState(false);
   };
+  const userSignIn = (e) => {
+    e.preventDefault();
+    const email = signInEmail.current;
+    const password = signInPassword.current;
+    if (
+      email.value === userInfo.email &&
+      password.value === userInfo.password
+    ) {
+      setLogin(true);
+      setToast(true);
+    } else {
+      setToast(false);
+    }
+    email.value = '';
+    password.value = '';
+  };
+  const userSignUp = (e) => {
+    e.preventDefault();
+    const email = signUpEmail.current.value;
+    const password = signUpPassword.current.value;
+  };
+  // toast
+  useEffect(() => {
+    console.log(toast);
+    const timer = setTimeout(() => {
+      setToast(null);
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [toast]);
+
   return (
     <Container>
-      <Form>
-        <SignIn flip={state}>
-          <Nav flip={state} bgc={color.signIn}>
-            <NavBtn bgc={color.signIn} onClick={flipSignIn}>
-              登入
-            </NavBtn>
-            <NavBtn onClick={flipSignUp}>註冊</NavBtn>
-          </Nav>
-          <label htmlFor="email">信箱</label>
-          <input id="email" type="text" />
-          <label htmlFor="passwords">密碼</label>
-          <input id="passwords" type="text" />
-          <CheckGroup>
-            <Checkbox />
-            <label>記住我</label>
-          </CheckGroup>
-          <Submit
-            bgc={color.signIn}
-            hover={color.hoverSignIn}
-          >
-            登入
-          </Submit>
-        </SignIn>
-        <SignUp flip={state}>
-          <Nav flip={state} bgc={color.signUp}>
-            <NavBtn onClick={flipSignIn}>登入</NavBtn>
-            <NavBtn bgc={color.signUp} onClick={flipSignUp}>
-              註冊
-            </NavBtn>
-          </Nav>
-          <label htmlFor="email">信箱</label>
-          <input id="email" type="text" />
-          <label htmlFor="passwords">密碼</label>
-          <input id="passwords" type="text" />
-          <CheckGroup>
-            <Checkbox />
-            <label>同意相關隱私權政策</label>
-          </CheckGroup>
-          <Submit
-            bgc={color.signUp}
-            hover={color.hoverSignUp}
-          >
-            註冊
-          </Submit>
-        </SignUp>
-      </Form>
+      {console.log('render')}
+      {toastsShow(toast)}
+      {login ? (
+        <Wellcome setLogin={setLogin} />
+      ) : (
+        <Card>
+          <CardSignIn flip={state}>
+            <Nav flip={state} bgc={color.signIn}>
+              <NavBtn
+                bgc={color.signIn}
+                onClick={flipSignIn}
+              >
+                登入
+              </NavBtn>
+              <NavBtn onClick={flipSignUp}>註冊</NavBtn>
+            </Nav>
+            <Form>
+              <label htmlFor="email">信箱</label>
+              <input
+                id="email"
+                type="email"
+                ref={signInEmail}
+              />
+              <label htmlFor="passwords">密碼</label>
+              <input
+                id="passwords"
+                type="password"
+                ref={signInPassword}
+              />
+              <CheckGroup>
+                <Checkbox />
+                <label>記住我</label>
+              </CheckGroup>
+              <Submit
+                type="submit"
+                bgc={color.signIn}
+                hover={color.hoverSignIn}
+                onClick={userSignIn}
+              >
+                登入
+              </Submit>
+            </Form>
+          </CardSignIn>
+          <CardSignUp flip={state}>
+            <Nav flip={state} bgc={color.signUp}>
+              <NavBtn onClick={flipSignIn}>登入</NavBtn>
+              <NavBtn
+                bgc={color.signUp}
+                onClick={flipSignUp}
+              >
+                註冊
+              </NavBtn>
+            </Nav>
+            <Form>
+              <label htmlFor="email">信箱</label>
+              <input
+                id="email"
+                type="email"
+                ref={signUpEmail}
+              />
+              <label htmlFor="passwords">密碼</label>
+              <input
+                id="passwords"
+                type="password"
+                ref={signUpPassword}
+              />
+              <CheckGroup>
+                <Checkbox />
+                <label>同意相關隱私權政策</label>
+              </CheckGroup>
+              <Submit
+                type="submit"
+                bgc={color.signUp}
+                hover={color.hoverSignUp}
+                onClick={userSignUp}
+              >
+                註冊
+              </Submit>
+            </Form>
+          </CardSignUp>
+        </Card>
+      )}
     </Container>
   );
 };

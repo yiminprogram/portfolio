@@ -135,7 +135,9 @@ const Index = () => {
     };
     setTodos(newArray);
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <TodoList>
       {toastsShow(show.info)}

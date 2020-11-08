@@ -174,7 +174,9 @@ const Index = () => {
       clearTimeout(timer);
     };
   }, [toast]);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <Container>
       {console.log('render')}

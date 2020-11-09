@@ -39,7 +39,7 @@ const Index = ({ path, project, screenshot }) => {
     <Card>
       <CardLink to={path}>
         <Image>
-          <img src={LoginImg} alt="error" />
+          <img src={screenshot} alt="error" />
         </Image>
         <Title>{project}</Title>
       </CardLink>

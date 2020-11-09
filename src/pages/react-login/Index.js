@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 //components
-import Wellcome from '../../containers/Login-user-info/Index';
+import Wellcome from '../../containers/login-user-info/Index';
 import { ToastsError, ToastsSuccess } from '../../components/Toasts/Index';
 //material-ui
 import Checkbox from '@material-ui/core/Checkbox';

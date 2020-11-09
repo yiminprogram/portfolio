@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components/macro';
 //components
-import Wellcome from '../../containers/Home-Wellcome/Index';
-import List from '../../containers/Home-List/Index';
+import Wellcome from '../../containers/home-wellcome/Index';
+import List from '../../containers/home-list/Index';
 //data
 import reactList from '../../assets/data/react-portfolio.json';
 import vueList from '../../assets/data/vue-portfolio.json';

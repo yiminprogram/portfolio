@@ -3,15 +3,16 @@ import styled from 'styled-components';
 import Card from '../../components/home-list-card/Index';
 
 const List = styled.section`
-  width: 80%;
+  width: 85%;
   padding: 1rem 0;
-  margin: 0 auto;
+  margin: 5rem auto;
 `;
 
 const Logo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 3rem;
   > div {
     flex: 0 1 100px;
 

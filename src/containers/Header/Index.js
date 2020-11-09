@@ -13,6 +13,7 @@ const Header = styled.div`
 `;
 
 const Home = styled(Link)`
+  font-size: 1.3rem;
   color: ${(props) => props.theme.colors.primary};
   text-decoration: none;
 `;
@@ -20,7 +21,7 @@ const Home = styled(Link)`
 const Index = () => {
   return (
     <Header>
-      <Home to="/portfolio">React Portfolio</Home>
+      <Home to="/portfolio">Portfolio</Home>
     </Header>
   );
 };

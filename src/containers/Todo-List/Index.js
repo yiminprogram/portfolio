@@ -1,12 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 //Icon
-import {
-  EventAvailable,
-  EventBusy,
-} from '@material-ui/icons';
+import { EventAvailable, EventBusy } from '@material-ui/icons';
 // Components
-import ListCard from '../../components/List-Card/Index';
+import ListCard from '../../components/todo-list-card/Index';
 
 const Container = styled.section`
   display: flex;
@@ -40,30 +37,12 @@ const Index = ({ todos, todoDone }) => {
           <EventBusy />
           <span>未完成</span>
         </Category>
-        {todos.map(
-          (ele) =>
-            !ele.done && (
-              <ListCard
-                key={ele.time}
-                {...ele}
-                todoDone={todoDone}
-              />
-            ),
-        )}
+        {todos.map((ele) => !ele.done && <ListCard key={ele.time} {...ele} todoDone={todoDone} />)}
         <Category color="#2e7d32">
           <EventAvailable />
           <span>已完成</span>
         </Category>
-        {todos.map(
-          (ele) =>
-            ele.done && (
-              <ListCard
-                key={ele.time}
-                {...ele}
-                todoDone={todoDone}
-              />
-            ),
-        )}
+        {todos.map((ele) => ele.done && <ListCard key={ele.time} {...ele} todoDone={todoDone} />)}
       </List>
     </Container>
   );

@@ -5,6 +5,8 @@ import Table from '../../components/Table/Index';
 //data
 import data from '../../assets/data/food.json';
 import { useEffect } from 'react';
+//functions
+import { ScrollTop } from '../../functions/Index';
 
 const TablePage = styled.div`
   ${(p) => p.theme.mixin.page};
@@ -20,9 +22,7 @@ const Container = styled.div`
 `;
 
 const Index = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
+  ScrollTop();
   return (
     <TablePage>
       <Container>

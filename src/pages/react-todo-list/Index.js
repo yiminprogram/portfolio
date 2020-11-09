@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+//functions
+import { ScrollTop } from '../../functions/Index';
 // Containers
 import List from '../../containers/Todo-List/Index';
-import {
-  ToastsError,
-  ToastsSuccess,
-} from '../../components/Toasts/Index';
+import { ToastsError, ToastsSuccess } from '../../components/Toasts/Index';
 
 const TodoList = styled.div`
   ${(props) => props.theme.mixin.page}
@@ -37,8 +36,7 @@ const InputTitle = styled.input`
 
   &:focus {
     outline: none;
-    box-shadow: ${(props) =>
-      props.theme.todoList.boxShadow};
+    box-shadow: ${(props) => props.theme.todoList.boxShadow};
   }
 `;
 
@@ -55,8 +53,7 @@ const InputContent = styled.textarea`
 
   &:focus {
     outline: none;
-    box-shadow: ${(props) =>
-      props.theme.todoList.boxShadow};
+    box-shadow: ${(props) => props.theme.todoList.boxShadow};
   }
 `;
 
@@ -64,8 +61,7 @@ const Btn = styled.button`
   cursor: pointer;
   font-size: 1rem;
   color: #fff;
-  background-color: ${(props) =>
-    props.theme.todoList.color};
+  background-color: ${(props) => props.theme.todoList.color};
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 10px;
@@ -74,9 +70,7 @@ const Btn = styled.button`
 const toastsShow = (e) => {
   switch (e) {
     case 'success':
-      return (
-        <ToastsSuccess>待辦事項新增成功</ToastsSuccess>
-      );
+      return <ToastsSuccess>待辦事項新增成功</ToastsSuccess>;
     case 'error':
       return <ToastsError>請輸入標題及內容</ToastsError>;
     default:
@@ -96,10 +90,7 @@ const Index = () => {
   const addTodo = (e) => {
     e.preventDefault();
     const time = new Date();
-    if (
-      todoTitle.current.value !== '' &&
-      todoContent.current.value !== ''
-    ) {
+    if (todoTitle.current.value !== '' && todoContent.current.value !== '') {
       const todo = {
         title: todoTitle.current.value,
         content: todoContent.current.value,
@@ -125,9 +116,7 @@ const Index = () => {
 
   // Todo Event Change Done Status
   const todoDone = (time) => {
-    const index = todos
-      .map((ele) => ele.time)
-      .indexOf(time);
+    const index = todos.map((ele) => ele.time).indexOf(time);
     const newArray = [...todos];
     newArray[index] = {
       ...newArray[index],
@@ -135,24 +124,14 @@ const Index = () => {
     };
     setTodos(newArray);
   };
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
+  ScrollTop();
   return (
     <TodoList>
       {toastsShow(show.info)}
       <Title>待辦事項</Title>
       <UserInput>
-        <InputTitle
-          type="text"
-          ref={todoTitle}
-          placeholder="標題"
-        />
-        <InputContent
-          type="text"
-          ref={todoContent}
-          placeholder="內容"
-        />
+        <InputTitle type="text" ref={todoTitle} placeholder="標題" />
+        <InputContent type="text" ref={todoContent} placeholder="內容" />
         <Btn onClick={addTodo} type="submit">
           新增待辦事項
         </Btn>

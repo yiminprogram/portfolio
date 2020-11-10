@@ -21,7 +21,7 @@ const Home = styled(Link)`
 const Index = () => {
   return (
     <Header>
-      <Home to="/portfolio">Portfolio</Home>
+      <Home to="/">Portfolio</Home>
     </Header>
   );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import LoginImg from '../../assets/image/screenshot/Login.png';
 
 const Card = styled.article`
   margin: 2rem 1rem;
@@ -39,7 +38,7 @@ export const ComponentCard = ({ path, project, screenshot }) => {
     <Card>
       <CardLink to={path}>
         <Image>
-          <img src={LoginImg} alt="error" />
+          <img src={screenshot} alt="error" />
         </Image>
         <Title>{project}</Title>
       </CardLink>
@@ -53,7 +52,7 @@ export const ProjectCard = (props) => {
     <Card>
       <CardLink to={{ pathname: `/project${path}`, query: { ...props } }}>
         <Image>
-          <img src={LoginImg} alt="error" />
+          <img src={screenshot} alt="error" />
         </Image>
         <Title>{project}</Title>
       </CardLink>

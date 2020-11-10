@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 //material-ui
 import { ArrowDownward } from '@material-ui/icons';
@@ -36,8 +36,7 @@ const rotate = (e) => {
 
 const SortIcon = styled.span`
   pointer-events: none;
-  display: ${(p) =>
-    p.sortStatus === 'none' ? 'none' : 'initial'};
+  display: ${(p) => (p.sortStatus === 'none' ? 'none' : 'initial')};
   transform: ${(p) => rotate(p.sortStatus)};
 `;
 

@@ -154,8 +154,6 @@ const Index = () => {
   };
   const userSignUp = (e) => {
     e.preventDefault();
-    const email = signUpEmail.current.value;
-    const password = signUpPassword.current.value;
   };
   // toast
   useEffect(() => {

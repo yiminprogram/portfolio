@@ -3,7 +3,7 @@
     "id": 1,
     "path": "/react-aqi-search",
     "project": "空氣指標查詢",
-    "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/vue-shopping-cart.jpg",
+    "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-aqi-search.png",
     "lastEdit": "2020/08/01",
     "information": [
       { "id": 1, "info": "react hook" },
@@ -13,9 +13,30 @@
     "link": [
       {
         "id": 1,
-        "image": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/vue-shopping-cart.jpg",
+        "image": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-aqi-search.png",
         "link": "https://yiminprogram.github.io/react-tech-research/#/",
-        "name": "購物車"
+        "name": "空氣指標查詢"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "path": "/react-facebook-clone",
+    "project": "facebook模仿練習",
+    "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-facebook-clone.png",
+    "lastEdit": "2020/08/01",
+    "information": [
+      { "id": 1, "info": "react hook" },
+      { "id": 2, "info": "react router" },
+      { "id": 3, "info": "styled components" },
+      { "id": 4, "info": "google firebase" }
+    ],
+    "link": [
+      {
+        "id": 1,
+        "image": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-facebook-clone.png",
+        "link": "https://react-firebase-facebook-clone.web.app/#/",
+        "name": "facebook模仿練習"
       }
     ]
   }

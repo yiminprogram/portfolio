@@ -27,9 +27,9 @@ const Container = styled.div`
 const Info = styled.div`
   text-align: center;
   > ul {
+    display: inline-block;
     list-style: outside;
     > li {
-      display: inline-block;
       color: #555;
       font-size: 1.3rem;
       font-weight: 700;
@@ -86,7 +86,7 @@ const Index = ({ location }) => {
           {link.map((ele) => (
             <a key={ele.id} href={ele.link}>
               <figure>
-                <img src={Home} alt="error" />
+                <img src={ele.image} alt="error" />
                 <figcaption>{ele.name}</figcaption>
               </figure>
             </a>

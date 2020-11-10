@@ -17,7 +17,7 @@ const Project = () => {
     <ThemeProvider theme={Theme}>
       <Header />
       <Switch>
-        <Route exact path="/portfolio" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/react-todolist" component={TodoList} />
         <Route path="/react-login" component={Login} />
         <Route path="/react-table" component={Table} />

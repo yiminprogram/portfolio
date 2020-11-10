@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Table from '../../components/Table/Index';
 //data
 import data from '../../assets/data/food.json';
-import { useEffect } from 'react';
 //functions
 import { ScrollTop } from '../../functions/Index';
 

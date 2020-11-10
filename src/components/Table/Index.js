@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Thead from './components/Thead/Index';
 import Tbody from './components/Tbody/Index';
 //context api
-import Context from './ContextApi';
+
 const Table = styled.table`
   margin: 10px;
   box-shadow: 0 0 10px #ccc;
@@ -48,12 +48,7 @@ const Index = ({ data }) => {
   };
   return (
     <Table>
-      <Thead
-        head={Object.keys(data[0])}
-        thClick={thClick}
-        item={item}
-        sortStaus={sortStaus}
-      />
+      <Thead head={Object.keys(data[0])} thClick={thClick} item={item} sortStaus={sortStaus} />
       <Tbody data={tableData} />
     </Table>
   );

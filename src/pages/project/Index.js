@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 //image
-import ShoppingCart from '../../assets/image/screenshot/vue-shopping-cart.jpg';
+import Home from '../../assets/image/screenshot/space-home.png';
 //functions
 import { ScrollTop } from '../../functions/Index';
 //material ui
 
-const VueShoppingCart = styled.div`
+const Project = styled.div`
   ${(p) => p.theme.mixin.page};
 `;
 
@@ -29,6 +29,7 @@ const Info = styled.div`
   > ul {
     list-style: outside;
     > li {
+      display: inline-block;
       color: #555;
       font-size: 1.3rem;
       font-weight: 700;
@@ -67,29 +68,32 @@ const Website = styled.div`
   }
 `;
 
-const Index = () => {
+const Index = ({ location }) => {
+  const { project, information, link } = location.query;
   ScrollTop();
   return (
-    <VueShoppingCart>
+    <Project>
       <Container>
-        <h1>Vue購物車</h1>
+        <h1>{project}</h1>
         <Info>
           <ul>
-            <li>vue cli 2</li>
-            <li>vue router</li>
-            <li>vuex</li>
+            {information.map((ele) => (
+              <li key={ele.id}>{ele.info}</li>
+            ))}
           </ul>
         </Info>
         <Website>
-          <a href="https://yiminprogram.github.io/vue-shopping-cart/#/">
-            <figure>
-              <img src={ShoppingCart} alt="error" />
-              <figcaption>購物車</figcaption>
-            </figure>
-          </a>
+          {link.map((ele) => (
+            <a key={ele.id} href={ele.link}>
+              <figure>
+                <img src={Home} alt="error" />
+                <figcaption>{ele.name}</figcaption>
+              </figure>
+            </a>
+          ))}
         </Website>
       </Container>
-    </VueShoppingCart>
+    </Project>
   );
 };
 

@@ -34,12 +34,12 @@ const Title = styled.h1`
   font-weight: 700;
 `;
 
-const Index = ({ path, project, screenshot }) => {
+export const ComponentCard = ({ path, project, screenshot }) => {
   return (
     <Card>
       <CardLink to={path}>
         <Image>
-          <img src={screenshot} alt="error" />
+          <img src={LoginImg} alt="error" />
         </Image>
         <Title>{project}</Title>
       </CardLink>
@@ -47,4 +47,16 @@ const Index = ({ path, project, screenshot }) => {
   );
 };
 
-export default Index;
+export const ProjectCard = (props) => {
+  const { path, project, screenshot } = props;
+  return (
+    <Card>
+      <CardLink to={{ pathname: `/project${path}`, query: { ...props } }}>
+        <Image>
+          <img src={LoginImg} alt="error" />
+        </Image>
+        <Title>{project}</Title>
+      </CardLink>
+    </Card>
+  );
+};

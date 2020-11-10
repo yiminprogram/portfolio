@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Card from '../../components/home-list-card/Index';
+import { ComponentCard, ProjectCard } from '../../components/home-list-card/Index';
 
 const List = styled.section`
   width: 85%;
@@ -22,14 +22,14 @@ const Logo = styled.div`
   }
 `;
 
-const ProjectList = styled.div`
+const LinkList = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
 `;
 
-const Index = ({ list, logo }) => {
+export const ComponentList = ({ list, logo }) => {
   return (
     <List>
       <Logo>
@@ -37,13 +37,28 @@ const Index = ({ list, logo }) => {
           <img src={logo} alt="error" />
         </div>
       </Logo>
-      <ProjectList>
+      <LinkList>
         {list.map((ele) => (
-          <Card key={ele.id} {...ele} />
+          <ComponentCard key={ele.id} {...ele} />
         ))}
-      </ProjectList>
+      </LinkList>
     </List>
   );
 };
 
-export default Index;
+export const ProjectList = ({ list, logo }) => {
+  return (
+    <List>
+      <Logo>
+        <div>
+          <img src={logo} alt="error" />
+        </div>
+      </Logo>
+      <LinkList>
+        {list.map((ele) => (
+          <ProjectCard key={ele.id} {...ele} />
+        ))}
+      </LinkList>
+    </List>
+  );
+};

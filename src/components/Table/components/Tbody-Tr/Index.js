@@ -14,14 +14,33 @@ const Tr = styled.tr`
   &:last-of-type {
     border-bottom: none;
   }
+
+  > td {
+    font-size: 1.1rem;
+    padding: 1rem;
+    text-align: center;
+    vertical-align: middle;
+
+    > img {
+      width: 60%;
+      min-width: 100px;
+    }
+  }
 `;
 
 const Index = ({ data }) => {
   return (
     <Tr>
-      {Object.values(data).map((ele, idx) => (
+      <td>{data.id}</td>
+      <td>{data.name}</td>
+      <td>
+        <img src={data.image} alt="error" />
+      </td>
+      <td>{data.price}</td>
+      <td>{data.calorie}</td>
+      {/* {Object.values(data).map((ele, idx) => (
         <Td key={idx} data={ele} />
-      ))}
+      ))} */}
     </Tr>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 //components
 import Thead from './components/Thead/Index';
@@ -6,6 +6,7 @@ import Tbody from './components/Tbody/Index';
 //context api
 
 const Table = styled.table`
+  width: 100%;
   margin: 10px;
   box-shadow: 0 0 10px #ccc;
   border-collapse: collapse;
@@ -13,10 +14,13 @@ const Table = styled.table`
   overflow: hidden;
 `;
 
-const Index = ({ data }) => {
-  const [tableData, setTableData] = useState(data);
+const Index = ({ data, head }) => {
+  const [tableData, setTableData] = useState();
   const [item, setItem] = useState('');
   const [sortStaus, setSortStaus] = useState('none');
+  useEffect(() => {
+    setTableData(data);
+  }, [data]);
   const thClick = (e) => {
     const thItem = e.target.getAttribute('aria-details');
     if (thItem !== item) {
@@ -48,8 +52,10 @@ const Index = ({ data }) => {
   };
   return (
     <Table>
-      <Thead head={Object.keys(data[0])} thClick={thClick} item={item} sortStaus={sortStaus} />
-      <Tbody data={tableData} />
+      {head && (
+        <Thead head={Object.keys(head)} thClick={thClick} item={item} sortStaus={sortStaus} />
+      )}
+      {tableData && <Tbody data={tableData} />}
     </Table>
   );
 };

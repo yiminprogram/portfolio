@@ -6,7 +6,7 @@ import Tbody from './components/Tbody/Index';
 //context api
 
 const Table = styled.table`
-  width: 100%;
+  width: 95%;
   margin: 10px;
   box-shadow: 0 0 10px #ccc;
   border-collapse: collapse;

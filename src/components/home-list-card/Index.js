@@ -39,7 +39,7 @@ export const ComponentCard = ({ path, project, screenshot }) => {
     <Card>
       <CardLink to={path}>
         <Image>
-          <img src={Home} alt="error" />
+          <img src={screenshot} alt="error" />
         </Image>
         <Title>{project}</Title>
       </CardLink>
@@ -53,7 +53,7 @@ export const ProjectCard = (props) => {
     <Card>
       <CardLink to={{ pathname: `/project${path}`, query: { ...props } }}>
         <Image>
-          <img src={Home} alt="error" />
+          <img src={screenshot} alt="error" />
         </Image>
         <Title>{project}</Title>
       </CardLink>

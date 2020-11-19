@@ -2,17 +2,20 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import {
   AmbientLight,
-  AxesHelper,
   DirectionalLight,
-  DirectionalLightHelper,
+  Mesh,
+  Object3D,
+  PCFSoftShadowMap,
   PerspectiveCamera,
+  PointLight,
   Scene,
+  SpotLight,
   sRGBEncoding,
   WebGLRenderer,
 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import WellCome from '../../assets/model/wellcome.gltf';
+import Portfolio from '../../assets/model/portfolio.gltf';
 
 const Container = styled.div`
   width: 100%;
@@ -46,18 +49,25 @@ const init = (target) => {
   const far = 1000;
   //create camera
   camera = new PerspectiveCamera(fov, aspect, near, far);
-  camera.position.set(-1, 5, 3.5);
+  camera.position.set(-5, 23, 5);
   //create ambient light
-  const ambient = new AmbientLight(0x333333, 5);
+  const ambient = new AmbientLight(0x111111, 6);
   scene.add(ambient);
   //create directional light
-  const directionalLight = new DirectionalLight(0xefefef, 1);
-  directionalLight.position.set(60, 60, 60);
+  const directionalLight = new DirectionalLight(0xffffff, 1.5);
+  directionalLight.position.set(200, 200, 200);
+  directionalLight.castShadow = true;
+  directionalLight.shadow.camera.left = -10;
+  directionalLight.shadow.camera.right = 10;
+  directionalLight.shadow.camera.top = 10;
+  directionalLight.shadow.camera.bottom = -10;
   scene.add(directionalLight);
   //create renderer
   renderer = new WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(model.clientWidth, model.clientHeight);
   renderer.outputEncoding = sRGBEncoding;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = PCFSoftShadowMap;
   //add to DOM
   model.appendChild(renderer.domElement);
   //create orbit control
@@ -66,8 +76,13 @@ const init = (target) => {
   control.minDistance = 3;
   //load 3d model
   const loader = new GLTFLoader();
-  loader.load(WellCome, (gltf) => {
-    gltf.scene.position.y = 1;
+  loader.load(Portfolio, (gltf) => {
+    gltf.scene.children[0].receiveShadow = true;
+    for (let i = 1; i < gltf.scene.children.length; i++) {
+      if (gltf.scene.children[i] instanceof Mesh) {
+        gltf.scene.children[i].castShadow = true;
+      }
+    }
     scene.add(gltf.scene);
     anime();
   });

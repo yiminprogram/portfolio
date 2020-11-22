@@ -3,13 +3,8 @@ import styled from 'styled-components';
 import {
   AmbientLight,
   DirectionalLight,
-  Mesh,
-  Object3D,
-  PCFSoftShadowMap,
   PerspectiveCamera,
-  PointLight,
   Scene,
-  SpotLight,
   sRGBEncoding,
   WebGLRenderer,
 } from 'three';
@@ -30,9 +25,14 @@ const Container = styled.div`
   }
 `;
 
-let scene, camera, renderer;
+let scene, camera, renderer, gltfModel;
 const anime = () => {
-  requestAnimationFrame(anime);
+  //render problem
+  //console.log('render');
+  if (window.location.href.split('').pop() === '/') {
+    gltfModel.rotation.y += 0.005;
+    requestAnimationFrame(anime);
+  }
   renderer.render(scene, camera);
 };
 const init = (target) => {
@@ -49,43 +49,38 @@ const init = (target) => {
   const far = 1000;
   //create camera
   camera = new PerspectiveCamera(fov, aspect, near, far);
-  camera.position.set(-5, 23, 5);
+  // camera.position.set(-5, 15, 10);
+  camera.position.set(-10, 20, 10);
   //create ambient light
-  const ambient = new AmbientLight(0x111111, 6);
+  const ambient = new AmbientLight(0xaaaaaa, 1);
   scene.add(ambient);
   //create directional light
-  const directionalLight = new DirectionalLight(0xffffff, 1.5);
-  directionalLight.position.set(200, 200, 200);
-  directionalLight.castShadow = true;
-  directionalLight.shadow.camera.left = -10;
-  directionalLight.shadow.camera.right = 10;
-  directionalLight.shadow.camera.top = 10;
-  directionalLight.shadow.camera.bottom = -10;
-  scene.add(directionalLight);
+  const rightLight = new DirectionalLight(0xaaaaaa, 1);
+  rightLight.position.set(200, 200, 0);
+  scene.add(rightLight);
+  const leftLight = new DirectionalLight(0xaaaaaa, 1);
+  leftLight.position.set(-200, 200, 0);
+  scene.add(leftLight);
+  const frontLight = new DirectionalLight(0xaaaaaa, 1);
+  frontLight.position.set(0, 100, 100);
+  scene.add(frontLight);
   //create renderer
   renderer = new WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(model.clientWidth, model.clientHeight);
   renderer.outputEncoding = sRGBEncoding;
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = PCFSoftShadowMap;
   //add to DOM
   model.appendChild(renderer.domElement);
   //create orbit control
   const control = new OrbitControls(camera, renderer.domElement);
-  control.maxDistance = 20;
-  control.minDistance = 3;
+  control.maxDistance = 50;
   //load 3d model
   const loader = new GLTFLoader();
   loader.load(Portfolio, (gltf) => {
-    gltf.scene.children[0].receiveShadow = true;
-    for (let i = 1; i < gltf.scene.children.length; i++) {
-      if (gltf.scene.children[i] instanceof Mesh) {
-        gltf.scene.children[i].castShadow = true;
-      }
-    }
     scene.add(gltf.scene);
-    anime();
+    gltfModel = gltf.scene;
+    anime(gltfModel);
   });
+
   //RWD
   window.addEventListener('resize', () => {
     camera.aspect = model.clientWidth / model.clientHeight;

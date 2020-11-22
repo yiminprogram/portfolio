@@ -3,10 +3,10 @@ import { Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Theme from './theme/Theme';
 //components
-import Header from './containers/Header/Index';
-import Footer from './containers/Footer/Index';
+import Header from './containers/header/Index';
+import Footer from './containers/footer/Index';
 //router components
-import Home from './pages/Home/Index';
+import Home from './pages/home/Index';
 import TodoList from './pages/react-todo-list/Index';
 import Table from './pages/react-table/Index';
 import Login from './pages/react-login/Index';

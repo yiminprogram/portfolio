@@ -3,7 +3,7 @@ import styled from 'styled-components';
 //functions
 import { ScrollTop } from '../../functions/Index';
 // Containers
-import List from '../../containers/Todo-List/Index';
+import List from '../../containers/todo-list/Index';
 import { ToastsError, ToastsSuccess } from '../../components/Toasts/Index';
 
 const TodoList = styled.div`

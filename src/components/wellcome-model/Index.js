@@ -16,6 +16,10 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
 
+  > canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
   &:hover {
     cursor: grab;
   }
@@ -49,19 +53,11 @@ const init = (target) => {
   const far = 1000;
   //create camera
   camera = new PerspectiveCamera(fov, aspect, near, far);
-  // camera.position.set(-5, 15, 10);
-  camera.position.set(-10, 20, 10);
+  camera.position.set(-10, 18, 10);
   //create ambient light
-  const ambient = new AmbientLight(0xaaaaaa, 1);
+  const ambient = new AmbientLight(0x888888, 1);
   scene.add(ambient);
-  //create directional light
-  const rightLight = new DirectionalLight(0xaaaaaa, 1);
-  rightLight.position.set(200, 200, 0);
-  scene.add(rightLight);
-  const leftLight = new DirectionalLight(0xaaaaaa, 1);
-  leftLight.position.set(-200, 200, 0);
-  scene.add(leftLight);
-  const frontLight = new DirectionalLight(0xaaaaaa, 1);
+  const frontLight = new DirectionalLight(0xaaaaaa, 2);
   frontLight.position.set(0, 100, 100);
   scene.add(frontLight);
   //create renderer
@@ -72,7 +68,7 @@ const init = (target) => {
   model.appendChild(renderer.domElement);
   //create orbit control
   const control = new OrbitControls(camera, renderer.domElement);
-  control.maxDistance = 50;
+  control.enableZoom = false;
   //load 3d model
   const loader = new GLTFLoader();
   loader.load(Portfolio, (gltf) => {

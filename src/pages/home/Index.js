@@ -19,7 +19,7 @@ const Home = styled.div`
 `;
 
 const Index = () => {
-  ScrollTop();
+  // ScrollTop();
   return (
     <Home>
       <Wellcome />

@@ -1,46 +1,54 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 //components
 import Model from '../../components/wellcome-model/Index';
-//icon
-import { Mouse } from '@material-ui/icons';
-
-const moveMouse = keyframes`
-25%{
-transform:translateX(30px);
-}
-50%{
-  transform:translateX(0px);
-}
-75%{
-  transform:translateX(-30px);
-}
-100%{
-  transform:translateX(0px);
-}
-`;
 
 const Wellcome = styled.div`
-  width: 85%;
-  height: 60vh;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  margin: 6rem auto;
 `;
 
-const Hover = styled.div`
-  color: #666;
-  text-align: center;
-  > ${Mouse} {
-    animation: ${moveMouse} 1s linear infinite;
+const Title = styled.div`
+  flex: 0 1 800px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  > h1 {
+    padding-bottom: 3rem;
+    font-weight: 700;
   }
+
+  .top {
+    font-size: 4rem;
+    color: #333;
+  }
+
+  .bottom {
+    line-height: 1.5;
+    font-size: 5rem;
+    color: ${(p) => p.theme.colors.primary};
+    text-align: right;
+  }
+`;
+
+const ModelContainer = styled.div`
+  flex: 0 1 800px;
+  height: 600px;
 `;
 
 const Index = () => {
   return (
     <Wellcome>
-      <Model />
-      <Hover>
-        <Mouse />
-      </Hover>
+      <Title>
+        <h1 className="top">Wellcome To</h1>
+        <h1 className="bottom">My Portfolio</h1>
+      </Title>
+      <ModelContainer>
+        <Model />
+      </ModelContainer>
     </Wellcome>
   );
 };

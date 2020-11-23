@@ -12,7 +12,7 @@ const CardLink = styled(Link)`
 `;
 const Image = styled.div`
   margin-bottom: 1rem;
-  border-radius: 10px;
+  border-radius: 3px;
   box-shadow: 0 0 10px #bbb;
   overflow: hidden;
   > img {

@@ -6,8 +6,9 @@ const theme = {
   mixin: {
     page: css`
       min-height: calc(100vh - 30px);
-      padding: 2rem 1rem;
-      background-color: #f0f2f5;
+      padding: 3rem 1rem;
+      background-color: #fff;
+      /* background: linear-gradient(10deg, #1e6aa5, #63bd98); */
     `,
   },
   todoList: {

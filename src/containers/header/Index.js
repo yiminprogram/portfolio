@@ -3,25 +3,50 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Header = styled.div`
+  position: absolute;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
-  height: 50px;
   font-weight: 700;
-  box-shadow: 0 0 10px #ccc;
+  height: 50px;
 `;
 
-const Home = styled(Link)`
+const Home = styled.div`
+  flex: 1;
   font-size: 1.3rem;
+`;
+
+const Nav = styled.div`
+  flex: 1;
+  text-align: right;
+`;
+
+const HomeLink = styled(Link)`
   color: ${(props) => props.theme.colors.primary};
+  font-size: 1.5rem;
+
   text-decoration: none;
+  margin-left: 2rem;
+`;
+
+const NavLink = styled(Link)`
+  color: #666;
+  font-size: 1.1rem;
+  text-decoration: none;
+  margin-right: 3rem;
 `;
 
 const Index = () => {
   return (
     <Header>
-      <Home to="/">Portfolio</Home>
+      <Home>
+        <HomeLink to="/">Portfolio</HomeLink>
+      </Home>
+      <Nav>
+        {/* <NavLink>React Portfolio</NavLink>
+        <NavLink>Vue Portfolio</NavLink>
+        <NavLink>III Portfolio</NavLink> */}
+      </Nav>
     </Header>
   );
 };

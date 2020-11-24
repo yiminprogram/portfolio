@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Home from '../../assets/image/screenshot/space-home.png';
 
 const Card = styled.article`
-  margin: 2rem 1rem;
+  margin: 3rem;
   flex: 0 1 300px;
 `;
 const CardLink = styled(Link)`
@@ -13,7 +13,7 @@ const CardLink = styled(Link)`
 const Image = styled.div`
   margin-bottom: 1rem;
   border-radius: 3px;
-  box-shadow: 0 0 10px #bbb;
+  box-shadow: ${(p) => p.theme.boxShadow.card};
   overflow: hidden;
   > img {
     width: 100%;
@@ -29,7 +29,7 @@ const Image = styled.div`
 
 const Title = styled.h1`
   text-align: center;
-  color: ${(props) => props.theme.colors.primary};
+  color: #555;
   font-size: 20px;
   font-weight: 700;
 `;
@@ -53,7 +53,7 @@ export const ProjectCard = (props) => {
     <Card>
       <CardLink to={{ pathname: `/project${path}`, query: { ...props } }}>
         <Image>
-          <img src={screenshot} alt="error" />
+          <img src={Home} alt="error" />
         </Image>
         <Title>{project}</Title>
       </CardLink>

@@ -1,22 +1,9 @@
 [
   {
     "id": 1,
-    "path": "/vue-shopping-cart",
+    "path": "https://yiminprogram.github.io/vue-shopping-cart/#/",
     "project": "購物車",
     "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/vue-shopping-cart.jpg",
-    "lastEdit": "2020/09/01",
-    "information": [
-      { "id": 1, "info": "vue cli 2" },
-      { "id": 2, "info": "vue router" },
-      { "id": 3, "info": "vuex" }
-    ],
-    "link": [
-      {
-        "id": 1,
-        "image": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/vue-shopping-cart.jpg",
-        "link": "https://yiminprogram.github.io/vue-shopping-cart/#/",
-        "name": "購物車"
-      }
-    ]
+    "lastEdit": "2020/09/01"
   }
 ]

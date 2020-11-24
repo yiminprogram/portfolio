@@ -7,7 +7,7 @@ const Wellcome = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
-  margin: 6rem auto;
+  margin: 5rem auto 10rem auto;
 `;
 
 const Title = styled.div`

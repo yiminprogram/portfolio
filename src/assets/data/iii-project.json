@@ -1,27 +1,16 @@
 [
   {
     "id": 1,
-    "path": "/iii-project",
-    "project": "資策會結訓專案",
+    "path": "https://yiminprogram.github.io/ProjectWebSite/src/Homepage.html",
+    "project": "資策會結訓專案(模板)-首頁",
     "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/space-home.png",
-    "lastEdit": "2020/06/01",
-    "information": [
-      { "id": 1, "info": "專案模板(未連接資料庫)" },
-      { "id": 2, "info": "HTML,CSS,jQuery,Bootstrap" }
-    ],
-    "link": [
-      {
-        "id": 1,
-        "image": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/space-home.png",
-        "link": "https://yiminprogram.github.io/ProjectWebSite/src/Homepage.html",
-        "name": "首頁"
-      },
-      {
-        "id": 2,
-        "image": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/space-search.jpg",
-        "link": "https://yiminprogram.github.io/ProjectWebSite/src/SpaceSearch.html",
-        "name": "搜尋頁面"
-      }
-    ]
+    "lastEdit": "2020/06/01"
+  },
+  {
+    "id": 2,
+    "path": "https://yiminprogram.github.io/ProjectWebSite/src/SpaceSearch.html",
+    "project": "資策會結訓專案(模板)-搜尋頁面",
+    "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/space-search.jpg",
+    "lastEdit": "2020/06/01"
   }
 ]

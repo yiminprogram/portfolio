@@ -11,6 +11,7 @@ import TodoList from './pages/react-todo-list/Index';
 import Table from './pages/react-table/Index';
 import Login from './pages/react-login/Index';
 import ProjectPage from './pages/project/Index';
+import ReactPortfolio from './pages/portfolio-list/index';
 
 const Project = () => {
   return (
@@ -21,7 +22,7 @@ const Project = () => {
         <Route path="/react-todolist" component={TodoList} />
         <Route path="/react-login" component={Login} />
         <Route path="/react-table" component={Table} />
-        <Route path="/project/:project" component={ProjectPage} />
+        <Route path="/profolio-list/:project" component={ReactPortfolio} />
       </Switch>
       <Footer />
     </ThemeProvider>

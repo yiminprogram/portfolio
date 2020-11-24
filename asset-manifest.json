@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.9b4423e0.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.9b4423e0.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.02667647.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.02667647.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.a6357315.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.a6357315.js.map",
-    "static/js/2.cbc63787.chunk.js": "/portfolio/static/js/2.cbc63787.chunk.js",
-    "static/js/2.cbc63787.chunk.js.map": "/portfolio/static/js/2.cbc63787.chunk.js.map",
+    "static/js/2.58ff9411.chunk.js": "/portfolio/static/js/2.58ff9411.chunk.js",
+    "static/js/2.58ff9411.chunk.js.map": "/portfolio/static/js/2.58ff9411.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/js/2.cbc63787.chunk.js.LICENSE.txt": "/portfolio/static/js/2.cbc63787.chunk.js.LICENSE.txt",
+    "static/js/2.58ff9411.chunk.js.LICENSE.txt": "/portfolio/static/js/2.58ff9411.chunk.js.LICENSE.txt",
+    "static/media/error-404.d6a4264d.svg": "/portfolio/static/media/error-404.d6a4264d.svg",
+    "static/media/error-fixed.f8bf22c3.svg": "/portfolio/static/media/error-fixed.f8bf22c3.svg",
     "static/media/portfolio.43ed2b1f.gltf": "/portfolio/static/media/portfolio.43ed2b1f.gltf",
     "static/media/reacr-profile.1618ee2d.svg": "/portfolio/static/media/reacr-profile.1618ee2d.svg",
     "static/media/school-logo.a9ffb36f.png": "/portfolio/static/media/school-logo.a9ffb36f.png",
@@ -17,7 +19,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.a6357315.js",
-    "static/js/2.cbc63787.chunk.js",
-    "static/js/main.9b4423e0.chunk.js"
+    "static/js/2.58ff9411.chunk.js",
+    "static/js/main.02667647.chunk.js"
   ]
 }

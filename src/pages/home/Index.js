@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 //components
 import Wellcome from '../../containers/home-wellcome/Index';
+import Img from '../../components/image/Index';
 //image
 import ReactImg from '../../assets/image/logo/reacr-profile.svg';
 import VueImg from '../../assets/image/logo/vue-profile.svg';
@@ -75,7 +76,7 @@ const Index = () => {
       <Wellcome />
       <Protfolio>
         <LogoContainer>
-          <img src={ReactImg} alt="error" />
+          <Img src={ReactImg} />
         </LogoContainer>
         <InfoContainer>
           <InfoCard color="#61dafb">
@@ -107,12 +108,12 @@ const Index = () => {
           </InfoCard>
         </InfoContainer>
         <LogoContainer>
-          <img src={VueImg} alt="error" />
+          <Img src={VueImg} />
         </LogoContainer>
       </Protfolio>
       <Protfolio>
         <LogoContainer>
-          <img src={StaticImg} alt="error" />
+          <Img src={StaticImg} />
         </LogoContainer>
         <InfoContainer>
           <InfoCard color="#dd4b25">

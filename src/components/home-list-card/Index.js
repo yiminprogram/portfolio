@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link, useRouteMatch } from 'react-router-dom';
 import Home from '../../assets/image/screenshot/space-home.png';
+//components
+import Img from '../../components/image/Index';
 
 const Card = styled.article`
   margin: 3rem;
@@ -17,11 +19,13 @@ const ProjectLink = styled.a`
 `;
 
 const Image = styled.div`
+  width: 100%;
+  height: 300px;
   margin-bottom: 1rem;
   border-radius: 3px;
   box-shadow: ${(p) => p.theme.boxShadow.card};
   overflow: hidden;
-  > img {
+  /* > img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -30,7 +34,7 @@ const Image = styled.div`
     &:hover {
       transform: scale(1.2);
     }
-  }
+  } */
 `;
 
 const Title = styled.h1`
@@ -47,7 +51,7 @@ export const ComponentCard = ({ path, project, screenshot }) => {
     <Card>
       <ComponentsLink to={`${url}${path}`}>
         <Image>
-          <img src={screenshot} alt="error" />
+          <Img src={screenshot} />
         </Image>
         <Title>{project}</Title>
       </ComponentsLink>
@@ -60,7 +64,7 @@ export const ProjectCard = ({ path, project, screenshot }) => {
     <Card>
       <ProjectLink href={path}>
         <Image>
-          <img src={screenshot} alt="error" />
+          <Img src={screenshot} />
         </Image>
         <Title>{project}</Title>
       </ProjectLink>

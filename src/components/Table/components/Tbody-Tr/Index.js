@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-//components
-import Td from '../Td/Index';
 
 const Tr = styled.tr`
   cursor: pointer;

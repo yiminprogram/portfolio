@@ -11,9 +11,7 @@ import Home from './pages/home/Index';
 import TodoList from './pages/react-todo-list/Index';
 import Table from './pages/react-table/Index';
 import Login from './pages/react-login/Index';
-import ReactPortfolio from './pages/portfolio-react/index';
-import VuePortfolio from './pages/portfolio-vue/index';
-import IIIPortfolio from './pages/portfolio-iii/index';
+import Portfolio from './pages/portfolio-list/Index';
 
 const Project = () => {
   return (
@@ -22,12 +20,13 @@ const Project = () => {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/react-todolist" component={TodoList} />
-          <Route path="/react-login" component={Login} />
-          <Route path="/react-table" component={Table} />
-          <Route path="/portfolio-react" component={ReactPortfolio} />
+          <Route path="/portfolio/react/react-todolist" component={TodoList} />
+          <Route path="/portfolio/react/react-login" component={Login} />
+          <Route path="/portfolio/react/react-table" component={Table} />
+          {/* <Route path="/portfolio-react" component={ReactPortfolio} />
           <Route path="/portfolio-vue" component={VuePortfolio} />
-          <Route path="/portfolio-iii" component={IIIPortfolio} />
+          <Route path="/portfolio-iii" component={IIIPortfolio} /> */}
+          <Route path="/portfolio/:id" component={Portfolio} />
           <Route component={Error} />
         </Switch>
         <Footer />

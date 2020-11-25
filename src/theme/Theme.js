@@ -20,7 +20,7 @@ const theme = {
       justify-content: center;
       align-items: center;
       margin: 0 auto;
-      margin-bottom: 30rem;
+      margin-bottom: 15rem;
     `,
   },
   todoList: {

@@ -157,7 +157,6 @@ const Index = () => {
   };
   // toast
   useEffect(() => {
-    console.log(toast);
     const timer = setTimeout(() => {
       setToast(null);
     }, 1000);
@@ -168,7 +167,6 @@ const Index = () => {
   ScrollTop();
   return (
     <Container>
-      {console.log('render')}
       {toastsShow(toast)}
       {login ? (
         <Wellcome setLogin={setLogin} />

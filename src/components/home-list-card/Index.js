@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import Home from '../../assets/image/screenshot/space-home.png';
 
 const Card = styled.article`
@@ -41,9 +41,11 @@ const Title = styled.h1`
 `;
 
 export const ComponentCard = ({ path, project, screenshot }) => {
+  const match = useRouteMatch();
+  const { url } = match;
   return (
     <Card>
-      <ComponentsLink to={path}>
+      <ComponentsLink to={`${url}${path}`}>
         <Image>
           <img src={screenshot} alt="error" />
         </Image>

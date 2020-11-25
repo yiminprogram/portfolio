@@ -3,36 +3,24 @@ import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 //components
 import Wellcome from '../../containers/home-wellcome/Index';
-//data
-import ReactList from '../../assets/data/react-portfolio.json';
-import ReactProject from '../../assets/data/react-project.json';
-import VueList from '../../assets/data/vue-project.json';
-import IIIList from '../../assets/data/iii-project.json';
 //image
 import ReactImg from '../../assets/image/logo/reacr-profile.svg';
 import VueImg from '../../assets/image/logo/vue-profile.svg';
 import StaticImg from '../../assets/image/logo/static-profile.svg';
-import ReactLogo from '../../assets/image/logo/react.png';
-import VueLogo from '../../assets/image/logo/vue.png';
-import SchoolLogo from '../../assets/image/logo/school-logo.png';
+
 //function
 // import { ScrollTop } from '../../functions/Index';
 const Home = styled.div`
   ${(props) => props.theme.mixin.page};
 `;
 
-const ReactPortfolio = styled.div`
+const Protfolio = styled.div`
   ${(p) => p.theme.mixin.portfolio};
 `;
-const VuePortfolio = styled.div`
-  ${(p) => p.theme.mixin.portfolio};
-`;
-const IIIPortfolio = styled.div`
-  ${(p) => p.theme.mixin.portfolio};
-`;
+
 const LogoContainer = styled.div`
   flex: 0 1 600px;
-  margin: 0 5rem;
+  padding: 1.5rem;
   > img {
     width: 100%;
     object-fit: cover;
@@ -43,7 +31,7 @@ const InfoContainer = styled.div`
 `;
 
 const InfoCard = styled.div`
-  width: 60%;
+  max-width: 400px;
   margin: 0 auto;
   padding: 2rem;
   box-shadow: ${(p) => p.theme.boxShadow.card};
@@ -85,7 +73,7 @@ const Index = () => {
   return (
     <Home>
       <Wellcome />
-      <ReactPortfolio>
+      <Protfolio>
         <LogoContainer>
           <img src={ReactImg} alt="error" />
         </LogoContainer>
@@ -97,14 +85,14 @@ const Index = () => {
               <li>React Project</li>
             </ul>
             <LinkGroup color="#61dafb">
-              <Link className="btn" to="/portfolio-react">
+              <Link className="btn" to="/portfolio/react">
                 Go to
               </Link>
             </LinkGroup>
           </InfoCard>
         </InfoContainer>
-      </ReactPortfolio>
-      <VuePortfolio>
+      </Protfolio>
+      <Protfolio>
         <InfoContainer>
           <InfoCard color="#41b883">
             <h1>Vue Portfolio</h1>
@@ -112,7 +100,7 @@ const Index = () => {
               <li>Vue Project</li>
             </ul>
             <LinkGroup color="#41b883">
-              <Link className="btn" to="/portfolio-vue">
+              <Link className="btn" to="/portfolio/vue">
                 Go to
               </Link>
             </LinkGroup>
@@ -121,8 +109,8 @@ const Index = () => {
         <LogoContainer>
           <img src={VueImg} alt="error" />
         </LogoContainer>
-      </VuePortfolio>
-      <IIIPortfolio>
+      </Protfolio>
+      <Protfolio>
         <LogoContainer>
           <img src={StaticImg} alt="error" />
         </LogoContainer>
@@ -134,13 +122,13 @@ const Index = () => {
               <li>Website Template</li>
             </ul>
             <LinkGroup color="#dd4b25">
-              <Link className="btn" to="/portfolio-iii">
+              <Link className="btn" to="/portfolio/iii">
                 Go to
               </Link>
             </LinkGroup>
           </InfoCard>
         </InfoContainer>
-      </IIIPortfolio>
+      </Protfolio>
     </Home>
   );
 };

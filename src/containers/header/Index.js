@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Header = styled.div`
+  width: 100%;
+  height: 50px;
   position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 700;
-  height: 50px;
 `;
 
 const Home = styled.div`
@@ -43,9 +44,9 @@ const Index = () => {
         <HomeLink to="/">Portfolio</HomeLink>
       </Home>
       <Nav>
-        {/* <NavLink>React Portfolio</NavLink>
-        <NavLink>Vue Portfolio</NavLink>
-        <NavLink>III Portfolio</NavLink> */}
+        <NavLink to="/portfolio/react">React Portfolio</NavLink>
+        <NavLink to="/portfolio/vue">Vue Portfolio</NavLink>
+        <NavLink to="/portfolio/iii">III Portfolio</NavLink>
       </Nav>
     </Header>
   );

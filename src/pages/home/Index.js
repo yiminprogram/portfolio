@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Wellcome from '../../containers/home-wellcome/Index';
 //data
 import ReactList from '../../assets/data/react-portfolio.json';
-// import ReactProject from '../../assets/data/react-project.json';
+import ReactProject from '../../assets/data/react-project.json';
 import VueList from '../../assets/data/vue-project.json';
 import IIIList from '../../assets/data/iii-project.json';
 //image
@@ -97,13 +97,7 @@ const Index = () => {
               <li>React Project</li>
             </ul>
             <LinkGroup color="#61dafb">
-              <Link
-                className="btn"
-                to={{
-                  pathname: '/profolio-list/react',
-                  query: { logo: ReactLogo, data: ReactList },
-                }}
-              >
+              <Link className="btn" to="/portfolio-react">
                 Go to
               </Link>
             </LinkGroup>
@@ -118,10 +112,7 @@ const Index = () => {
               <li>Vue Project</li>
             </ul>
             <LinkGroup color="#41b883">
-              <Link
-                className="btn"
-                to={{ pathname: '/profolio-list/vue', query: { logo: VueLogo, data: VueList } }}
-              >
+              <Link className="btn" to="/portfolio-vue">
                 Go to
               </Link>
             </LinkGroup>
@@ -143,10 +134,7 @@ const Index = () => {
               <li>Website Template</li>
             </ul>
             <LinkGroup color="#dd4b25">
-              <Link
-                className="btn"
-                to={{ pathname: '/profolio-list/iii', query: { logo: SchoolLogo, data: IIIList } }}
-              >
+              <Link className="btn" to="/portfolio-iii">
                 Go to
               </Link>
             </LinkGroup>

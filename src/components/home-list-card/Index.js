@@ -7,9 +7,15 @@ const Card = styled.article`
   margin: 3rem;
   flex: 0 1 300px;
 `;
-const CardLink = styled(Link)`
+
+const ComponentsLink = styled(Link)`
   text-decoration: none;
 `;
+
+const ProjectLink = styled.a`
+  text-decoration: none;
+`;
+
 const Image = styled.div`
   margin-bottom: 1rem;
   border-radius: 3px;
@@ -37,26 +43,25 @@ const Title = styled.h1`
 export const ComponentCard = ({ path, project, screenshot }) => {
   return (
     <Card>
-      <CardLink to={path}>
+      <ComponentsLink to={path}>
         <Image>
           <img src={screenshot} alt="error" />
         </Image>
         <Title>{project}</Title>
-      </CardLink>
+      </ComponentsLink>
     </Card>
   );
 };
 
-export const ProjectCard = (props) => {
-  const { path, project, screenshot } = props;
+export const ProjectCard = ({ path, project, screenshot }) => {
   return (
     <Card>
-      <CardLink to={{ pathname: `/project${path}`, query: { ...props } }}>
+      <ProjectLink href={path}>
         <Image>
-          <img src={Home} alt="error" />
+          <img src={screenshot} alt="error" />
         </Image>
         <Title>{project}</Title>
-      </CardLink>
+      </ProjectLink>
     </Card>
   );
 };

@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 //components
-import { ComponentCard, ProjectCard } from '../../components/home-list-card/Index';
+import { ProjectCard } from '../../components/home-list-card/Index';
+//data
+import ProjectList from '../../assets/data/vue-project.json';
+//image
+import LogoImg from '../../assets/image/logo/vue.png';
 //function
 import { ScrollTop } from '../../functions/Index';
 
@@ -26,21 +30,19 @@ const ListContainer = styled.div`
   flex-flow: row wrap;
   justify-content: center;
 `;
-const index = (props) => {
-  const { logo, components, projects } = props.location.query;
+const index = () => {
   ScrollTop();
   return (
     <ReactPortfolio>
       <Logo>
         <div className="logoContainer">
-          <img src={logo} alt="error" />
+          <img src={LogoImg} alt="error" />
         </div>
       </Logo>
       <ListContainer>
-        {components && components.map((ele) => <ComponentCard key={ele.id} {...ele} />)}
-      </ListContainer>
-      <ListContainer>
-        {projects && projects.map((ele) => <ProjectCard key={ele.id} {...ele} />)}
+        {ProjectList.map((ele) => (
+          <ProjectCard key={ele.id} {...ele} />
+        ))}
       </ListContainer>
     </ReactPortfolio>
   );

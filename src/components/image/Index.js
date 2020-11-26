@@ -6,7 +6,13 @@ const Img = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.5s;
   display: ${(p) => (p.load ? 'none' : 'initial')};
+
+  &:hover {
+    filter: brightness(0.85);
+    transform: scale(1.2);
+  }
 `;
 
 const Index = ({ src }) => {

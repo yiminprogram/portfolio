@@ -25,16 +25,6 @@ const Image = styled.div`
   border-radius: 3px;
   box-shadow: ${(p) => p.theme.boxShadow.card};
   overflow: hidden;
-  /* > img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: 0.5s;
-
-    &:hover {
-      transform: scale(1.2);
-    }
-  } */
 `;
 
 const Title = styled.h1`

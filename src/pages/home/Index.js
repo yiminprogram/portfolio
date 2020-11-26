@@ -76,7 +76,7 @@ const Index = () => {
       <Wellcome />
       <Protfolio>
         <LogoContainer>
-          <Img src={ReactImg} />
+          <img src={ReactImg} alt="error" />
         </LogoContainer>
         <InfoContainer>
           <InfoCard color="#61dafb">
@@ -108,12 +108,12 @@ const Index = () => {
           </InfoCard>
         </InfoContainer>
         <LogoContainer>
-          <Img src={VueImg} />
+          <img src={VueImg} alt="error" />
         </LogoContainer>
       </Protfolio>
       <Protfolio>
         <LogoContainer>
-          <Img src={StaticImg} />
+          <img src={StaticImg} alt="error" />
         </LogoContainer>
         <InfoContainer>
           <InfoCard color="#dd4b25">

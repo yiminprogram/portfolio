@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link, useRouteMatch } from 'react-router-dom';
 import Home from '../../assets/image/screenshot/space-home.png';
 //components
-import Img from '../../components/image/Index';
+import { ImgHover } from '../../components/image/Index';
 
 const Card = styled.article`
   margin: 3rem;
@@ -41,7 +41,7 @@ export const ComponentCard = ({ path, project, screenshot }) => {
     <Card>
       <ComponentsLink to={`${url}${path}`}>
         <Image>
-          <Img src={Home} />
+          <ImgHover src={Home} />
         </Image>
         <Title>{project}</Title>
       </ComponentsLink>
@@ -54,7 +54,7 @@ export const ProjectCard = ({ path, project, screenshot }) => {
     <Card>
       <ProjectLink href={path}>
         <Image>
-          <Img src={Home} />
+          <ImgHover src={Home} />
         </Image>
         <Title>{project}</Title>
       </ProjectLink>

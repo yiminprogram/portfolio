@@ -10,6 +10,8 @@ import CloudRain from '../../components/weather/CloudRain';
 import Error from '../../components/weather/Error';
 //api
 import { apiKey } from '../../authentication/weather-api';
+
+//method
 const getWeatherImg = (weather) => {
   let img;
   if (weather.includes('晴')) {
@@ -37,6 +39,7 @@ const getWeatherImg = (weather) => {
   }
 };
 
+//style
 const Weather = styled.div`
   ${(p) => p.theme.mixin.page};
 `;
@@ -138,8 +141,8 @@ const WeatherImg = styled.div`
   transition: 0.5s;
 
   @media screen and (max-width: 768px) {
-    top: -45%;
-    right: 3%;
+    top: -70%;
+    right: 0%;
     width: 280px;
     height: 280px;
   }
@@ -178,7 +181,9 @@ const Index = () => {
         setWeather({ location, time, temp, weather });
       })
       .catch(() => {
-        alert('請輸入有效縣市名稱，或請稍待再次輸入查詢');
+        alert(
+          '請輸入有效縣市名稱，或請稍待再次輸入查詢，如無法查詢可能為系統未增加該縣市之天氣資料',
+        );
       });
   };
   const search = (e) => {

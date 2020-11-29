@@ -13,9 +13,10 @@ const TablePage = styled.div`
 `;
 
 const Container = styled.div`
+  padding-top: 3rem;
   display: flex;
-  justify-content: center;
   flex-flow: row wrap;
+  justify-content: center;
 `;
 
 const Search = styled.div`
@@ -25,7 +26,7 @@ const Search = styled.div`
 
 const TableContainer = styled.div`
   flex: 0 1 1000px;
-  max-height: 600px;
+  max-height: 700px;
   overflow-x: auto;
 `;
 

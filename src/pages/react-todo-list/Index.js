@@ -10,6 +10,10 @@ const TodoList = styled.div`
   ${(props) => props.theme.mixin.page}
 `;
 
+const Container = styled.div`
+  padding-top: 5rem;
+`;
+
 const Title = styled.h1`
   margin-bottom: 2rem;
   text-align: center;
@@ -127,16 +131,18 @@ const Index = () => {
   ScrollTop();
   return (
     <TodoList>
-      {toastsShow(show.info)}
-      <Title>待辦事項</Title>
-      <UserInput>
-        <InputTitle type="text" ref={todoTitle} placeholder="標題" />
-        <InputContent type="text" ref={todoContent} placeholder="內容" />
-        <Btn onClick={addTodo} type="submit">
-          新增待辦事項
-        </Btn>
-      </UserInput>
-      <List todos={todos} todoDone={todoDone} />
+      <Container>
+        {toastsShow(show.info)}
+        <Title>待辦事項</Title>
+        <UserInput>
+          <InputTitle type="text" ref={todoTitle} placeholder="標題" />
+          <InputContent type="text" ref={todoContent} placeholder="內容" />
+          <Btn onClick={addTodo} type="submit">
+            新增待辦事項
+          </Btn>
+        </UserInput>
+        <List todos={todos} todoDone={todoDone} />
+      </Container>
     </TodoList>
   );
 };

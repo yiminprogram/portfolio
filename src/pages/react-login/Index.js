@@ -30,9 +30,11 @@ const toastsShow = (e) => {
       return null;
   }
 };
-
-const Container = styled.div`
+const ReactLogin = styled.div`
   ${(props) => props.theme.mixin.page};
+`;
+const Container = styled.div`
+  padding-top: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,67 +168,69 @@ const Index = () => {
   }, [toast]);
   ScrollTop();
   return (
-    <Container>
-      {toastsShow(toast)}
-      {login ? (
-        <Wellcome setLogin={setLogin} />
-      ) : (
-        <Card>
-          <CardSignIn flip={state}>
-            <Nav flip={state} bgc={color.signIn}>
-              <NavBtn bgc={color.signIn} onClick={flipSignIn}>
-                登入
-              </NavBtn>
-              <NavBtn onClick={flipSignUp}>註冊</NavBtn>
-            </Nav>
-            <Form>
-              <label htmlFor="email">信箱</label>
-              <input id="email" type="email" ref={signInEmail} />
-              <label htmlFor="passwords">密碼</label>
-              <input id="passwords" type="password" ref={signInPassword} />
-              <CheckGroup>
-                <Checkbox />
-                <label>記住我</label>
-              </CheckGroup>
-              <Submit
-                type="submit"
-                bgc={color.signIn}
-                hover={color.hoverSignIn}
-                onClick={userSignIn}
-              >
-                登入
-              </Submit>
-            </Form>
-          </CardSignIn>
-          <CardSignUp flip={state}>
-            <Nav flip={state} bgc={color.signUp}>
-              <NavBtn onClick={flipSignIn}>登入</NavBtn>
-              <NavBtn bgc={color.signUp} onClick={flipSignUp}>
-                註冊
-              </NavBtn>
-            </Nav>
-            <Form>
-              <label htmlFor="email">信箱</label>
-              <input id="email" type="email" ref={signUpEmail} />
-              <label htmlFor="passwords">密碼</label>
-              <input id="passwords" type="password" ref={signUpPassword} />
-              <CheckGroup>
-                <Checkbox />
-                <label>同意相關隱私權政策</label>
-              </CheckGroup>
-              <Submit
-                type="submit"
-                bgc={color.signUp}
-                hover={color.hoverSignUp}
-                onClick={userSignUp}
-              >
-                註冊
-              </Submit>
-            </Form>
-          </CardSignUp>
-        </Card>
-      )}
-    </Container>
+    <ReactLogin>
+      <Container>
+        {toastsShow(toast)}
+        {login ? (
+          <Wellcome setLogin={setLogin} />
+        ) : (
+          <Card>
+            <CardSignIn flip={state}>
+              <Nav flip={state} bgc={color.signIn}>
+                <NavBtn bgc={color.signIn} onClick={flipSignIn}>
+                  登入
+                </NavBtn>
+                <NavBtn onClick={flipSignUp}>註冊</NavBtn>
+              </Nav>
+              <Form>
+                <label htmlFor="email">信箱</label>
+                <input id="email" type="email" ref={signInEmail} />
+                <label htmlFor="passwords">密碼</label>
+                <input id="passwords" type="password" ref={signInPassword} />
+                <CheckGroup>
+                  <Checkbox />
+                  <label>記住我</label>
+                </CheckGroup>
+                <Submit
+                  type="submit"
+                  bgc={color.signIn}
+                  hover={color.hoverSignIn}
+                  onClick={userSignIn}
+                >
+                  登入
+                </Submit>
+              </Form>
+            </CardSignIn>
+            <CardSignUp flip={state}>
+              <Nav flip={state} bgc={color.signUp}>
+                <NavBtn onClick={flipSignIn}>登入</NavBtn>
+                <NavBtn bgc={color.signUp} onClick={flipSignUp}>
+                  註冊
+                </NavBtn>
+              </Nav>
+              <Form>
+                <label htmlFor="email">信箱</label>
+                <input id="email" type="email" ref={signUpEmail} />
+                <label htmlFor="passwords">密碼</label>
+                <input id="passwords" type="password" ref={signUpPassword} />
+                <CheckGroup>
+                  <Checkbox />
+                  <label>同意相關隱私權政策</label>
+                </CheckGroup>
+                <Submit
+                  type="submit"
+                  bgc={color.signUp}
+                  hover={color.hoverSignUp}
+                  onClick={userSignUp}
+                >
+                  註冊
+                </Submit>
+              </Form>
+            </CardSignUp>
+          </Card>
+        )}
+      </Container>
+    </ReactLogin>
   );
 };
 

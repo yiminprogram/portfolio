@@ -48,6 +48,10 @@ const ListContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const Index = () => {
   const match = useRouteMatch();

@@ -1,0 +1,52 @@
+{
+  "success": "true",
+  "result": {
+    "resource_id": "O-A0003-001",
+    "fields": [
+      { "id": "lat", "type": "Double" },
+      { "id": "lon", "type": "Double" },
+      { "id": "locationName", "type": "String" },
+      { "id": "stationId", "type": "String" },
+      { "id": "obsTime", "type": "Timestamp" },
+      { "id": "elementName", "type": "String" },
+      { "id": "elementValue", "type": "String" },
+      { "id": "parameterName", "type": "String" },
+      { "id": "parameterValue", "type": "String" }
+    ]
+  },
+  "records": {
+    "location": [
+      {
+        "lat": "25.039410",
+        "lon": "121.506676",
+        "locationName": "臺北",
+        "stationId": "466920",
+        "time": { "obsTime": "2020-11-27 21:20:00" },
+        "weatherElement": [
+          { "elementName": "ELEV", "elementValue": "6.2550" },
+          { "elementName": "WDIR", "elementValue": "50" },
+          { "elementName": "WDSD", "elementValue": "2.50" },
+          { "elementName": "TEMP", "elementValue": "21.50" },
+          { "elementName": "HUMD", "elementValue": "0.77" },
+          { "elementName": "PRES", "elementValue": "1020.10" },
+          { "elementName": "24R", "elementValue": "0" },
+          { "elementName": "H_FX", "elementValue": "8.60" },
+          { "elementName": "H_XD", "elementValue": "40" },
+          { "elementName": "H_FXT", "elementValue": "2054" },
+          { "elementName": "H_F10", "elementValue": "4" },
+          { "elementName": "H_10D", "elementValue": "40" },
+          { "elementName": "H_F10T", "elementValue": "2026" },
+          { "elementName": "H_UVI", "elementValue": "0" },
+          { "elementName": "D_TX", "elementValue": "24.20" },
+          { "elementName": "D_TXT", "elementValue": "0001" },
+          { "elementName": "D_TN", "elementValue": "21.30" },
+          { "elementName": "D_TNT", "elementValue": "1200" },
+          { "elementName": "D_TS", "elementValue": "0" },
+          { "elementName": "VIS", "elementValue": "21-30" },
+          { "elementName": "Weather", "elementValue": "" }
+        ],
+        "parameter": [{ "parameterName": "CITY", "parameterValue": "臺北市" }]
+      }
+    ]
+  }
+}

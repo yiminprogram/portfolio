@@ -8,6 +8,8 @@ const Header = styled.div`
   width: 100%;
   height: 50px;
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,6 +66,7 @@ const NavLink = styled(Link)`
 `;
 
 const Hamburger = styled.button`
+  cursor: pointer;
   margin: 0 1rem;
   padding: 0.3rem;
   border: none;
@@ -83,25 +86,27 @@ const MenuList = styled.div`
   left: 0;
   top: 0;
   width: 100%;
+  padding-bottom: 1rem;
   display: flex;
   flex-flow: column;
-  background-color: #000000cc;
+  background-color: #fff;
+  box-shadow: 0 0 10px #aaa;
   transition: 0.3s;
   transform: ${(p) => (p.menuState ? 'translateY(0)' : 'translateY(-500px)')};
 `;
 const MenuLink = styled(Link)`
-  color: #fff;
+  color: #333;
   font-size: 1.3rem;
   font-weight: 700;
-  padding: 2rem 0;
+  padding: 1rem 0;
   text-decoration: none;
   &:hover {
-    background-color: #cccccc33;
+    background-color: #ddd;
   }
 `;
 
 const Close = styled.div`
-  color: #fff;
+  color: #333;
   padding-top: 1rem;
   padding-right: 1rem;
   text-align: right;
@@ -112,7 +117,7 @@ const Close = styled.div`
 `;
 
 const Index = () => {
-  const [menuState, setMenuState] = useState(true);
+  const [menuState, setMenuState] = useState(false);
   const showMenu = () => {
     setMenuState(true);
   };

@@ -41,7 +41,7 @@ export const ComponentCard = ({ path, project, screenshot }) => {
     <Card>
       <ComponentsLink to={`${url}${path}`}>
         <Image>
-          <Img src={screenshot} />
+          <Img src={Home} />
         </Image>
         <Title>{project}</Title>
       </ComponentsLink>
@@ -54,7 +54,7 @@ export const ProjectCard = ({ path, project, screenshot }) => {
     <Card>
       <ProjectLink href={path}>
         <Image>
-          <Img src={screenshot} />
+          <Img src={Home} />
         </Image>
         <Title>{project}</Title>
       </ProjectLink>

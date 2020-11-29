@@ -8,10 +8,9 @@ const theme = {
   },
   mixin: {
     page: css`
-      min-height: calc(100vh - 30px);
-      padding: 3rem 1rem;
+      min-height: calc(100vh - 35.2px);
+      padding-top: 50px;
       background-color: #fff;
-      /* background: linear-gradient(10deg, #1e6aa5, #63bd98); */
     `,
     portfolio: css`
       width: 80%;

@@ -1,0 +1,47 @@
+<svg width="259" height="260" viewBox="0 0 259 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="rain">
+<path id="cloud" fill-rule="evenodd" clip-rule="evenodd" d="M78 0C87.6536 0 96.7044 2.55267 104.5 7.01278C112.296 2.55267 121.346 0 131 0C140.654 0 149.704 2.55267 157.5 7.01278C165.296 2.55267 174.346 0 184 0C213.271 0 237 23.4689 237 52.4194C237 56.7561 236.468 60.9698 235.464 65C236.468 69.0302 237 73.2439 237 77.5806C237 106.531 213.271 130 184 130C174.346 130 165.296 127.447 157.5 122.987C149.704 127.447 140.654 130 131 130C121.346 130 112.296 127.447 104.5 122.987C96.7044 127.447 87.6536 130 78 130C48.7289 130 25 106.531 25 77.5806C25 73.2439 25.5325 69.0302 26.5363 65C25.5325 60.9698 25 56.7561 25 52.4194C25 23.4689 48.7289 0 78 0Z" fill="#DADADA"/>
+<line id="rain_2" x1="26.9701" y1="160.243" x2="23.9701" y2="172.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_3" x1="20.9701" y1="136.243" x2="17.9701" y2="148.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_4" x1="46.9701" y1="142.243" x2="43.9701" y2="154.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_5" x1="6.97014" y1="187.243" x2="3.97014" y2="199.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_6" x1="23.9701" y1="223.243" x2="20.9701" y2="235.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_7" x1="3.97014" y1="223.243" x2="0.970142" y2="235.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_8" x1="47.9701" y1="187.243" x2="44.9701" y2="199.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_9" x1="23.9701" y1="190.243" x2="20.9701" y2="202.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_10" x1="78.9701" y1="172.243" x2="75.9701" y2="184.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_11" x1="70.9701" y1="148.243" x2="67.9701" y2="160.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_12" x1="67.9701" y1="223.243" x2="64.9701" y2="235.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_13" x1="43.9701" y1="235.243" x2="40.9701" y2="247.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_14" x1="99.9701" y1="211.243" x2="96.9701" y2="223.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_15" x1="68.9701" y1="199.243" x2="65.9701" y2="211.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_16" x1="116.97" y1="178.243" x2="113.97" y2="190.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_17" x1="100.97" y1="178.243" x2="97.9701" y2="190.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_18" x1="140.97" y1="148.243" x2="137.97" y2="160.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_19" x1="102.97" y1="154.243" x2="99.9701" y2="166.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_20" x1="122.97" y1="235.243" x2="119.97" y2="247.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_21" x1="133.97" y1="244.243" x2="130.97" y2="256.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_22" x1="90.9701" y1="241.243" x2="87.9701" y2="253.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_23" x1="137.97" y1="190.243" x2="134.97" y2="202.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_24" x1="158.97" y1="226.243" x2="155.97" y2="238.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_25" x1="180.97" y1="211.243" x2="177.97" y2="223.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_26" x1="140.97" y1="217.243" x2="137.97" y2="229.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_27" x1="124.97" y1="211.243" x2="121.97" y2="223.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_28" x1="154.97" y1="172.243" x2="151.97" y2="184.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_29" x1="172.97" y1="187.243" x2="169.97" y2="199.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_30" x1="178.97" y1="154.243" x2="175.97" y2="166.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_31" x1="181.97" y1="232.243" x2="178.97" y2="244.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_32" x1="159.97" y1="247.243" x2="156.97" y2="259.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_33" x1="200.97" y1="193.243" x2="197.97" y2="205.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_34" x1="222.97" y1="154.243" x2="219.97" y2="166.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_35" x1="209.97" y1="232.243" x2="206.97" y2="244.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_36" x1="213.97" y1="211.243" x2="210.97" y2="223.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_37" x1="221.97" y1="244.243" x2="218.97" y2="256.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_38" x1="233.97" y1="190.243" x2="230.97" y2="202.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_39" x1="200.97" y1="167.243" x2="197.97" y2="179.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_40" x1="237.97" y1="130.243" x2="234.97" y2="142.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_41" x1="201.97" y1="142.243" x2="198.97" y2="154.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_42" x1="245.97" y1="229.243" x2="242.97" y2="241.243" stroke="#B9F2FF" stroke-width="2"/>
+<line id="rain_43" x1="257.97" y1="178.243" x2="254.97" y2="190.243" stroke="#B9F2FF" stroke-width="2"/>
+</g>
+</svg>

@@ -99,7 +99,7 @@ const Info = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 85.2px);
+  min-height: calc(100vh - 85.2px);
   transition: 0.5s ease-out;
   visibility: ${(p) => (p.close ? 'visible' : 'hidden')};
   opacity: ${(p) => (p.close ? 1 : 0)};
@@ -202,6 +202,7 @@ const Index = () => {
           </Btn>
         </Form>
       </UserInput>
+
       <Info close={close}>
         <Card>
           <WeatherImg>{getWeatherImg(weather)}</WeatherImg>

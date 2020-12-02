@@ -9,8 +9,7 @@ const Footer = styled.div`
   height: 25px;
   padding: 1.1rem;
   color: #fff;
-  background-color: ${(props) =>
-    props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   font-weight: 700;
 `;
 
@@ -30,7 +29,7 @@ const GitHub = styled.a`
 const Index = () => {
   return (
     <Footer>
-      <GitHub href="https://www.google.com.tw/">
+      <GitHub href="https://github.com/yiminprogram/portfolio">
         <img src={Logo} alt="github" />
         <span>GitHub Page</span>
       </GitHub>

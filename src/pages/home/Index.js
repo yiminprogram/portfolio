@@ -9,8 +9,6 @@ import ReactImg from '../../assets/image/logo/reacr-profile.svg';
 import VueImg from '../../assets/image/logo/vue-profile.svg';
 import StaticImg from '../../assets/image/logo/static-profile.svg';
 
-//function
-// import { ScrollTop } from '../../functions/Index';
 const Home = styled.div`
   ${(props) => props.theme.mixin.page};
 `;
@@ -70,7 +68,6 @@ const LinkGroup = styled.div`
 `;
 
 const Index = () => {
-  // ScrollTop();
   return (
     <Home>
       <Wellcome />

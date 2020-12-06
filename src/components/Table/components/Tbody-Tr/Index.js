@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 //components
-import Img from '../../../image/Index';
+import { Image } from '../../../image/Index';
 
 const Tr = styled.tr`
   cursor: pointer;
@@ -41,7 +41,7 @@ const Index = ({ data }) => {
       <td>{data.name}</td>
       <td>
         <ImgContainer>
-          <Img src={data.image} />
+          <Image src={data.image} />
         </ImgContainer>
       </td>
       <td>{data.price}</td>

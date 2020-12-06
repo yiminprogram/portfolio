@@ -5,7 +5,10 @@ import { useRouteMatch } from 'react-router-dom';
 import reactLogo from '../../assets/image/logo/react.png';
 import vueLogo from '../../assets/image/logo/vue.png';
 import iiiLogo from '../../assets/image/logo/school-logo.png';
-import { ComponentCard, ProjectCard } from '../../components/home-list-card/Index';
+import {
+  ComponentCard,
+  ProjectCard,
+} from '../../components/home-list-card/Index';
 //data
 import reactList from '../../assets/data/react-portfolio.json';
 import reactProject from '../../assets/data/react-project.json';
@@ -18,11 +21,23 @@ import { ScrollTop } from '../../functions/Index';
 const portfolioType = (id) => {
   switch (id) {
     case 'react':
-      return { logo: reactLogo, portfolios: reactList, projects: reactProject };
+      return {
+        logo: reactLogo,
+        portfolios: reactList,
+        projects: reactProject,
+      };
     case 'vue':
-      return { logo: vueLogo, portfolios: null, projects: vueProject };
+      return {
+        logo: vueLogo,
+        portfolios: null,
+        projects: vueProject,
+      };
     case 'iii':
-      return { logo: iiiLogo, portfolios: null, projects: iiiProject };
+      return {
+        logo: iiiLogo,
+        portfolios: null,
+        projects: iiiProject,
+      };
     default:
       break;
   }
@@ -66,10 +81,16 @@ const Index = () => {
         </div>
       </Logo>
       <ListContainer>
-        {portfolios && portfolios.map((ele) => <ComponentCard key={ele.id} {...ele} />)}
+        {portfolios &&
+          portfolios.map((ele) => (
+            <ComponentCard key={ele.id} {...ele} />
+          ))}
       </ListContainer>
       <ListContainer>
-        {projects && projects.map((ele) => <ProjectCard key={ele.id} {...ele} />)}
+        {projects &&
+          projects.map((ele) => (
+            <ProjectCard key={ele.id} {...ele} />
+          ))}
       </ListContainer>
     </Portfolio>
   );

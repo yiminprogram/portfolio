@@ -6,11 +6,11 @@ export const Container = styled.article`
   flex: 0 1 300px;
 `;
 
-export const ComponentsLink = styled(Link)`
+export const ComponentLink = styled(Link)`
   text-decoration: none;
 `;
 
-export const ProjectsLink = styled.a`
+export const ProjectLink = styled.a`
   text-decoration: none;
 `;
 

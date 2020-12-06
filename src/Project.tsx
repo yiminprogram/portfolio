@@ -13,6 +13,7 @@ import Table from './pages/react-table/Index';
 import Login from './pages/react-login/Index';
 import Weather from './pages/react-weather/Index';
 import Portfolio from './pages/portfolio-list/Index';
+import ErrorPage from './pages/error/Error';
 
 const Project = () => {
   return (
@@ -26,7 +27,7 @@ const Project = () => {
           <Route path="/portfolio/react/react-table" component={Table} />
           <Route path="/portfolio/react/react-weather" component={Weather} />
           <Route path="/portfolio/:id" component={Portfolio} />
-          <Route component={Error} />
+          <Route component={ErrorPage} />
         </Switch>
         <Footer />
       </ErrorBoundary>

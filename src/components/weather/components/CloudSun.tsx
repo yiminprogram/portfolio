@@ -1,29 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
-import { bright, right, left } from './animation';
-
-const SVG = styled.svg`
-  width: 100%;
-  height: 100%;
-
-  #cloudStart {
-    animation: 2s ${left} infinite linear;
-  }
-
-  #cloudEnd {
-    animation: 2s ${right} infinite linear;
-  }
-
-  #sun {
-    animation: 5s ${bright} infinite linear;
-  }
-`;
+//style
+import * as SVG from '../style';
 
 const CloudSun = () => {
   return (
-    <SVG viewBox="0 0 285 198" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <SVG.CloudSun
+      viewBox="0 0 285 198"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g id="cloudSun">
-        <circle id="sun" cx="143" cy="65" r="65" fill="#FFD600" />
+        <circle
+          id="sun"
+          cx="143"
+          cy="65"
+          r="65"
+          fill="#FFD600"
+        />
         <path
           id="cloudEnd"
           fill-rule="evenodd"
@@ -39,7 +32,7 @@ const CloudSun = () => {
           fill="#F3F3F3"
         />
       </g>
-    </SVG>
+    </SVG.CloudSun>
   );
 };
 

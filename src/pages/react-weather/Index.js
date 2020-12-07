@@ -3,11 +3,11 @@ import styled from 'styled-components';
 //data
 import cityFilter from '../../assets/data/weather-city.json';
 //weather image
-import Rain from '../../components/weather/Rain';
-import Cloud from '../../components/weather/Cloud';
-import Sun from '../../components/weather/Sun';
-import CloudRain from '../../components/weather/CloudRain';
-import Error from '../../components/weather/Error';
+import { Cloud } from '../../components/weather/index';
+import { CloudRain } from '../../components/weather/index';
+import { Rain } from '../../components/weather/index';
+import { Sun } from '../../components/weather/index';
+import { Error } from '../../components/weather/index';
 //api
 import { apiKey } from '../../authentication/weather-api';
 
@@ -16,13 +16,22 @@ const getWeatherImg = (weather) => {
   let img;
   if (weather.includes('晴')) {
     img = 'sun';
-  } else if (weather.includes('雨') && weather.includes('雲')) {
+  } else if (
+    weather.includes('雨') &&
+    weather.includes('雲')
+  ) {
     img = 'cloudRain';
-  } else if (weather.includes('雨') && weather.includes('陰')) {
+  } else if (
+    weather.includes('雨') &&
+    weather.includes('陰')
+  ) {
     img = 'cloudRain';
   } else if (weather.includes('雨')) {
     img = 'cloudRain';
-  } else if (weather.includes('雲') || weather.includes('陰')) {
+  } else if (
+    weather.includes('雲') ||
+    weather.includes('陰')
+  ) {
     img = 'cloud';
   }
   switch (img) {
@@ -150,7 +159,10 @@ const WeatherImg = styled.div`
 
 const Index = () => {
   const [close, setClose] = useState(false);
-  const [{ location, time, temp, weather }, setWeather] = useState({
+  const [
+    { location, time, temp, weather },
+    setWeather,
+  ] = useState({
     location: 'Error',
     time: 'Error',
     temp: 'Error',
@@ -169,13 +181,21 @@ const Index = () => {
     fetch(key)
       .then((res) => res.json())
       .then((data) => {
-        const { parameter, time: dataTime, weatherElement } = data.records.location[0];
+        const {
+          parameter,
+          time: dataTime,
+          weatherElement,
+        } = data.records.location[0];
         const { parameterValue: location } = parameter[0];
         const time = dataTime.obsTime;
-        const { elementValue: temp } = weatherElement.filter(
+        const {
+          elementValue: temp,
+        } = weatherElement.filter(
           (ele) => ele.elementName === 'TEMP',
         )[0];
-        const { elementValue: weather } = weatherElement.filter(
+        const {
+          elementValue: weather,
+        } = weatherElement.filter(
           (ele) => ele.elementName === 'Weather',
         )[0];
         setWeather({ location, time, temp, weather });
@@ -196,7 +216,11 @@ const Index = () => {
       <UserInput close={close}>
         <Form onSubmit={search}>
           <h1>搜尋縣市</h1>
-          <input ref={inputCity} type="text" placeholder="輸入縣市名稱" />
+          <input
+            ref={inputCity}
+            type="text"
+            placeholder="輸入縣市名稱"
+          />
           <Btn>
             <button>搜尋</button>
           </Btn>

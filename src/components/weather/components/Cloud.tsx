@@ -1,26 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
-import { right, left } from './animation';
-
-const SVG = styled.svg`
-  width: 100%;
-  height: 100%;
-
-  #cloudStart {
-    animation: 2s ${right} infinite linear;
-  }
-  #cloudCenter {
-    animation: 2s ${left} infinite linear;
-  }
-
-  #cloudEnd {
-    animation: 3s ${right} infinite linear;
-  }
-`;
+//style
+import * as SVG from '../style';
 
 const Cloud = () => {
   return (
-    <SVG viewBox="0 0 300 175" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <SVG.Cloud
+      viewBox="0 0 300 175"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g id="cloud">
         <path
           id="cloudEnd"
@@ -44,7 +32,7 @@ const Cloud = () => {
           fill="#ECECEC"
         />
       </g>
-    </SVG>
+    </SVG.Cloud>
   );
 };
 

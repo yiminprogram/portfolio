@@ -1,34 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
-import { left, right, drop } from './animation';
-
-const SVG = styled.svg`
-  width: 100%;
-  height: 100%;
-
-  #cloudStart {
-    animation: 2s ${right} infinite linear;
-  }
-  #cloudCenter {
-    animation: 2s ${left} infinite linear;
-  }
-
-  #cloudEnd {
-    animation: 3s ${right} infinite linear;
-  }
-
-  .rain {
-    animation: 1s ${drop} infinite linear;
-  }
-
-  .rain1 {
-    animation: 2s ${drop} infinite linear;
-  }
-`;
+//style
+import * as SVG from '../style';
 
 const CloudRain = () => {
   return (
-    <SVG viewBox="0 0 300 257" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <SVG.CloudRain
+      viewBox="0 0 300 257"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g id="cloudRain">
         <path
           id="cloudEnd"
@@ -214,7 +194,7 @@ const CloudRain = () => {
           stroke-width="2"
         />
       </g>
-    </SVG>
+    </SVG.CloudRain>
   );
 };
 

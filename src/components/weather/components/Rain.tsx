@@ -1,26 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
-import { bright, drop } from './animation';
-const SVG = styled.svg`
-  width: 100%;
-  height: 100%;
-
-  #cloud {
-    animation: 5s ${bright} infinite linear;
-  }
-
-  .rain {
-    animation: 1s ${drop} infinite linear;
-  }
-
-  .rain1 {
-    animation: 2s ${drop} infinite linear;
-  }
-`;
+//style
+import * as SVG from '../style';
 
 const Rain = () => {
   return (
-    <SVG viewBox="0 0 259 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <SVG.Rain
+      viewBox="0 0 259 260"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g id="rain">
         <path
           id="cloud"
@@ -408,7 +396,7 @@ const Rain = () => {
           stroke-width="2"
         />
       </g>
-    </SVG>
+    </SVG.Rain>
   );
 };
 

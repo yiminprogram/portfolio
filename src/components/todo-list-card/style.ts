@@ -1,7 +1,6 @@
-import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import Checkbox from '@material-ui/core/Checkbox';
 
+//keyframes
 const fadeIn = keyframes`
 0%{
   transform:translateX(-50px);
@@ -13,7 +12,8 @@ const fadeIn = keyframes`
 }
 `;
 
-const ListCard = styled.div`
+//style
+export const ListCard = styled.div`
   display: flex;
   align-items: center;
   margin: 1.5rem 0;
@@ -28,7 +28,7 @@ const ListCard = styled.div`
   }
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   flex: 1;
   display: flex;
   flex-flow: column nowrap;
@@ -53,27 +53,3 @@ const Info = styled.div`
     align-self: flex-end;
   }
 `;
-
-const Index = ({
-  title,
-  content,
-  time,
-  done,
-  todoDone,
-}) => {
-  return (
-    <ListCard done={done}>
-      <Checkbox
-        checked={done}
-        onChange={() => todoDone(time)}
-      />
-      <Info>
-        <h3>{title}</h3>
-        <p>{content}</p>
-        <time>{time}</time>
-      </Info>
-    </ListCard>
-  );
-};
-
-export default Index;

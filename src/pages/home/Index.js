@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 //components
@@ -12,8 +12,26 @@ const Home = styled.div`
   ${(props) => props.theme.mixin.page};
 `;
 
-const Protfolio = styled.div`
+const ProtfolioReact = styled.div`
   ${(p) => p.theme.mixin.portfolio};
+  transition: 0.5s;
+  transform: ${({ fade }) =>
+    fade ? 'translateY(0px)' : 'translateY(-150px)'};
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
+`;
+const ProtfolioVue = styled.div`
+  ${(p) => p.theme.mixin.portfolio};
+  transition: 0.5s;
+  transform: ${({ fade }) =>
+    fade ? 'translateY(0px)' : 'translateY(-150px)'};
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
+`;
+const ProtfolioIII = styled.div`
+  ${(p) => p.theme.mixin.portfolio};
+  transition: 0.5s;
+  transform: ${({ fade }) =>
+    fade ? 'translateY(0px)' : 'translateY(-150px)'};
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
 `;
 
 const LogoContainer = styled.div`
@@ -67,10 +85,46 @@ const LinkGroup = styled.div`
 `;
 
 const Index = () => {
+  const portfolioReact = useRef();
+  const portfolioVue = useRef();
+  const portfolioIII = useRef();
+  const [fadeReact, setFadeReact] = useState(false);
+  const [fadeVue, setFadeVue] = useState(false);
+  const [fadeIII, setFadeIII] = useState(false);
+  const scrollReact = (e) => {
+    if (e[0].isIntersecting) {
+      setFadeReact(true);
+    }
+  };
+  const scrollVue = (e) => {
+    if (e[0].isIntersecting) {
+      setFadeVue(true);
+    }
+  };
+  const scrollIII = (e) => {
+    if (e[0].isIntersecting) {
+      setFadeIII(true);
+    }
+  };
+  useEffect(() => {
+    const observeReact = new IntersectionObserver(
+      scrollReact,
+      { threshold: 0.75 },
+    );
+    const observeVue = new IntersectionObserver(scrollVue, {
+      threshold: 0.75,
+    });
+    const observeIII = new IntersectionObserver(scrollIII, {
+      threshold: 0.75,
+    });
+    observeReact.observe(portfolioReact.current);
+    observeVue.observe(portfolioVue.current);
+    observeIII.observe(portfolioIII.current);
+  }, []);
   return (
     <Home>
       <Wellcome />
-      <Protfolio>
+      <ProtfolioReact ref={portfolioReact} fade={fadeReact}>
         <LogoContainer>
           <img src={ReactImg} alt="error" />
         </LogoContainer>
@@ -88,8 +142,8 @@ const Index = () => {
             </LinkGroup>
           </InfoCard>
         </InfoContainer>
-      </Protfolio>
-      <Protfolio>
+      </ProtfolioReact>
+      <ProtfolioVue ref={portfolioVue} fade={fadeVue}>
         <InfoContainer>
           <InfoCard color="#41b883">
             <h1>Vue Portfolio</h1>
@@ -106,8 +160,8 @@ const Index = () => {
         <LogoContainer>
           <img src={VueImg} alt="error" />
         </LogoContainer>
-      </Protfolio>
-      <Protfolio>
+      </ProtfolioVue>
+      <ProtfolioIII ref={portfolioIII} fade={fadeIII}>
         <LogoContainer>
           <img src={StaticImg} alt="error" />
         </LogoContainer>
@@ -125,7 +179,7 @@ const Index = () => {
             </LinkGroup>
           </InfoCard>
         </InfoContainer>
-      </Protfolio>
+      </ProtfolioIII>
     </Home>
   );
 };

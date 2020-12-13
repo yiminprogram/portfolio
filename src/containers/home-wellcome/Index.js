@@ -46,7 +46,9 @@ const Index = () => {
         <h1 className="top">Wellcome To</h1>
         <h1 className="bottom">My Portfolio</h1>
       </Title>
-      <ModelContainer>{/* <Model /> */}</ModelContainer>
+      <ModelContainer>
+        <Model />
+      </ModelContainer>
     </Wellcome>
   );
 };

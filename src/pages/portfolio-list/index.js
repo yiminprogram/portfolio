@@ -15,7 +15,7 @@ import reactProject from '../../assets/data/react-project.json';
 import vueProject from '../../assets/data/vue-project.json';
 import iiiProject from '../../assets/data/iii-project.json';
 //function
-import { ScrollTop } from '../../functions/Index';
+import { ScrollTop } from '../../functions/function';
 
 //check page type
 const portfolioType = (id) => {

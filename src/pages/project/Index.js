@@ -3,7 +3,7 @@ import styled from 'styled-components';
 //image
 import Home from '../../assets/image/screenshot/space-home.png';
 //functions
-import { ScrollTop } from '../../functions/Index';
+import { ScrollTop } from '../../functions/function';
 //material ui
 
 const Project = styled.div`

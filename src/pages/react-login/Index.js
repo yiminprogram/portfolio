@@ -2,11 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 //components
 import Wellcome from '../../containers/login-user-info/Index';
-import { ToastsError, ToastsSuccess } from '../../components/Toasts/Index';
+import {
+  ToastsError,
+  ToastsSuccess,
+} from '../../components/Toasts/Index';
 //material-ui
 import Checkbox from '@material-ui/core/Checkbox';
 //functions
-import { ScrollTop } from '../../functions/Index';
+import { ScrollTop } from '../../functions/function';
 
 const color = {
   signIn: '#1e88e5',
@@ -56,7 +59,8 @@ const CardSignIn = styled.div`
   border-radius: 5px;
   box-shadow: 0 0 10px #ccc;
   transition: 1s;
-  transform: ${(p) => (p.flip ? 'none' : 'rotateY(180deg)')};
+  transform: ${(p) =>
+    p.flip ? 'none' : 'rotateY(180deg)'};
   transform-style: preserve-3d;
   backface-visibility: hidden;
 `;
@@ -70,7 +74,8 @@ const CardSignUp = styled.div`
   box-shadow: 0 0 10px #ccc;
   border-radius: 5px;
   transition: 1s;
-  transform: ${(p) => (p.flip ? 'rotateY(180deg)' : 'rotateY(360deg)')};
+  transform: ${(p) =>
+    p.flip ? 'rotateY(180deg)' : 'rotateY(360deg)'};
   transform-style: preserve-3d;
   backface-visibility: hidden;
 `;
@@ -86,7 +91,8 @@ const NavBtn = styled.button`
   cursor: pointer;
   color: #fff;
   padding: 0.8rem 1rem;
-  background-color: ${(p) => (p.bgc ? p.bgc : 'transparent')};
+  background-color: ${(p) =>
+    p.bgc ? p.bgc : 'transparent'};
   border: none;
   border-radius: 10px;
   font-size: 1.5rem;
@@ -145,7 +151,10 @@ const Index = () => {
     e.preventDefault();
     const email = signInEmail.current;
     const password = signInPassword.current;
-    if (email.value === userInfo.email && password.value === userInfo.password) {
+    if (
+      email.value === userInfo.email &&
+      password.value === userInfo.password
+    ) {
       setLogin(true);
       setToast(true);
     } else {
@@ -177,16 +186,27 @@ const Index = () => {
           <Card>
             <CardSignIn flip={state}>
               <Nav flip={state} bgc={color.signIn}>
-                <NavBtn bgc={color.signIn} onClick={flipSignIn}>
+                <NavBtn
+                  bgc={color.signIn}
+                  onClick={flipSignIn}
+                >
                   登入
                 </NavBtn>
                 <NavBtn onClick={flipSignUp}>註冊</NavBtn>
               </Nav>
               <Form>
                 <label htmlFor="email">信箱</label>
-                <input id="email" type="email" ref={signInEmail} />
+                <input
+                  id="email"
+                  type="email"
+                  ref={signInEmail}
+                />
                 <label htmlFor="passwords">密碼</label>
-                <input id="passwords" type="password" ref={signInPassword} />
+                <input
+                  id="passwords"
+                  type="password"
+                  ref={signInPassword}
+                />
                 <CheckGroup>
                   <Checkbox />
                   <label>記住我</label>
@@ -204,15 +224,26 @@ const Index = () => {
             <CardSignUp flip={state}>
               <Nav flip={state} bgc={color.signUp}>
                 <NavBtn onClick={flipSignIn}>登入</NavBtn>
-                <NavBtn bgc={color.signUp} onClick={flipSignUp}>
+                <NavBtn
+                  bgc={color.signUp}
+                  onClick={flipSignUp}
+                >
                   註冊
                 </NavBtn>
               </Nav>
               <Form>
                 <label htmlFor="email">信箱</label>
-                <input id="email" type="email" ref={signUpEmail} />
+                <input
+                  id="email"
+                  type="email"
+                  ref={signUpEmail}
+                />
                 <label htmlFor="passwords">密碼</label>
-                <input id="passwords" type="password" ref={signUpPassword} />
+                <input
+                  id="passwords"
+                  type="password"
+                  ref={signUpPassword}
+                />
                 <CheckGroup>
                   <Checkbox />
                   <label>同意相關隱私權政策</label>

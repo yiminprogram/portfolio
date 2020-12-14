@@ -21,6 +21,15 @@ const theme = {
       margin: 0 auto;
       margin-bottom: 15rem;
     `,
+    logo: css`
+      flex: 0 1 600px;
+      padding: 1.5rem;
+      transition: 0.5s all ease;
+      > img {
+        width: 100%;
+        object-fit: cover;
+      }
+    `,
   },
   todoList: {
     color: '#1877f2',

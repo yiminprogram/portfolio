@@ -12,38 +12,48 @@ const Home = styled.div`
   ${(props) => props.theme.mixin.page};
 `;
 
-const ProtfolioReact = styled.div`
+const Protfolio = styled.div`
   ${(p) => p.theme.mixin.portfolio};
-  transition: 0.5s;
-  transform: ${({ fade }) =>
-    fade ? 'translateY(0px)' : 'translateY(-150px)'};
-  opacity: ${({ fade }) => (fade ? 1 : 0)};
-`;
-const ProtfolioVue = styled.div`
-  ${(p) => p.theme.mixin.portfolio};
-  transition: 0.5s;
-  transform: ${({ fade }) =>
-    fade ? 'translateY(0px)' : 'translateY(-150px)'};
-  opacity: ${({ fade }) => (fade ? 1 : 0)};
-`;
-const ProtfolioIII = styled.div`
-  ${(p) => p.theme.mixin.portfolio};
-  transition: 0.5s;
-  transform: ${({ fade }) =>
-    fade ? 'translateY(0px)' : 'translateY(-150px)'};
-  opacity: ${({ fade }) => (fade ? 1 : 0)};
 `;
 
-const LogoContainer = styled.div`
-  flex: 0 1 600px;
-  padding: 1.5rem;
-  > img {
-    width: 100%;
-    object-fit: cover;
-  }
+const ReactLogo = styled.div`
+  ${(p) => p.theme.mixin.logo};
+  transform: ${({ fade }) =>
+    fade ? 'translateX(0)' : 'translateX(-150px)'};
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
 `;
-const InfoContainer = styled.div`
+const VueLogo = styled.div`
+  ${(p) => p.theme.mixin.logo};
+  transform: ${({ fade }) =>
+    fade ? 'translateX(0)' : 'translateX(150px)'};
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
+`;
+const IIILogo = styled.div`
+  ${(p) => p.theme.mixin.logo};
+  transform: ${({ fade }) =>
+    fade ? 'translateX(0)' : 'translateX(-150px)'};
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
+`;
+const ReactInfo = styled.div`
   flex: 0 1 600px;
+  transition: 0.5s all ease;
+  transform: ${({ fade }) =>
+    fade ? 'translateX(0)' : 'translateX(150px)'};
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
+`;
+const VueInfo = styled.div`
+  flex: 0 1 600px;
+  transition: 0.5s all ease;
+  transform: ${({ fade }) =>
+    fade ? 'translateX(0)' : 'translateX(-150px)'};
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
+`;
+const IIIInfo = styled.div`
+  flex: 0 1 600px;
+  transition: 0.5s all ease;
+  transform: ${({ fade }) =>
+    fade ? 'translateX(0)' : 'translateX(150px)'};
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
 `;
 
 const InfoCard = styled.div`
@@ -124,11 +134,11 @@ const Index = () => {
   return (
     <Home>
       <Wellcome />
-      <ProtfolioReact ref={portfolioReact} fade={fadeReact}>
-        <LogoContainer>
+      <Protfolio ref={portfolioReact}>
+        <ReactLogo fade={fadeReact}>
           <img src={ReactImg} alt="error" />
-        </LogoContainer>
-        <InfoContainer>
+        </ReactLogo>
+        <ReactInfo fade={fadeReact}>
           <InfoCard color="#61dafb">
             <h1>React Portfolio</h1>
             <ul>
@@ -141,10 +151,10 @@ const Index = () => {
               </Link>
             </LinkGroup>
           </InfoCard>
-        </InfoContainer>
-      </ProtfolioReact>
-      <ProtfolioVue ref={portfolioVue} fade={fadeVue}>
-        <InfoContainer>
+        </ReactInfo>
+      </Protfolio>
+      <Protfolio ref={portfolioVue}>
+        <VueInfo fade={fadeVue}>
           <InfoCard color="#41b883">
             <h1>Vue Portfolio</h1>
             <ul>
@@ -156,16 +166,16 @@ const Index = () => {
               </Link>
             </LinkGroup>
           </InfoCard>
-        </InfoContainer>
-        <LogoContainer>
+        </VueInfo>
+        <VueLogo fade={fadeVue}>
           <img src={VueImg} alt="error" />
-        </LogoContainer>
-      </ProtfolioVue>
-      <ProtfolioIII ref={portfolioIII} fade={fadeIII}>
-        <LogoContainer>
+        </VueLogo>
+      </Protfolio>
+      <Protfolio ref={portfolioIII}>
+        <IIILogo fade={fadeIII}>
           <img src={StaticImg} alt="error" />
-        </LogoContainer>
-        <InfoContainer>
+        </IIILogo>
+        <IIIInfo fade={fadeIII}>
           <InfoCard color="#dd4b25">
             <h1>資策會結訓專案</h1>
             <ul>
@@ -178,8 +188,8 @@ const Index = () => {
               </Link>
             </LinkGroup>
           </InfoCard>
-        </InfoContainer>
-      </ProtfolioIII>
+        </IIIInfo>
+      </Protfolio>
     </Home>
   );
 };

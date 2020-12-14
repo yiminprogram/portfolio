@@ -25,3 +25,6 @@ yarn-error.log*
 # folder
 /src/authentication
 /.vscode
+
+#specific file
+.eslintcache

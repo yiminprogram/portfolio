@@ -5,15 +5,15 @@ import Theme from './theme/Theme';
 //components
 import Header from './containers/header/Index';
 import Footer from './containers/footer/Index';
-import ErrorBoundary from './pages/error/index';
+import ErrorBoundary from './views/error/index';
 //router components
-import Home from './pages/home/Index';
-import TodoList from './pages/react-todo-list/Index';
-import Table from './pages/react-table/Index';
-import Login from './pages/react-login/Index';
-import Weather from './pages/react-weather/Index';
-import Portfolio from './pages/portfolio-list/Index';
-import ErrorPage from './pages/error/Error';
+import Home from './views/home/Index';
+import TodoList from './views/react-todo-list/Index';
+import Table from './views/react-table/Index';
+import Login from './views/react-login/Index';
+import Weather from './views/react-weather/Index';
+import Portfolio from './views/portfolio-list/Index';
+import ErrorPage from './views/error/Error';
 
 const Project = () => {
   return (

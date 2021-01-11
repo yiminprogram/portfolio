@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 //style
 import {
   HeaderDiv,
@@ -14,7 +14,7 @@ import {
 //material icon
 import { Menu, HighlightOff } from '@material-ui/icons';
 
-const Header = () => {
+const Header: FC = () => {
   const [menuState, setMenuState] = useState<boolean>(false);
   const showMenu = (): void => {
     setMenuState(true);

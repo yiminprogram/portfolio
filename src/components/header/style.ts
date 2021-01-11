@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+
 //type
-import { TStyled } from './type';
+type TStyled = {
+  menuState: boolean;
+};
 
 export const HeaderDiv = styled.div`
   width: 100%;

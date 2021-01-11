@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+
 const theme = {
   colors: {
     primary: '#1877f2',
@@ -10,7 +11,6 @@ const theme = {
     page: css`
       min-height: calc(100vh - 35.2px);
       padding: 50px 1rem 0 1rem;
-      background-color: #fff;
     `,
     portfolio: css`
       width: 80%;
@@ -30,10 +30,6 @@ const theme = {
         object-fit: cover;
       }
     `,
-  },
-  todoList: {
-    color: '#1877f2',
-    boxShadow: '0 0 0 2px #1877f2',
   },
 };
 export default theme;

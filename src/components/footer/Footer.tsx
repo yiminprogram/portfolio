@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { FooterDiv, GitHubLogo } from './style';
 import Logo from '../../assets/image/github.png';
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <FooterDiv>
       <GitHubLogo href="https://github.com/yiminprogram/portfolio">

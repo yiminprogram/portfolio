@@ -8,7 +8,7 @@ import Footer from './components/footer';
 import ErrorBoundary from './views/error/index';
 //router components
 import Home from './views/home/Index';
-import TodoList from './views/react-todo-list/Index';
+import TodoList from './views/react-todo-list';
 import Table from './views/react-table/Index';
 import Login from './views/react-login/Index';
 import Weather from './views/react-weather/Index';

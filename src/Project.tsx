@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Theme from './theme/Theme';
 //components
-import Header from './containers/header/Index';
-import Footer from './containers/footer/Index';
+import Header from './components/header';
+import Footer from './components/footer';
 import ErrorBoundary from './views/error/index';
 //router components
 import Home from './views/home/Index';

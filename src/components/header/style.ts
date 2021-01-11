@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-//material icon
-import { Menu, HighlightOff } from '@material-ui/icons';
+//type
+import { TStyled } from './type';
 
-const Header = styled.div`
+export const HeaderDiv = styled.div`
   width: 100%;
   height: 50px;
   position: absolute;
@@ -16,19 +15,19 @@ const Header = styled.div`
   font-weight: 700;
 `;
 
-const Home = styled.div`
+export const Home = styled.div`
   flex: 1;
   font-size: 1.3rem;
 `;
 
-const Nav = styled.div`
+export const Nav = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 `;
 
-const HomeLink = styled(Link)`
+export const HomeLink = styled(Link)`
   color: ${(props) => props.theme.colors.primary};
   font-size: 1.5rem;
 
@@ -36,7 +35,7 @@ const HomeLink = styled(Link)`
   margin-left: 2rem;
 `;
 
-const NavLink = styled(Link)`
+export const NavLink = styled(Link)`
   position: relative;
   color: #666;
   font-size: 1.1rem;
@@ -65,7 +64,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Hamburger = styled.button`
+export const Hamburger = styled.button`
   cursor: pointer;
   margin: 0 1rem;
   padding: 0.3rem;
@@ -81,7 +80,7 @@ const Hamburger = styled.button`
     display: initial;
   }
 `;
-const MenuList = styled.div`
+export const MenuList = styled.div<TStyled>`
   position: fixed;
   left: 0;
   top: 0;
@@ -94,7 +93,7 @@ const MenuList = styled.div`
   transition: 0.3s;
   transform: ${(p) => (p.menuState ? 'translateY(0)' : 'translateY(-500px)')};
 `;
-const MenuLink = styled(Link)`
+export const MenuLink = styled(Link)`
   color: #333;
   font-size: 1.3rem;
   font-weight: 700;
@@ -105,7 +104,7 @@ const MenuLink = styled(Link)`
   }
 `;
 
-const Close = styled.div`
+export const Close = styled.div`
   color: #333;
   padding-top: 1rem;
   padding-right: 1rem;
@@ -115,38 +114,3 @@ const Close = styled.div`
     cursor: pointer;
   }
 `;
-
-const Index = () => {
-  const [menuState, setMenuState] = useState(false);
-  const showMenu = () => {
-    setMenuState(true);
-  };
-  const closeMenu = () => {
-    setMenuState(false);
-  };
-  return (
-    <Header>
-      <Home>
-        <HomeLink to="/">Portfolio</HomeLink>
-      </Home>
-      <Nav>
-        <NavLink to="/portfolio/react">React Portfolio</NavLink>
-        <NavLink to="/portfolio/vue">Vue Portfolio</NavLink>
-        <NavLink to="/portfolio/iii">III Portfolio</NavLink>
-        <Hamburger>
-          <Menu onClick={showMenu} />
-          <MenuList menuState={menuState} onClick={closeMenu}>
-            <Close>
-              <HighlightOff style={{ fontSize: 30 }} />
-            </Close>
-            <MenuLink to="/portfolio/react">React Portfolio</MenuLink>
-            <MenuLink to="/portfolio/vue">Vue Portfolio</MenuLink>
-            <MenuLink to="/portfolio/iii">III Portfolio</MenuLink>
-          </MenuList>
-        </Hamburger>
-      </Nav>
-    </Header>
-  );
-};
-
-export default Index;

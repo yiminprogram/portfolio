@@ -1,8 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
-import Logo from '../../assets/image/github.png';
 
-const Footer = styled.div`
+export const FooterDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +11,7 @@ const Footer = styled.div`
   font-weight: 700;
 `;
 
-const GitHub = styled.a`
+export const GitHubLogo = styled.a`
   display: flex;
   align-items: center;
   color: #fff;
@@ -25,16 +23,3 @@ const GitHub = styled.a`
     margin-left: 1rem;
   }
 `;
-
-const Index = () => {
-  return (
-    <Footer>
-      <GitHub href="https://github.com/yiminprogram/portfolio">
-        <img src={Logo} alt="github" />
-        <span>GitHub Page</span>
-      </GitHub>
-    </Footer>
-  );
-};
-
-export default Index;

@@ -18,8 +18,8 @@ export const ListCard = styled.div`
   align-items: center;
   margin: 1.5rem 0;
   padding: 1rem;
-  background-color: #fff;
-  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+  border-radius: 5px;
   transition: 0.1s;
   animation: ${fadeIn} 0.5s linear;
   &:hover {
@@ -41,7 +41,7 @@ export const Info = styled.div`
     font-weight: 700;
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #f0f0f0;
   }
   > p {
     color: #757575;

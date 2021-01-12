@@ -7,14 +7,14 @@ export const FooterDiv = styled.div`
   height: 25px;
   padding: 1.1rem;
   color: #fff;
-  background-color: ${(props) => props.theme.colors.primary};
+  background-color: #24292e;
   font-weight: 700;
 `;
 
 export const GitHubLogo = styled.a`
+  color: #000;
   display: flex;
   align-items: center;
-  color: #fff;
   text-decoration: 0;
   > img {
     height: 20px;

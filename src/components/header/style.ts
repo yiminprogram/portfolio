@@ -9,6 +9,7 @@ type TStyled = {
 export const HeaderDiv = styled.div`
   width: 100%;
   height: 50px;
+  background-color: #fff;
   position: absolute;
   top: 0;
   left: 0;
@@ -48,10 +49,10 @@ export const NavLink = styled(Link)`
   &::before {
     content: '';
     position: absolute;
-    bottom: -30%;
+    bottom: -40%;
     left: 50%;
     width: 0;
-    height: 20%;
+    height: 5px;
     background-color: ${(p) => p.theme.colors.primary};
     transition: 0.5s;
   }

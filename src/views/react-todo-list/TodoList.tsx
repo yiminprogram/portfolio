@@ -84,8 +84,8 @@ const Index: FC = () => {
   ScrollTop();
   return (
     <TodoList>
+      {toasts(show.info)}
       <Container>
-        {toasts(show.info)}
         <Title>待辦事項</Title>
         <UserInput>
           <InputTitle
@@ -99,8 +99,10 @@ const Index: FC = () => {
             onChange={(e) => setTodoContent(e.target.value)}
             placeholder="內容"
           />
-          <Btn onClick={addTodo} type="submit">
-            新增待辦事項
+          <Btn>
+            <button onClick={addTodo} type="submit">
+              新增待辦事項
+            </button>
           </Btn>
         </UserInput>
         <List todos={todos} todoDone={todoDone} />

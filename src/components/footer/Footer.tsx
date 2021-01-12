@@ -7,7 +7,6 @@ const Footer: FC = () => {
     <FooterDiv>
       <GitHubLogo href="https://github.com/yiminprogram/portfolio">
         <img src={Logo} alt="github" />
-        <span>GitHub Page</span>
       </GitHubLogo>
     </FooterDiv>
   );

@@ -53,7 +53,7 @@ const init = (target) => {
   const far = 1000;
   //create camera
   camera = new PerspectiveCamera(fov, aspect, near, far);
-  camera.position.set(-10, 18, 10);
+  camera.position.set(-10, 15, 15);
   //create ambient light
   const ambient = new AmbientLight(0x888888, 1);
   scene.add(ambient);

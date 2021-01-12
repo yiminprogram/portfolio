@@ -18,13 +18,12 @@ export const ListCard = styled.div`
   align-items: center;
   margin: 1.5rem 0;
   padding: 1rem;
-  border: 2px solid #f0f0f0;
+  background-color: #fff;
   border-radius: 5px;
   transition: 0.1s;
   animation: ${fadeIn} 0.5s linear;
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 10px #aaa;
   }
 `;
 

@@ -12,7 +12,7 @@ import {
   InputContent,
   InputTitle,
   Title,
-  TodoList,
+  TodoListPage,
   UserInput,
 } from './style';
 //functions
@@ -34,7 +34,7 @@ const toasts = (e: string): ReactElement | null => {
   }
 };
 
-const Index: FC = () => {
+const TodoList: FC = () => {
   const [todos, setTodos] = useState<TTodo[]>([]);
   const [show, setShow] = useState<TShow>({
     open: false,
@@ -83,7 +83,7 @@ const Index: FC = () => {
   };
   ScrollTop();
   return (
-    <TodoList>
+    <TodoListPage>
       {toasts(show.info)}
       <Container>
         <Title>待辦事項</Title>
@@ -107,8 +107,8 @@ const Index: FC = () => {
         </UserInput>
         <List todos={todos} todoDone={todoDone} />
       </Container>
-    </TodoList>
+    </TodoListPage>
   );
 };
 
-export default Index;
+export default TodoList;

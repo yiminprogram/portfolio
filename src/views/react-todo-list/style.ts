@@ -6,7 +6,7 @@ const style = {
   marginBottom: '2rem',
 };
 
-export const TodoList = styled.div`
+export const TodoListPage = styled.div`
   ${(props) => props.theme.mixin.page}
   display:flex;
   justify-content: center;

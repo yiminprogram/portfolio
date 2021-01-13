@@ -10,6 +10,7 @@ import StaticImg from '../../assets/image/logo/static-profile.svg';
 
 const Home = styled.div`
   ${(props) => props.theme.mixin.page};
+  overflow: hidden;
 `;
 
 const Protfolio = styled.div`
@@ -18,41 +19,35 @@ const Protfolio = styled.div`
 
 const ReactLogo = styled.div`
   ${(p) => p.theme.mixin.logo};
-  transform: ${({ fade }) =>
-    fade ? 'translateX(0)' : 'translateX(-150px)'};
+  transform: ${({ fade }) => (fade ? 'translateX(0)' : 'translateX(-150px)')};
   opacity: ${({ fade }) => (fade ? 1 : 0)};
 `;
 const VueLogo = styled.div`
   ${(p) => p.theme.mixin.logo};
-  transform: ${({ fade }) =>
-    fade ? 'translateX(0)' : 'translateX(150px)'};
+  transform: ${({ fade }) => (fade ? 'translateX(0)' : 'translateX(150px)')};
   opacity: ${({ fade }) => (fade ? 1 : 0)};
 `;
 const IIILogo = styled.div`
   ${(p) => p.theme.mixin.logo};
-  transform: ${({ fade }) =>
-    fade ? 'translateX(0)' : 'translateX(-150px)'};
+  transform: ${({ fade }) => (fade ? 'translateX(0)' : 'translateX(-150px)')};
   opacity: ${({ fade }) => (fade ? 1 : 0)};
 `;
 const ReactInfo = styled.div`
   flex: 0 1 600px;
   transition: 0.5s all ease;
-  transform: ${({ fade }) =>
-    fade ? 'translateX(0)' : 'translateX(150px)'};
+  transform: ${({ fade }) => (fade ? 'translateX(0)' : 'translateX(150px)')};
   opacity: ${({ fade }) => (fade ? 1 : 0)};
 `;
 const VueInfo = styled.div`
   flex: 0 1 600px;
   transition: 0.5s all ease;
-  transform: ${({ fade }) =>
-    fade ? 'translateX(0)' : 'translateX(-150px)'};
+  transform: ${({ fade }) => (fade ? 'translateX(0)' : 'translateX(-150px)')};
   opacity: ${({ fade }) => (fade ? 1 : 0)};
 `;
 const IIIInfo = styled.div`
   flex: 0 1 600px;
   transition: 0.5s all ease;
-  transform: ${({ fade }) =>
-    fade ? 'translateX(0)' : 'translateX(150px)'};
+  transform: ${({ fade }) => (fade ? 'translateX(0)' : 'translateX(150px)')};
   opacity: ${({ fade }) => (fade ? 1 : 0)};
 `;
 
@@ -117,10 +112,9 @@ const Index = () => {
     }
   };
   useEffect(() => {
-    const observeReact = new IntersectionObserver(
-      scrollReact,
-      { threshold: 0.75 },
-    );
+    const observeReact = new IntersectionObserver(scrollReact, {
+      threshold: 0.75,
+    });
     const observeVue = new IntersectionObserver(scrollVue, {
       threshold: 0.75,
     });

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 //style
 import * as SVG from '../style';
 
-const Cloud = () => {
+const Cloud: FC = () => {
   return (
     <SVG.Cloud
       viewBox="0 0 300 175"

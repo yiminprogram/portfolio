@@ -1,2 +1,2 @@
-export { default as ComponentCard } from './components/ComponentCard';
-export { default as ProjectCard } from './components/ProjectCard';
+export { default as CardComponents } from './components/CardComponents';
+export { default as CardProjects } from './components/CardProjects';

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
-//interface
-import { IStyleLoad } from './interface';
+
+type IStyleLoad = {
+  load: boolean;
+};
 
 export const ImageHover = styled.img<IStyleLoad>`
   width: 100%;

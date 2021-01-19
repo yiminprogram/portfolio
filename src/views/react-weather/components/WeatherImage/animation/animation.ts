@@ -6,13 +6,13 @@ export const bright = keyframes`
   filter:brightness(1);
 }
 25%{
-  filter:brightness(0.95);
+  filter:brightness(0.90);
 }
 50%{
   filter:brightness(1);
 }
 75%{
-  filter:brightness(1.05);
+  filter:brightness(1.1);
 }
 100%{
   filter:brightness(1);

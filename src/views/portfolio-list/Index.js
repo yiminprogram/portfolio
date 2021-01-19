@@ -5,10 +5,7 @@ import { useRouteMatch } from 'react-router-dom';
 import reactLogo from '../../assets/image/logo/react.png';
 import vueLogo from '../../assets/image/logo/vue.png';
 import iiiLogo from '../../assets/image/logo/school-logo.png';
-import {
-  ComponentCard,
-  ProjectCard,
-} from '../../components/home-list-card/Index';
+import { CardComponents, CardProjects } from '../../components/home-list-card';
 //data
 import reactList from '../../assets/data/react-portfolio.json';
 import reactProject from '../../assets/data/react-project.json';
@@ -82,15 +79,11 @@ const Index = () => {
       </Logo>
       <ListContainer>
         {portfolios &&
-          portfolios.map((ele) => (
-            <ComponentCard key={ele.id} {...ele} />
-          ))}
+          portfolios.map((ele) => <CardComponents key={ele.id} {...ele} />)}
       </ListContainer>
       <ListContainer>
         {projects &&
-          projects.map((ele) => (
-            <ProjectCard key={ele.id} {...ele} />
-          ))}
+          projects.map((ele) => <CardProjects key={ele.id} {...ele} />)}
       </ListContainer>
     </Portfolio>
   );

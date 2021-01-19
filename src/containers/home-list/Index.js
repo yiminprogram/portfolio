@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ComponentCard, ProjectCard } from '../../components/home-list-card/Index';
+import { CardComponents, CardProjects } from '../../components/home-list-card';
 
 const List = styled.section`
   width: 85%;
@@ -39,7 +39,7 @@ export const ComponentList = ({ list, logo }) => {
       </Logo>
       <LinkList>
         {list.map((ele) => (
-          <ComponentCard key={ele.id} {...ele} />
+          <CardComponents key={ele.id} {...ele} />
         ))}
       </LinkList>
     </List>
@@ -56,7 +56,7 @@ export const ProjectList = ({ list, logo }) => {
       </Logo>
       <LinkList>
         {list.map((ele) => (
-          <ProjectCard key={ele.id} {...ele} />
+          <CardProjects key={ele.id} {...ele} />
         ))}
       </LinkList>
     </List>

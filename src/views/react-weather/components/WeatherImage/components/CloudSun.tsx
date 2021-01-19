@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 //style
 import * as SVG from '../style';
 
-const CloudSun = () => {
+const CloudSun: FC = () => {
   return (
     <SVG.CloudSun
       viewBox="0 0 285 198"
@@ -10,13 +10,7 @@ const CloudSun = () => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <g id="cloudSun">
-        <circle
-          id="sun"
-          cx="143"
-          cy="65"
-          r="65"
-          fill="#FFD600"
-        />
+        <circle id="sun" cx="143" cy="65" r="65" fill="#FFD600" />
         <path
           id="cloudEnd"
           fill-rule="evenodd"

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 //style
-import { WeatherInfoDiv, Info, WeatherImg, BackBtn } from '../../style';
+import { WeatherInfoDiv, Info, WeatherImg, BackBtn, Card } from '../../style';
 //type
 import { TProps } from '../../type';
 //weather image
@@ -44,7 +44,7 @@ const WeatherInfo: FC<TProps> = ({
   setQuery,
 }) => {
   return (
-    <>
+    <WeatherInfoDiv>
       <BackBtn>
         <button
           onClick={() =>
@@ -61,7 +61,7 @@ const WeatherInfo: FC<TProps> = ({
           <span>搜尋其它縣市氣象資訊</span>
         </button>
       </BackBtn>
-      <WeatherInfoDiv>
+      <Card>
         <Info>
           <h1>{location}</h1>
           <h2>{weather}</h2>
@@ -69,8 +69,8 @@ const WeatherInfo: FC<TProps> = ({
           <h3>{time}</h3>
         </Info>
         <WeatherImg>{getWeatherImg(weather)}</WeatherImg>
-      </WeatherInfoDiv>
-    </>
+      </Card>
+    </WeatherInfoDiv>
   );
 };
 

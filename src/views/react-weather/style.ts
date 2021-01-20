@@ -9,15 +9,18 @@ export const WeatherPage = styled.div`
   ${(p) => p.theme.mixin.page};
   display: flex;
   justify-content: center;
-  align-items: center;
   background: linear-gradient(150deg, #3a79b0, #3ab0a8);
 `;
 
+export const SearchDiv = styled.div`
+  flex: 0 1 500px;
+  padding-top: 5rem;
+`;
+
 export const SearchForm = styled.form`
-  flex: 0 1 400px;
   padding: 2rem;
+  background-color: #fff;
   border-radius: 5px;
-  background-color: #ffffffbb;
 
   > h1 {
     color: #333;
@@ -33,6 +36,7 @@ export const SearchForm = styled.form`
     margin-bottom: ${style.marginBottom};
     border: 0;
     border-radius: 5px;
+    background-color: #e0e0e0;
   }
 `;
 
@@ -50,19 +54,19 @@ export const SearchBtn = styled.button`
 
 export const WeatherInfoDiv = styled.div`
   flex: 0 1 500px;
+  padding-top: 5rem;
+`;
+export const Card = styled.div`
   background-color: #fff;
   border-radius: 5px;
-  display: flex;
 
+  display: flex;
+  flex-flow: row nowrap;
   @media screen and (max-width: 768px) {
     flex-flow: column nowrap;
-    flex: 0 1 400px;
   }
 `;
-
 export const Info = styled.div`
-  flex: 1;
-
   padding: 1.5rem;
 
   > h1,
@@ -89,18 +93,11 @@ export const WeatherImg = styled.div`
 `;
 
 export const BackBtn = styled.div`
-  position: absolute;
-  top: 15%;
-  left: 0;
-  width: 100%;
-
+  margin-bottom: 3rem;
   > button {
     cursor: pointer;
     display: flex;
     align-items: center;
-    letter-spacing: 5px;
-    font-size: 1.5rem;
-    font-weight: 700;
     color: #fff;
     background-color: #3ab0a8;
     box-shadow: 5px 5px 5px #555;
@@ -110,6 +107,8 @@ export const BackBtn = styled.div`
     border-radius: 5px;
 
     > span {
+      font-size: 1.5rem;
+      font-weight: 700;
       margin-left: 1rem;
     }
   }

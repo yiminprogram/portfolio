@@ -1,6 +1,6 @@
 import React, { FC, useState, FormEvent } from 'react';
 //style
-import { SearchForm, SearchBtn } from '../../style';
+import { SearchForm, SearchBtn, SearchDiv } from '../../style';
 //type
 import { TSetQuery, TWeatherAPI } from '../../type';
 //api key
@@ -57,16 +57,18 @@ const Search: FC<TSetQuery> = ({ setQuery }) => {
       });
   };
   return (
-    <SearchForm onSubmit={search}>
-      <h1>搜尋城市</h1>
-      <input
-        type="text"
-        placeholder="輸入城市名稱"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-      />
-      <SearchBtn type="submit">搜尋</SearchBtn>
-    </SearchForm>
+    <SearchDiv>
+      <SearchForm onSubmit={search}>
+        <h1>搜尋城市</h1>
+        <input
+          type="text"
+          placeholder="輸入城市名稱"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+        />
+        <SearchBtn type="submit">搜尋</SearchBtn>
+      </SearchForm>
+    </SearchDiv>
   );
 };
 

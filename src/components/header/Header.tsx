@@ -33,6 +33,7 @@ const Header: FC = () => {
         <NavLink to="/portfolio/react">React作品集</NavLink>
         <NavLink to="/portfolio/vue">Vue作品集</NavLink>
         <NavLink to="/portfolio/iii">資策會結訓</NavLink>
+        <NavLink to="/about">關於我</NavLink>
         <Hamburger>
           <Menu onClick={showMenu} />
           <MenuList menuState={menuState} onClick={closeMenu}>
@@ -42,6 +43,7 @@ const Header: FC = () => {
             <MenuLink to="/portfolio/react">React作品集</MenuLink>
             <MenuLink to="/portfolio/vue">Vue作品集</MenuLink>
             <MenuLink to="/portfolio/iii">資策會結訓</MenuLink>
+            <MenuLink to="/about">關於我</MenuLink>
           </MenuList>
         </Hamburger>
       </Nav>

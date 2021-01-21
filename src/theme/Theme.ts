@@ -10,7 +10,7 @@ const theme = {
   mixin: {
     page: css`
       min-height: 100vh;
-      padding: 50px 1rem 1rem 1rem;
+      padding-top: 50px;
     `,
     portfolio: css`
       width: 80%;

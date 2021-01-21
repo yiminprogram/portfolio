@@ -12,7 +12,7 @@ import {
   NavLink,
 } from './style';
 //material icon
-import { Menu, HighlightOff } from '@material-ui/icons';
+import { Home as Logo, Menu, HighlightOff } from '@material-ui/icons';
 
 const Header: FC = () => {
   const [menuState, setMenuState] = useState<boolean>(false);
@@ -25,21 +25,23 @@ const Header: FC = () => {
   return (
     <HeaderDiv>
       <Home>
-        <HomeLink to="/">Portfolio</HomeLink>
+        <HomeLink to="/">
+          <Logo style={{ fontSize: '2rem' }} />
+        </HomeLink>
       </Home>
       <Nav>
-        <NavLink to="/portfolio/react">React Portfolio</NavLink>
-        <NavLink to="/portfolio/vue">Vue Portfolio</NavLink>
-        <NavLink to="/portfolio/iii">III Portfolio</NavLink>
+        <NavLink to="/portfolio/react">React作品集</NavLink>
+        <NavLink to="/portfolio/vue">Vue作品集</NavLink>
+        <NavLink to="/portfolio/iii">資策會結訓</NavLink>
         <Hamburger>
           <Menu onClick={showMenu} />
           <MenuList menuState={menuState} onClick={closeMenu}>
             <Close>
               <HighlightOff style={{ fontSize: 30 }} />
             </Close>
-            <MenuLink to="/portfolio/react">React Portfolio</MenuLink>
-            <MenuLink to="/portfolio/vue">Vue Portfolio</MenuLink>
-            <MenuLink to="/portfolio/iii">III Portfolio</MenuLink>
+            <MenuLink to="/portfolio/react">React作品集</MenuLink>
+            <MenuLink to="/portfolio/vue">Vue作品集</MenuLink>
+            <MenuLink to="/portfolio/iii">資策會結訓</MenuLink>
           </MenuList>
         </Hamburger>
       </Nav>

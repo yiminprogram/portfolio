@@ -1,11 +1,9 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 //style
 import { WeatherPage } from './style';
 //components
 import Search from './components/Search';
 import WeatherInfo from './components/WeatherInfo';
-//functions
-import { ScrollTop } from '../../functions/function';
 //type
 import { TQuery } from './type';
 
@@ -18,7 +16,9 @@ const Weather: FC = () => {
     isInput: false,
   };
   const [query, setQuery] = useState<TQuery>(defaultValue);
-  ScrollTop();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <WeatherPage>
       {query.isInput ? (

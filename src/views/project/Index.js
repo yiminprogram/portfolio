@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-//image
-import Home from '../../assets/image/screenshot/space-home.png';
 //functions
-import { ScrollTop } from '../../functions/function';
+import { scrollTop } from '../../functions/scrollTop';
 //material ui
 
 const Project = styled.div`
@@ -70,7 +68,7 @@ const Website = styled.div`
 
 const Index = ({ location }) => {
   const { project, information, link } = location.query;
-  ScrollTop();
+  scrollTop();
   return (
     <Project>
       <Container>

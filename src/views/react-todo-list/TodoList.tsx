@@ -15,8 +15,6 @@ import {
   TodoListPage,
   UserInput,
 } from './style';
-//functions
-import { ScrollTop } from '../../functions/function';
 //components
 import List from './components/List';
 import { ToastsError, ToastsSuccess } from '../../components/Toasts/Index';
@@ -81,7 +79,9 @@ const TodoList: FC = () => {
     };
     setTodos(newArray);
   };
-  ScrollTop();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <TodoListPage>
       {toasts(show.info)}

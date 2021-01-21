@@ -5,8 +5,6 @@ import Table from '../../components/Table/Index';
 import Searchbar from '../../components/searchbar/Index';
 //data
 import FoodData from '../../assets/data/food.json';
-//functions
-import { ScrollTop } from '../../functions/function';
 
 const TablePage = styled.div`
   ${(p) => p.theme.mixin.page};
@@ -31,7 +29,6 @@ const TableContainer = styled.div`
 `;
 
 const Index = () => {
-  ScrollTop();
   const [data, setData] = useState(FoodData);
   const [head, setHead] = useState();
   const [input, setInput] = useState('');
@@ -40,9 +37,7 @@ const Index = () => {
   }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
-      const newData = FoodData.filter((ele) =>
-        ele.name.includes(input),
-      );
+      const newData = FoodData.filter((ele) => ele.name.includes(input));
       setData(newData);
     }, 500);
     return () => {

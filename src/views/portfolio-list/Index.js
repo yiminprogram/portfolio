@@ -11,8 +11,6 @@ import reactList from '../../assets/data/react-portfolio.json';
 import reactProject from '../../assets/data/react-project.json';
 import vueProject from '../../assets/data/vue-project.json';
 import iiiProject from '../../assets/data/iii-project.json';
-//function
-import { ScrollTop } from '../../functions/function';
 
 //check page type
 const portfolioType = (id) => {
@@ -69,7 +67,6 @@ const Index = () => {
   const match = useRouteMatch();
   const { id } = match.params;
   const { logo, portfolios, projects } = portfolioType(id);
-  ScrollTop();
   return (
     <Portfolio>
       <Logo>

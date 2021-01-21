@@ -10,8 +10,6 @@ import loginContext from './ContextAPI';
 import { ToastsError, ToastsSuccess } from '../../components/Toasts/Index';
 //type
 import { TToasts } from './type';
-//functions
-import { ScrollTop } from '../../functions/function';
 
 const toastsShow = (e: string): ReactElement | null => {
   switch (e) {
@@ -56,7 +54,9 @@ const Login: FC = () => {
   }): void => {
     setToasts({ open, info });
   };
-  ScrollTop();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <LoginPage>
       {toastsShow(toasts.info)}

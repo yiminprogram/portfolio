@@ -37,6 +37,10 @@ export const HomeLink = styled(Link)`
 
   text-decoration: none;
   margin-left: 2rem;
+
+  > img {
+    height: 30px;
+  }
 `;
 
 export const NavLink = styled(Link)`

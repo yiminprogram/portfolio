@@ -32,6 +32,7 @@ export const Title = styled.h1`
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 5px;
+  text-indent: 5px;
 `;
 
 export const UserInput = styled.form`
@@ -75,6 +76,7 @@ export const Btn = styled.div`
     cursor: pointer;
     font-size: 1.3rem;
     letter-spacing: 5px;
+    text-indent: 5px;
     color: #fff;
     background-color: #369e9e;
     padding: 0.8rem 1.3rem;

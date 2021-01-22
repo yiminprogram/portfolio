@@ -45,6 +45,7 @@ export const SearchBtn = styled.button`
   width: 100%;
   padding: 0.5rem 1rem;
   letter-spacing: 5px;
+  text-indent: 5px;
   font-size: 1.3rem;
   color: #fff;
   background-color: ${style.primary};

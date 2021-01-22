@@ -7,7 +7,7 @@ export const HomeDiv = styled.div`
 
 export const WellcomeDiv = styled.div`
   max-width: 1300px;
-  margin: 0 auto 10rem auto;
+  margin: 0 auto 5rem auto;
   padding-top: 5rem;
   display: flex;
   justify-content: center;
@@ -18,10 +18,11 @@ export const WellcomeDiv = styled.div`
   }
 `;
 
-export const Title = styled.div`
+export const WellcomeTitle = styled.div`
   flex: 0 1 600px;
   color: #333;
   letter-spacing: 0.5rem;
+  text-indent: 0.5rem;
   font-size: 3.5rem;
   font-weight: 700;
   text-align: center;
@@ -51,7 +52,7 @@ export const ModelContainer = styled.div`
 
 export const PortfolioDiv = styled.div`
   max-width: 1300px;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 5rem auto;
 `;
 export const ReactCard = styled.div`
   max-width: 650px;
@@ -99,10 +100,52 @@ export const OtherCard = styled.div`
 `;
 
 export const AboutDiv = styled.div`
-  max-width: 650px;
-  margin: 0 auto 20rem auto;
-  padding: 2rem 1rem;
+  height: 1000px;
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  padding-top: 10rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    left: 0;
+    top: 0;
+    background: linear-gradient(#fff, #ffffff00);
+    z-index: -1;
+  }
+`;
+
+export const AboutTitle = styled.h1`
+  color: #333;
+  font-size: 5rem;
+  font-weight: 700;
   text-align: center;
-  background-color: #fafafa;
-  border-radius: 5px;
+  margin-bottom: 2rem;
+`;
+
+export const AboutBtnDiv = styled.div`
+  text-align: center;
+`;
+export const AboutBtn = styled(Link)`
+  color: #1866f2;
+  font-size: 1.3rem;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 1.5px 0 #1866f2;
+  }
+`;
+
+export const PortfolioTitle = styled.h1`
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 3rem;
+  letter-spacing: 30px;
+  text-indent: 30px;
 `;

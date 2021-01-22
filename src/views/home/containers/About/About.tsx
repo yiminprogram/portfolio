@@ -1,18 +1,16 @@
 import React from 'react';
 //style
-import { AboutDiv, Image, LinkBtn } from '../../style';
+import { AboutBtn, AboutBtnDiv, AboutDiv, AboutTitle } from '../../style';
 //image
-import Logo from 'src/assets/image/logo/profile.svg';
+import Wallpaper from 'src/assets/image/home-wallpaper.jpg';
 
 const About = () => {
   return (
-    <AboutDiv>
-      <Image>
-        <img src={Logo} alt="about" />
-      </Image>
-      <LinkBtn color="#f9a826" to="/about">
-        關於我 &gt;
-      </LinkBtn>
+    <AboutDiv style={{ backgroundImage: `url(${Wallpaper})` }}>
+      <AboutTitle>關於我</AboutTitle>
+      <AboutBtnDiv>
+        <AboutBtn to="/about">進一步了解 &gt;</AboutBtn>
+      </AboutBtnDiv>
     </AboutDiv>
   );
 };

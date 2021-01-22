@@ -15,7 +15,7 @@ export const Info = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 650px;
+  height: 500px;
   margin-bottom: 5rem;
   background-image: url(${Wallpaper});
   background-position: center;
@@ -37,38 +37,30 @@ export const Info = styled.div`
   }
 `;
 
-export const InfoCard = styled.div`
-  flex: 0 1 500px;
-  text-align: center;
-  color: #ececec;
-`;
-export const Image = styled.div`
-  max-width: 300px;
-  margin: 0 auto 2rem auto;
-  border-radius: 50%;
-  overflow: hidden;
-
-  > img {
-    width: 100%;
-    filter: brightness(1.2);
-  }
-`;
-
 export const Title = styled.h1`
   color: #fff;
-  margin-bottom: 5rem;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
-  letter-spacing: 1rem;
+  text-align: center;
+  letter-spacing: 3rem;
+  text-indent: 3rem;
 `;
 
-export const Introduce = styled.div`
+export const Introduce = styled.article`
+  color: #333;
   font-size: 1.1rem;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto 5rem auto;
   padding: 2rem;
-  line-height: 3;
+  line-height: 2;
   text-align: center;
+
+  > h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 30px;
+    text-indent: 30px;
+  }
 `;
 
 export const Name = styled.span`
@@ -76,40 +68,80 @@ export const Name = styled.span`
   font-weight: 700;
 `;
 
-export const Code = styled.span`
-  color: ${(p) => p.color};
-  font-weight: 700;
-`;
-
 export const Skill = styled.div`
   max-width: 1200px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex-flow: row wrap;
   margin: 0 auto 5rem auto;
-  padding: 1rem;
 `;
 
 export const Language = styled.div`
-  flex: 0 1 500px;
+  flex: 0 1 400px;
   color: ${(p) => p.color};
   margin: 0 2rem 5rem 2rem;
   display: flex;
   align-items: center;
 
   > span {
-    flex: 2;
+    flex: 1;
     font-size: 1.5rem;
     font-weight: 700;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.1rem;
+    }
   }
 `;
 export const Bar = styled.div<TPercentage>`
-  flex: 3;
+  flex: 2;
   > div {
     width: ${({ scroll, percentage }) => (scroll ? `${percentage}` : 0)};
     height: 20px;
-    background: linear-gradient(150deg, #cc208eaa, #6713d2aa);
+    background: linear-gradient(150deg, #51aded, #5761e0);
     border-radius: 20px;
     transition: 1s linear;
+  }
+`;
+
+export const Contact = styled.div`
+  max-width: 1000px;
+  margin: 0 auto 5rem auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+`;
+export const ContactImg = styled.div`
+  flex: 0 1 500px;
+  padding: 3.5rem;
+  > img {
+    width: 100%;
+  }
+`;
+export const ContactInfo = styled.div`
+  flex: 0 1 500px;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 5rem;
+  color: #333;
+
+  > h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+`;
+export const ContactContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+
+  > span {
+    margin-left: 0.5rem;
+    white-space: nowrap;
   }
 `;

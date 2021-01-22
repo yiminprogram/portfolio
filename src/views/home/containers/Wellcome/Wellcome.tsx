@@ -2,7 +2,7 @@ import React from 'react';
 //style
 import {
   WellcomeDiv,
-  Title,
+  WellcomeTitle,
   TitleTop,
   TitleBottom,
   ModelContainer,
@@ -13,10 +13,10 @@ import Model from '../../components/WellcomeModel';
 const Wellcome = () => {
   return (
     <WellcomeDiv>
-      <Title>
+      <WellcomeTitle>
         <TitleTop>歡迎來到我的</TitleTop>
         <TitleBottom>作品集</TitleBottom>
-      </Title>
+      </WellcomeTitle>
       <ModelContainer>
         <Model />
       </ModelContainer>

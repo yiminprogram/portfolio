@@ -9,7 +9,7 @@ type TStyled = {
 export const HeaderDiv = styled.header`
   width: 100%;
   height: 50px;
-  background-color: #fff;
+  /* background-color: #fff; */
   position: absolute;
   top: 0;
   left: 0;
@@ -17,6 +17,7 @@ export const HeaderDiv = styled.header`
   justify-content: space-between;
   align-items: center;
   font-weight: 700;
+  z-index: 1;
 `;
 
 export const Home = styled.div`

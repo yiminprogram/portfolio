@@ -92,6 +92,7 @@ export const SubmitBtn = styled.div`
     cursor: pointer;
     width: 100%;
     letter-spacing: 5px;
+    text-indent: 5px;
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
     border: 0;
@@ -130,6 +131,7 @@ export const LoginInfoDiv = styled.div`
     cursor: pointer;
     padding: 0.5rem 1rem;
     letter-spacing: 5px;
+    text-indent: 5px;
     font-size: 1rem;
     color: #fff;
     background-color: ${style.primaryColor};

@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.41be1700.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.41be1700.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.29a6f8da.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.29a6f8da.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.6eeca8a1.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.6eeca8a1.js.map",
-    "static/js/2.3a94c053.chunk.js": "/portfolio/static/js/2.3a94c053.chunk.js",
-    "static/js/2.3a94c053.chunk.js.map": "/portfolio/static/js/2.3a94c053.chunk.js.map",
+    "static/js/2.ec03ad3d.chunk.js": "/portfolio/static/js/2.ec03ad3d.chunk.js",
+    "static/js/2.ec03ad3d.chunk.js.map": "/portfolio/static/js/2.ec03ad3d.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/js/2.3a94c053.chunk.js.LICENSE.txt": "/portfolio/static/js/2.3a94c053.chunk.js.LICENSE.txt",
+    "static/js/2.ec03ad3d.chunk.js.LICENSE.txt": "/portfolio/static/js/2.ec03ad3d.chunk.js.LICENSE.txt",
+    "static/media/email.47deec3d.svg": "/portfolio/static/media/email.47deec3d.svg",
     "static/media/error-404.d6a4264d.svg": "/portfolio/static/media/error-404.d6a4264d.svg",
     "static/media/error-fixed.f8bf22c3.svg": "/portfolio/static/media/error-fixed.f8bf22c3.svg",
+    "static/media/home-wallpaper.5c30795d.jpg": "/portfolio/static/media/home-wallpaper.5c30795d.jpg",
     "static/media/portfolio.43ed2b1f.gltf": "/portfolio/static/media/portfolio.43ed2b1f.gltf",
-    "static/media/profile.04a745b8.svg": "/portfolio/static/media/profile.04a745b8.svg",
     "static/media/react-profile.1618ee2d.svg": "/portfolio/static/media/react-profile.1618ee2d.svg",
     "static/media/school-logo.a9ffb36f.png": "/portfolio/static/media/school-logo.a9ffb36f.png",
     "static/media/static-profile.9b666b31.svg": "/portfolio/static/media/static-profile.9b666b31.svg",
-    "static/media/user-photo.3ce61b1b.png": "/portfolio/static/media/user-photo.3ce61b1b.png",
     "static/media/vue-profile.4c13e3b1.svg": "/portfolio/static/media/vue-profile.4c13e3b1.svg",
     "static/media/wallpaper.8068a20b.jpg": "/portfolio/static/media/wallpaper.8068a20b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.6eeca8a1.js",
-    "static/js/2.3a94c053.chunk.js",
-    "static/js/main.41be1700.chunk.js"
+    "static/js/2.ec03ad3d.chunk.js",
+    "static/js/main.29a6f8da.chunk.js"
   ]
 }

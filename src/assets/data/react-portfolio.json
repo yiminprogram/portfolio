@@ -3,24 +3,24 @@
     "id": 1,
     "path": "/react-todolist",
     "project": "代辦事項",
-    "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-todolist.png"
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-todolist.png"
   },
   {
     "id": 2,
     "path": "/react-login",
     "project": "註冊登入系統",
-    "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-login.png"
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-login.png"
   },
   {
     "id": 3,
     "path": "/react-table",
     "project": "數據表格",
-    "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-table.jpg"
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-table.jpg"
   },
   {
     "id": 4,
     "path": "/react-weather",
     "project": "氣象查詢",
-    "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-weather.png"
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-weather.png"
   }
 ]

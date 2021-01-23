@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 //components
-import { Image } from '../../../image/Index';
+import { Image } from '../../../image';
 
 const Tr = styled.tr`
   cursor: pointer;

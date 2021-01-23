@@ -1,15 +1,19 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type IStyleLoad = {
   load: boolean;
 };
 
-export const ImageHover = styled.img<IStyleLoad>`
+const Image = css`
   width: 100%;
   height: 100%;
   object-fit: cover;
+`;
+
+export const ImgHover = styled.img<IStyleLoad>`
+  ${Image};
+  display: ${(p) => (p.load ? 'none' : 'initial')};
   transition: 0.5s;
-  display: ${({ load }) => (load ? 'none' : 'initial')};
 
   &:hover {
     filter: brightness(0.85);
@@ -17,9 +21,7 @@ export const ImageHover = styled.img<IStyleLoad>`
   }
 `;
 
-export const Image = styled.img<IStyleLoad>`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+export const Img = styled.img<IStyleLoad>`
+  ${Image};
   display: ${(p) => (p.load ? 'none' : 'initial')};
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 //components
-import { ImageHover } from '../../../image/Index';
+import { ImageHover } from '../../../image';
 //type
 import { TProps } from '../../type';
 //style

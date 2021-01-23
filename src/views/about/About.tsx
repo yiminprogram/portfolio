@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 //style
 import {
   AboutDiv,
@@ -21,7 +21,7 @@ import EmailImg from 'src/assets/image/email.svg';
 //icons
 import { Email, GitHub, Language as Portfolio } from '@material-ui/icons';
 
-const About = () => {
+const About: FC = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const target = useRef<HTMLDivElement | null>(null);
   useEffect(() => {

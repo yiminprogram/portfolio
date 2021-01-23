@@ -9,7 +9,7 @@ type TStyled = {
 export const HeaderDiv = styled.header`
   width: 100%;
   height: 50px;
-  /* background-color: #fff; */
+  background-color: #fff;
   position: absolute;
   top: 0;
   left: 0;
@@ -68,7 +68,7 @@ export const NavLink = styled(Link)`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1060px) {
     display: none;
   }
 `;
@@ -85,7 +85,7 @@ export const Hamburger = styled.button`
   &:hover {
     background-color: #ddd;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1060px) {
     display: initial;
   }
 `;

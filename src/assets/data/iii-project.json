@@ -3,14 +3,14 @@
     "id": 1,
     "path": "https://yiminprogram.github.io/ProjectWebSite/src/Homepage.html",
     "project": "資策會結訓專案(模板)-首頁",
-    "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/space-home.png",
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/space-home.png",
     "lastEdit": "2020/06/01"
   },
   {
     "id": 2,
     "path": "https://yiminprogram.github.io/ProjectWebSite/src/SpaceSearch.html",
     "project": "資策會結訓專案(模板)-搜尋頁面",
-    "screenshot": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/space-search.jpg",
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/space-search.jpg",
     "lastEdit": "2020/06/01"
   }
 ]

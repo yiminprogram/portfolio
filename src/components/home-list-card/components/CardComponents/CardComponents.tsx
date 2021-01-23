@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouteMatch } from 'react-router-dom';
 //components
-import { ImageHover } from '../../../image/Index';
+import { ImageHover } from 'src/components/image';
 //types
 import { TProps } from '../../type';
 //style

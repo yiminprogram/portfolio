@@ -56,6 +56,7 @@ body,html{
   width:100%;
   font-family: 'Noto Sans TC', sans-serif;
 	color:#333;
+
 }
 
 *,*::before,*::after{

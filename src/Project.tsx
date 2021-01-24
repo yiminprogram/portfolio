@@ -9,7 +9,7 @@ import ErrorBoundary from './views/error/index';
 //router components
 import Home from './views/home';
 import TodoList from './views/react-todo-list';
-import Table from './views/react-table/Index';
+import Table from './views/react-table';
 import Login from './views/react-login';
 import Weather from './views/react-weather';
 import { ReactPortfolio } from './views/portfolio';

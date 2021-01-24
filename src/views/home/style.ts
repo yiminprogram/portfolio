@@ -6,12 +6,12 @@ export const HomeDiv = styled.div`
 `;
 
 export const WellcomeDiv = styled.div`
-  max-width: 1300px;
   margin: 0 auto 5rem auto;
-  padding-top: 5rem;
+  padding: 3rem 0;
   display: flex;
   justify-content: center;
   flex-flow: row nowrap;
+  background-color: #fafafa;
 
   @media screen and (max-width: 768px) {
     flex-flow: column nowrap;

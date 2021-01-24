@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 //image
 import Error404 from '../../assets/image/error-404.svg';
@@ -49,7 +49,7 @@ const Info = styled.div`
   }
 `;
 
-const Error = () => {
+const Error: FC = () => {
   return (
     <Page>
       <Img>

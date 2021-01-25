@@ -64,15 +64,26 @@ export const TableDiv = styled.div`
     }
 
     th {
+      cursor: pointer;
       font-size: 1.5rem;
       font-weight: 700;
       background-color: #7a1f51bb;
+
+      &:hover {
+        background-color: #7a1f5188;
+      }
 
       &:first-child {
         border-top-left-radius: 5px;
       }
       &:last-child {
         border-top-right-radius: 5px;
+      }
+
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
 

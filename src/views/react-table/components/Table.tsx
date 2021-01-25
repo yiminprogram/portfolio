@@ -4,16 +4,34 @@ import { TableDiv, ImageWrapper } from '../style';
 //components
 import { Image } from 'src/components/image';
 //type
-import { TTableFoods } from '../type';
+import { TTableFoods, ESortStatus } from '../type';
+//icons
+import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons';
 
-const Table: FC<TTableFoods> = ({ th, foods }) => {
+const arrowIcon = (sort: ESortStatus) => {
+  switch (sort) {
+    case ESortStatus.ASCENDING:
+      return <ArrowDropUp />;
+    case ESortStatus.DESCENDING:
+      return <ArrowDropDown />;
+    default:
+      return;
+  }
+};
+
+const Table: FC<TTableFoods> = ({ header, foods, getSort }) => {
   return (
     <TableDiv>
       <table>
         <thead>
           <tr>
-            {th.map((ele) => (
-              <th>{ele}</th>
+            {header.map((ele) => (
+              <th onClick={() => getSort(ele.title)}>
+                <div>
+                  {ele.title}
+                  {arrowIcon(ele.sort)}
+                </div>
+              </th>
             ))}
           </tr>
         </thead>

@@ -12,6 +12,7 @@ import TodoList from './views/react-todo-list';
 import Table from './views/react-table';
 import Login from './views/react-login';
 import Weather from './views/react-weather';
+import ShoppingCart from './views/shopping-cart';
 import { ReactPortfolio } from './views/portfolio';
 import { VuePortfolio } from './views/portfolio';
 import { IIIPortfolio } from './views/portfolio';
@@ -29,6 +30,10 @@ const Project = () => {
           <Route path="/portfolio/react/react-login" component={Login} />
           <Route path="/portfolio/react/react-table" component={Table} />
           <Route path="/portfolio/react/react-weather" component={Weather} />
+          <Route
+            path="/portfolio/react/shopping-cart"
+            component={ShoppingCart}
+          />
           <Route path="/portfolio/react" component={ReactPortfolio} />
           <Route path="/portfolio/vue" component={VuePortfolio} />
           <Route path="/portfolio/iii" component={IIIPortfolio} />

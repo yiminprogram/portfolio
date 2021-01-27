@@ -24,6 +24,10 @@ export const InputGroup = styled.form`
     border: 1px solid #fff;
     border-radius: 5px;
 
+    &::placeholder {
+      color: #ffffffaa;
+    }
+
     &:focus {
       outline: none;
       box-shadow: 5px 5px 10px #7a1f51;

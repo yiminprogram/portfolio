@@ -14,7 +14,7 @@ export const WeatherPage = styled.div`
 
 export const SearchDiv = styled.div`
   flex: 0 1 500px;
-  padding-top: 5rem;
+  padding-top: 20rem;
 `;
 
 export const SearchForm = styled.form`

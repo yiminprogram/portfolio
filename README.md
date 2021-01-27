@@ -1,29 +1,31 @@
 ## 作品集
 
-- [react 作品集](https://yiminprogram.github.io/portfolio/#/portfolio/react)
+🏠 [作品集首頁](https://yiminprogram.github.io/portfolio/)
 
-  - react hook
+📘 [react 作品集](https://yiminprogram.github.io/portfolio/#/portfolio/react)
 
-  - react-router-dom
+- react hook
 
-  - styled-components
+- react-router-dom
 
-  - context api
+- styled-components
 
-  - typescript
+- context api
 
-- [vue 作品集](https://yiminprogram.github.io/portfolio/#/portfolio/vue)
+- typescript
 
-  - vuex
+📗 [vue 作品集](https://yiminprogram.github.io/portfolio/#/portfolio/vue)
 
-  - vue router
+- vuex
 
-- [資策會結訓專案網站前端模板](https://yiminprogram.github.io/portfolio/#/portfolio/iii)
+- vue router
 
-  - HTML
+📙 [資策會結訓專案網站前端模板](https://yiminprogram.github.io/portfolio/#/portfolio/iii)
 
-  - CSS
+- HTML
 
-  - jQuery
+- CSS
 
-  - Bootstrap 4
+- jQuery
+
+- Bootstrap 4

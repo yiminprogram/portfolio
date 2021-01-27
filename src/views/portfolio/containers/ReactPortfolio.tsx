@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 //style
 import { PortfolioDiv, Banner, Image, Info, List } from '../style';
 //components
@@ -10,7 +10,7 @@ import Logo from 'src/assets/image/logo/react.png';
 import portfolioData from 'src/assets/data/react-portfolio.json';
 import projectData from 'src/assets/data/react-project.json';
 
-const ReactPortfolio = () => {
+const ReactPortfolio: FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

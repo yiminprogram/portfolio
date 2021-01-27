@@ -19,6 +19,7 @@ const ShoppingCart: FC = () => {
   const [cartState, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const foods: TFoods[] = data.map((ele) => ({
       ...ele,
       favorite: false,

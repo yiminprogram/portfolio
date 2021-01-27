@@ -63,6 +63,10 @@ body,html{
   box-sizing:border-box;
 }
 
+button:focus{
+	outline:none;
+}
+
 #root{
   width:100%;
 }

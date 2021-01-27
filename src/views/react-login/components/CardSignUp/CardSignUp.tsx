@@ -18,6 +18,7 @@ const CardSignUp: FC<TCardProps> = ({ hasAccount, setHasAccount }) => {
   const [signUp, setSignUp] = useState<TUserInput>(signUpDefaultValue);
   const { handleToasts } = useContext(loginContext);
   const userSignUp = (e: MouseEvent<HTMLFormElement>): void => {
+    e.preventDefault();
     if (signUp.email !== '' && signUp.password !== '') {
       localStorage.setItem(
         'userInfo',

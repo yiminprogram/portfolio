@@ -4,6 +4,7 @@ import { ShoppinCartPage, List, ProductsList, CartBtn, Title } from './style';
 //components
 import FoodCard from './components/FoodCard';
 import Cart from './components/Cart';
+import Checked from './components/Checked';
 //type
 import { TFoods, ECartAction } from './type';
 //data
@@ -30,7 +31,6 @@ const ShoppingCart: FC = () => {
 
   return (
     <ShoppinCartPage>
-      {console.log('defends line')}
       <CartContext.Provider value={{ cartState, dispatch }}>
         <ProductsList>
           <Title>商品列表</Title>
@@ -41,13 +41,19 @@ const ShoppingCart: FC = () => {
           </List>
           <Cart />
         </ProductsList>
-        <CartBtn>
+        <CartBtn isAnime={cartState.isAnime}>
+          <span
+            onAnimationEnd={() => dispatch({ type: ECartAction.TOGGLE_ANIME })}
+          >
+            {cartState.cart.length}
+          </span>
           <button onClick={() => dispatch({ type: ECartAction.TOGGLE_CART })}>
             <span>
               <ShoppingCartImg />
             </span>
           </button>
         </CartBtn>
+        <Checked />
       </CartContext.Provider>
     </ShoppinCartPage>
   );

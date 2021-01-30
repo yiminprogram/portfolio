@@ -5,6 +5,8 @@ export const initialState: TCartContext = {
   foods: [],
   cart: [],
   isCart: false,
+  isChecked: false,
+  isAnime: false,
 };
 
 const fetchFoodsData = (
@@ -71,6 +73,26 @@ const removeFromCart = (state: TCartContext, id: number): TCartContext => {
   return { ...state, foods: newFoods, cart: newCartFoods };
 };
 
+const cartChecked = (state: TCartContext): TCartContext => {
+  const newFoods = [...state.foods];
+  newFoods.forEach((ele) => (ele.isInCart = false));
+  return {
+    ...state,
+    foods: newFoods,
+    cart: [],
+    isCart: false,
+    isChecked: true,
+  };
+};
+
+const checkedComplete = (state: TCartContext): TCartContext => {
+  return { ...state, isChecked: false };
+};
+
+const toggleAnime = (state: TCartContext): TCartContext => {
+  return { ...state, isAnime: !state.isAnime };
+};
+
 export const reducer = (
   state: TCartContext,
   action: TCartAction,
@@ -90,6 +112,12 @@ export const reducer = (
       return removeFromCart(state, action.payload);
     case ECartAction.TOGGLE_CART:
       return toggleCart(state);
+    case ECartAction.CART_CHECKED:
+      return cartChecked(state);
+    case ECartAction.CHECKED_COMPLETE:
+      return checkedComplete(state);
+    case ECartAction.TOGGLE_ANIME:
+      return toggleAnime(state);
     default:
       return state;
   }

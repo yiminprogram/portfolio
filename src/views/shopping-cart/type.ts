@@ -13,6 +13,8 @@ export type TCartContext = {
   foods: TFoods[];
   cart: TCart[];
   isCart: boolean;
+  isChecked: boolean;
+  isAnime: boolean;
 };
 
 export type TContext = {
@@ -54,6 +56,18 @@ type TToggleCart = {
   type: ECartAction.TOGGLE_CART;
 };
 
+type TCartChecked = {
+  type: ECartAction.CART_CHECKED;
+};
+
+type TCheckedComplete = {
+  type: ECartAction.CHECKED_COMPLETE;
+};
+
+type TToggleAnime = {
+  type: ECartAction.TOGGLE_ANIME;
+};
+
 export type TCartAction =
   | TFetchFoodsdata
   | TAddToCart
@@ -61,7 +75,10 @@ export type TCartAction =
   | TIcreaseFoodQuantity
   | TDecreaseFoodQuantity
   | TRemoveFromCard
-  | TToggleCart;
+  | TToggleCart
+  | TCartChecked
+  | TCheckedComplete
+  | TToggleAnime;
 
 export enum ECartAction {
   FETCH_FOODS_DATA = 'FETCH_FOODS_DATA',
@@ -71,4 +88,7 @@ export enum ECartAction {
   DECREASE_FOOD_QUANTITY = 'DECREASE_FOOD_QUANTITY',
   REMOVE_FROM_CART = 'REMOVE_FROM_CART',
   TOGGLE_CART = 'TOGGLE_CART',
+  CART_CHECKED = 'CART_CHECKED',
+  CHECKED_COMPLETE = 'CHECKED_COMPLETE',
+  TOGGLE_ANIME = 'TOGGLE_ANIME',
 }

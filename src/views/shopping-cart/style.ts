@@ -1,4 +1,18 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
+
+const flash = keyframes`
+50%{
+  width:50px;
+  height:50px;
+  top:-12.5px;
+  right:-12.5px;
+  background-color:#ffc233;
+}
+`;
+
+type TAnime = {
+  isAnime: boolean;
+};
 
 export const ShoppinCartPage = styled.div`
   ${(p) => p.theme.mixin.page};
@@ -23,7 +37,7 @@ export const List = styled.ul`
   flex-flow: row wrap;
 `;
 
-export const CartBtn = styled.div`
+export const CartBtn = styled.div<TAnime>`
   position: fixed;
   right: 5%;
   bottom: 10%;
@@ -47,5 +61,26 @@ export const CartBtn = styled.div`
     &:active {
       background-color: #22774c;
     }
+  }
+
+  > span {
+    position: absolute;
+    color: #fff;
+    background-color: #ff1e1a;
+    font-size: 0.8rem;
+    font-weight: 700;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    top: -5px;
+    right: -5px;
+    animation: ${({ isAnime }) =>
+      isAnime &&
+      css`
+        ${flash} 1s ease-out
+      `};
   }
 `;

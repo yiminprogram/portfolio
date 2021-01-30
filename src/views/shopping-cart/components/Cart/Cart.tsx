@@ -46,7 +46,12 @@ const Cart: FC = () => {
         <span>總金額</span>
         <Price>${calculatePrice(cart)}</Price>
       </TotalPrice>
-      <Check>結帳</Check>
+      <Check
+        disabled={cart.length === 0}
+        onClick={() => dispatch({ type: ECartAction.CART_CHECKED })}
+      >
+        完成購物
+      </Check>
     </CartPage>
   );
 };

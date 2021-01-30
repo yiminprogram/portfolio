@@ -25,6 +25,10 @@ export const CartPage = styled.div<isCart>`
     font-weight: 700;
     margin-bottom: 2rem;
   }
+
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+  }
 `;
 
 export const CloseCartBtn = styled.button`
@@ -85,5 +89,9 @@ export const Check = styled.button`
 
   &:active {
     background-color: #22774c;
+  }
+
+  &:disabled {
+    background-color: #c0c0c0;
   }
 `;

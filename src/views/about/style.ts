@@ -42,8 +42,8 @@ export const Title = styled.h1`
   font-size: 4rem;
   font-weight: 700;
   text-align: center;
-  letter-spacing: 3rem;
-  text-indent: 3rem;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
 `;
 
 export const Introduce = styled.article`

@@ -12,8 +12,6 @@ import {
 } from './style';
 //components
 import { Image } from 'src/components/image';
-//image
-import FoodImg from 'src/assets/image/foods/burger.jpg';
 //icons
 import { Favorite, AddBox } from '@material-ui/icons';
 //type
@@ -52,9 +50,10 @@ const FoodCard: FC<TFoods> = ({
           <Price>${price}</Price>
           <Add
             isInCart={isInCart}
-            onClick={() =>
-              dispatch({ type: ECartAction.ADD_TO_CART, payload: id })
-            }
+            onClick={() => {
+              dispatch({ type: ECartAction.ADD_TO_CART, payload: id });
+              dispatch({ type: ECartAction.TOGGLE_ANIME });
+            }}
           >
             <span>
               <AddBox />

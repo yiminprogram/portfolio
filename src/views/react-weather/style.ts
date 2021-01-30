@@ -1,20 +1,40 @@
 import styled from 'styled-components';
 
+type TWeatherImage = {
+  weatherImage: string;
+};
+
 const style = {
   marginBottom: '2rem',
   primary: '#3a79b0',
 };
 
-export const WeatherPage = styled.div`
+export const WeatherPage = styled.div<TWeatherImage>`
   ${(p) => p.theme.mixin.page};
   display: flex;
   justify-content: center;
-  background: linear-gradient(150deg, #3a79b0, #3ab0a8);
+  position: relative;
+  background: ${(p) => p.weatherImage};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #00000055;
+    z-index: -1;
+  }
 `;
 
 export const SearchDiv = styled.div`
   flex: 0 1 500px;
-  padding-top: 20rem;
+  padding-top: 15rem;
 `;
 
 export const SearchForm = styled.form`

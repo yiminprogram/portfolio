@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.453e53f9.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.453e53f9.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.44d749bb.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.44d749bb.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.6eeca8a1.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.6eeca8a1.js.map",
-    "static/js/2.cf1d7af3.chunk.js": "/portfolio/static/js/2.cf1d7af3.chunk.js",
-    "static/js/2.cf1d7af3.chunk.js.map": "/portfolio/static/js/2.cf1d7af3.chunk.js.map",
+    "static/js/2.16d5c8cc.chunk.js": "/portfolio/static/js/2.16d5c8cc.chunk.js",
+    "static/js/2.16d5c8cc.chunk.js.map": "/portfolio/static/js/2.16d5c8cc.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/js/2.cf1d7af3.chunk.js.LICENSE.txt": "/portfolio/static/js/2.cf1d7af3.chunk.js.LICENSE.txt",
+    "static/js/2.16d5c8cc.chunk.js.LICENSE.txt": "/portfolio/static/js/2.16d5c8cc.chunk.js.LICENSE.txt",
     "static/media/cloudy.b800fa92.jpg": "/portfolio/static/media/cloudy.b800fa92.jpg",
     "static/media/email.47deec3d.svg": "/portfolio/static/media/email.47deec3d.svg",
     "static/media/error-404.d6a4264d.svg": "/portfolio/static/media/error-404.d6a4264d.svg",
@@ -25,7 +25,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6eeca8a1.js",
-    "static/js/2.cf1d7af3.chunk.js",
-    "static/js/main.453e53f9.chunk.js"
+    "static/js/2.16d5c8cc.chunk.js",
+    "static/js/main.44d749bb.chunk.js"
   ]
 }

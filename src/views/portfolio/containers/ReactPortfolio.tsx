@@ -1,21 +1,14 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 //style
 import { PortfolioDiv, Banner, Image, Info, List } from '../style';
 //components
-import CardPortfolio from '../components/CardPortfolio';
-import CardProject from '../components/CardProject';
-import CardFixing from '../components/CardFixing';
+import CardPortfolio from '../components/Card/CardPortfolio';
 //image
 import Logo from 'src/assets/image/logo/react.png';
 //data
 import portfolioData from 'src/assets/data/react-portfolio.json';
-import projectData from 'src/assets/data/react-project.json';
-import tempData from 'src/assets/data/temp.json';
 
 const ReactPortfolio: FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <PortfolioDiv>
       <Banner>
@@ -30,14 +23,6 @@ const ReactPortfolio: FC = () => {
       <List>
         {portfolioData.map((ele) => (
           <CardPortfolio {...ele} />
-        ))}
-        {tempData.map((ele) => (
-          <CardFixing {...ele} />
-        ))}
-      </List>
-      <List>
-        {projectData.map((ele) => (
-          <CardProject {...ele} />
         ))}
       </List>
     </PortfolioDiv>

@@ -16,10 +16,5 @@ export const GitHubLogo = styled.a`
   display: flex;
   align-items: center;
   text-decoration: 0;
-  > img {
-    height: 20px;
-  }
-  > span {
-    margin-left: 1rem;
-  }
+  color: #fff;
 `;

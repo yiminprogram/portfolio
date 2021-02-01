@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const PortfolioDiv = styled.div`
   ${(p) => p.theme.mixin.page};
+  padding: 5rem 0 15rem 0;
 `;
 
 export const Banner = styled.div`

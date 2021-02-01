@@ -1,6 +1,6 @@
 [
   { "language": "React", "color": "#53c1de", "percentage": "75%" },
-  { "language": "Vue", "color": "#41b883", "percentage": "50%" },
+  { "language": "Vue", "color": "#41b883", "percentage": "30%" },
   { "language": "HTML", "color": "#dd4b25", "percentage": "75%" },
   { "language": "CSS/SCSS", "color": "#0055a3", "percentage": "75%" },
   { "language": "Javascript", "color": "#efd81d", "percentage": "75%" },

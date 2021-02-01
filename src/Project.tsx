@@ -13,7 +13,7 @@ import Table from './views/react-table';
 import Login from './views/react-login';
 import Weather from './views/react-weather';
 import ShoppingCart from './views/shopping-cart';
-import ReactCalendar from './views/calendar';
+import ReactCalendar from './views/react-calendar';
 import { ReactPortfolio } from './views/portfolio';
 import { VuePortfolio } from './views/portfolio';
 import { IIIPortfolio } from './views/portfolio';

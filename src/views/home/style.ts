@@ -1,5 +1,40 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled, { keyframes, css } from 'styled-components';
+
+export const fadeIn = keyframes`
+from{
+  transform:translateY(100px);
+  opacity:0;
+}
+to{
+  transform:translateY(0)
+  opacity:1;
+  visibility:visible;
+}
+`;
+
+export const leftImgFadein = keyframes`
+from{
+  opacity:0;
+  transform:translateX(-100px);
+}
+to{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(0);
+}
+`;
+
+export const rightImgFadein = keyframes`
+from{
+  opacity:0;
+  transform:translateX(100px);
+}
+to{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(0);
+}
+`;
 
 export const HomeDiv = styled.div`
   ${(props) => props.theme.mixin.page};
@@ -11,7 +46,6 @@ export const WellcomeDiv = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: row nowrap;
-  background-color: #fafafa;
 
   @media screen and (max-width: 768px) {
     flex-flow: column nowrap;
@@ -20,27 +54,64 @@ export const WellcomeDiv = styled.div`
 
 export const WellcomeTitle = styled.div`
   flex: 0 1 600px;
-  color: #333;
-  letter-spacing: 0.5rem;
-  text-indent: 0.5rem;
+  padding-left: 5rem;
+  text-indent: 5px;
   font-size: 3.5rem;
   font-weight: 700;
-  text-align: center;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
 
   @media screen and (max-width: 768px) {
+    padding: 1rem;
     margin-bottom: 2rem;
     flex: unset;
+    text-align: center;
   }
 `;
 export const TitleTop = styled.div`
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  > h1 {
+    animation: ${fadeIn} 0.5s linear;
+  }
 `;
+
 export const TitleBottom = styled.div`
-  color: #1877f2;
+  margin-bottom: 6rem;
+  overflow: hidden;
+  > h1 {
+    color: ${(p) => p.theme.colors.primary};
+    visibility: hidden;
+    animation: ${fadeIn} 0.5s linear;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
+  }
 `;
+
+export const TitleBtn = styled.div`
+  overflow: hidden;
+  > a {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    background-color: ${(p) => p.theme.colors.primary};
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    visibility: hidden;
+    animation: ${fadeIn} 0.5s linear;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    text-decoration: none;
+
+    &:hover {
+      background-color: ${(p) => p.theme.colors.hover};
+    }
+  }
+`;
+
 export const ModelContainer = styled.div`
   flex: 0 1 600px;
   height: 600px;
@@ -51,52 +122,8 @@ export const ModelContainer = styled.div`
 `;
 
 export const PortfolioDiv = styled.div`
-  max-width: 1300px;
+  max-width: 1000px;
   margin: 0 auto 5rem auto;
-`;
-export const ReactCard = styled.div`
-  max-width: 650px;
-  margin: 0 auto 1rem auto;
-  padding: 2rem 1rem;
-  text-align: center;
-  background-color: #fafafa;
-  border-radius: 5px;
-`;
-
-export const Image = styled.div`
-  margin-bottom: 5rem;
-  > img {
-    width: 100%;
-  }
-`;
-
-export const LinkBtn = styled(Link)`
-  font-size: 1.2rem;
-  color: ${(p) => p.color};
-  text-decoration: none;
-
-  &:hover {
-    box-shadow: 0 2px 0 ${(p) => p.color};
-  }
-`;
-
-export const OtherPortfolioDiv = styled.div`
-  text-align: center;
-`;
-
-export const OtherCard = styled.div`
-  display: inline-block;
-  max-width: 500px;
-  margin: 1rem;
-  padding: 2rem 1rem;
-  background-color: #fafafa;
-  border-radius: 5px;
-  text-align: center;
-
-  @media screen and (max-width: 1200px) {
-    max-width: 650px;
-    margin: 1rem auto;
-  }
 `;
 
 export const AboutDiv = styled.div`
@@ -121,31 +148,88 @@ export const AboutDiv = styled.div`
 
 export const AboutTitle = styled.h1`
   color: #333;
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 2rem;
 `;
 
-export const AboutBtnDiv = styled.div`
+export const AboutLink = styled.div`
   text-align: center;
-`;
-export const AboutBtn = styled(Link)`
-  color: #1866f2;
-  font-size: 1.3rem;
-  text-decoration: none;
 
-  &:hover {
-    box-shadow: 0 1.5px 0 #1866f2;
+  > a {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: ${(p) => p.theme.colors.primary};
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: ${(p) => p.theme.colors.hover};
+    }
   }
 `;
 
-export const PortfolioTitle = styled.h1`
-  text-align: center;
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 3rem;
-  letter-spacing: 30px;
-  text-indent: 30px;
+export const Portfolio = css`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10rem;
+
+  @media screen and (max-width: 768px) {
+    flex-flow: column nowrap;
+  }
+`;
+
+export const Image = css`
+  flex: 0 1 500px;
+  padding: 2rem;
+
+  > img {
+    width: 100%;
+    object-fit: cover;
+  }
+`;
+
+export const Info = css`
+  flex: 0 1 500px;
+  padding: 3rem;
+`;
+
+export const InfoTitle = css`
+  overflow: hidden;
+
+  > h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+`;
+
+export const InfoContent = css`
+  overflow: hidden;
+  > p {
+    color: #666;
+    line-height: 2;
+    margin-bottom: 1rem;
+  }
+`;
+
+export const InfoLink = css`
+  overflow: hidden;
+  > a {
+    font-weight: 700;
+    display: inline-block;
+    padding: 1rem;
+    color: #ffffff;
+    background-color: ${(p) => p.theme.colors.primary};
+    text-decoration: none;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: ${(p) => p.theme.colors.hover};
+    }
+  }
 `;

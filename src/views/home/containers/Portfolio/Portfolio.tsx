@@ -1,15 +1,17 @@
 import React from 'react';
 //style
-import { PortfolioDiv, PortfolioTitle } from '../../style';
+import { PortfolioDiv } from '../../style';
 //components
-import { ReactPortfolio, OtherPortfolio } from '../../components/Portfolio';
+import ReactPortfolio from '../../components/ReactPortfolio';
+import VuePortfolio from '../../components/VuePortfolio';
+import IIIPortfolio from '../../components/IIIPortfolio';
 
 const Portfolio = () => {
   return (
     <PortfolioDiv>
-      <PortfolioTitle>作品集</PortfolioTitle>
       <ReactPortfolio />
-      <OtherPortfolio />
+      <VuePortfolio />
+      <IIIPortfolio />
     </PortfolioDiv>
   );
 };

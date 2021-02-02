@@ -2,7 +2,8 @@ import { css } from 'styled-components';
 
 const theme = {
   colors: {
-    primary: '#1877f2',
+    primary: '#527afe',
+    hover: '#3463fe',
   },
   boxShadow: {
     card: '0 0 10px 1px #ddd',

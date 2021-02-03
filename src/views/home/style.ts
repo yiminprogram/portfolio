@@ -126,53 +126,6 @@ export const PortfolioDiv = styled.div`
   margin: 0 auto 5rem auto;
 `;
 
-export const AboutDiv = styled.div`
-  height: 1000px;
-  background-position: bottom;
-  background-size: cover;
-  position: relative;
-  z-index: 1;
-  padding-top: 10rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 500px;
-    left: 0;
-    top: 0;
-    background: linear-gradient(#fff, #ffffff00);
-    z-index: -1;
-  }
-`;
-
-export const AboutTitle = styled.h1`
-  color: #333;
-  font-size: 3.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 2rem;
-`;
-
-export const AboutLink = styled.div`
-  text-align: center;
-
-  > a {
-    display: inline-block;
-    color: #fff;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: none;
-    background-color: ${(p) => p.theme.colors.primary};
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-
-    &:hover {
-      background-color: ${(p) => p.theme.colors.hover};
-    }
-  }
-`;
-
 export const Portfolio = css`
   display: flex;
   justify-content: center;
@@ -191,11 +144,19 @@ export const Image = css`
     width: 100%;
     object-fit: cover;
   }
+
+  @media screen and (max-width: 768px) {
+    flex: unset;
+  }
 `;
 
 export const Info = css`
   flex: 0 1 500px;
   padding: 3rem;
+
+  @media screen and (max-width: 768px) {
+    flex: unset;
+  }
 `;
 
 export const InfoTitle = css`

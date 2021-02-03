@@ -21,18 +21,18 @@ const CardPortfolio: FC<TProps> = ({ imageSrc, project, path, github }) => {
         <CardTitle>{project}</CardTitle>
         <CardInfo>
           <CardInfoLink>
-            <span>
-              <Language />
-            </span>
             <a target="_blank" rel="noopener noreferrer" href={path}>
+              <span>
+                <Language />
+              </span>
               作品
             </a>
           </CardInfoLink>
           <CardInfoLink>
-            <span>
-              <GitHub />
-            </span>
             <a target="_blank" rel="noopener noreferrer" href={github}>
+              <span>
+                <GitHub />
+              </span>
               程式碼
             </a>
           </CardInfoLink>

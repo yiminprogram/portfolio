@@ -21,6 +21,7 @@ export const Image = styled.div`
 
   > img {
     width: 100%;
+    filter: drop-shadow(10px 10px 5px #ccc);
   }
 `;
 export const Info = styled.p`

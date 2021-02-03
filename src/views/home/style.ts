@@ -143,6 +143,7 @@ export const Image = css`
   > img {
     width: 100%;
     object-fit: cover;
+    filter: drop-shadow(10px 10px 5px #aaa);
   }
 
   @media screen and (max-width: 768px) {

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.da2e0d37.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.da2e0d37.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.0fd69104.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.0fd69104.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.6eeca8a1.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.6eeca8a1.js.map",
     "static/js/2.92c58738.chunk.js": "/portfolio/static/js/2.92c58738.chunk.js",
@@ -13,7 +13,6 @@
     "static/media/error-404.d6a4264d.svg": "/portfolio/static/media/error-404.d6a4264d.svg",
     "static/media/error-fixed.f8bf22c3.svg": "/portfolio/static/media/error-fixed.f8bf22c3.svg",
     "static/media/fixing.c17b49e8.svg": "/portfolio/static/media/fixing.c17b49e8.svg",
-    "static/media/home-wallpaper.5c30795d.jpg": "/portfolio/static/media/home-wallpaper.5c30795d.jpg",
     "static/media/portfolio.4b876b75.gltf": "/portfolio/static/media/portfolio.4b876b75.gltf",
     "static/media/rainny.7e649706.jpg": "/portfolio/static/media/rainny.7e649706.jpg",
     "static/media/react-profile.1618ee2d.svg": "/portfolio/static/media/react-profile.1618ee2d.svg",
@@ -26,6 +25,6 @@
   "entrypoints": [
     "static/js/runtime-main.6eeca8a1.js",
     "static/js/2.92c58738.chunk.js",
-    "static/js/main.da2e0d37.chunk.js"
+    "static/js/main.0fd69104.chunk.js"
   ]
 }

@@ -1,30 +1,53 @@
-import { TCalendarContext, TAction, EAction, TDate } from './type';
+import {
+  TCalendarContext,
+  TAction,
+  EAction,
+  TDate,
+  TMonth,
+  TCalendar,
+} from './type';
 
 const today = new Date();
 
-export const initialState: TCalendarContext = {
-  today: today,
-  currentDay: new Date(today.getFullYear(), today.getMonth(), 1),
-  currentList: [],
-  nextList: [],
-  prevList: [],
+const firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
+
+const example: TCalendar = {
+  id: new Date(),
+  title: '活動標題',
+  content: '活動內容',
 };
 
-const createCurrentMonthList = (currentDay: Date): TDate[] => {
-  const temp = new Date(currentDay);
+export const initialState: TCalendarContext = {
+  month: {
+    prevList: [],
+    currentList: [],
+    nextList: [],
+  },
+  firstDate: firstDate,
+  currentDate: today,
+  boardList: [],
+  dataBase: [],
+  isAdd: false,
+};
+
+const createCurrentMonthList = (firstDate: Date): TDate[] => {
+  const temp = new Date(firstDate);
   const arr: TDate[] = [];
-  while (temp.getMonth() === currentDay.getMonth()) {
-    arr.push({ id: new Date(temp), list: [] });
+  while (temp.getMonth() === firstDate.getMonth()) {
+    arr.push({
+      id: new Date(temp),
+      list: [],
+    });
     temp.setDate(temp.getDate() + 1);
   }
   return arr;
 };
 
-const createPrevMonthList = (currentDay: Date): TDate[] => {
-  const temp = new Date(currentDay);
+const createPrevMonthList = (firstDate: Date): TDate[] => {
+  const temp = new Date(firstDate);
   temp.setDate(temp.getDate() - temp.getDay());
   const arr: TDate[] = [];
-  while (temp < currentDay) {
+  while (temp < firstDate) {
     arr.push({ id: new Date(temp), list: [] });
     temp.setDate(temp.getDate() + 1);
   }
@@ -41,46 +64,80 @@ const createNextMonthList = (currentDay: Date): TDate[] => {
   return arr;
 };
 
+const createMonth = (currentDate: Date): TMonth => {
+  const prevList = createPrevMonthList(currentDate);
+  const currentList = createCurrentMonthList(currentDate);
+  const nextList = createNextMonthList(currentDate);
+
+  return { prevList, currentList, nextList };
+};
+
 export const initialDate = (state: TCalendarContext): TCalendarContext => {
-  const prevList = createPrevMonthList(state.currentDay);
-  const currentList = createCurrentMonthList(state.currentDay);
-  const nextList = createNextMonthList(state.currentDay);
+  const month = createMonth(state.firstDate);
+  const dataBase = [...state.dataBase, example];
+  const boardList = [example];
   return {
     ...state,
-    prevList: prevList,
-    currentList: currentList,
-    nextList: nextList,
+    month,
+    dataBase,
+    boardList,
   };
 };
 
 export const prevMonth = (state: TCalendarContext): TCalendarContext => {
-  const temp = new Date(state.currentDay);
+  const temp = new Date(state.firstDate);
   temp.setMonth(temp.getMonth() - 1);
-  const prevList = createPrevMonthList(temp);
-  const currentList = createCurrentMonthList(temp);
-  const nextList = createNextMonthList(temp);
+  const month = createMonth(temp);
   return {
     ...state,
-    currentDay: temp,
-    prevList: prevList,
-    currentList: currentList,
-    nextList: nextList,
+    firstDate: temp,
+    month,
   };
 };
 
 export const nextMonth = (state: TCalendarContext): TCalendarContext => {
-  const temp = new Date(state.currentDay);
+  const temp = new Date(state.firstDate);
   temp.setMonth(temp.getMonth() + 1);
-  const prevList = createPrevMonthList(temp);
-  const currentList = createCurrentMonthList(temp);
-  const nextList = createNextMonthList(temp);
+  const month = createMonth(temp);
   return {
     ...state,
-    currentDay: temp,
-    prevList: prevList,
-    currentList: currentList,
-    nextList: nextList,
+    firstDate: temp,
+    month,
   };
+};
+
+export const backToday = (state: TCalendarContext): TCalendarContext => {
+  const month = createMonth(firstDate);
+  const boardList = state.dataBase.filter(
+    (ele) => ele.id.toLocaleDateString() === today.toLocaleDateString(),
+  );
+  return { ...state, firstDate, month, currentDate: today, boardList };
+};
+
+export const showForm = (state: TCalendarContext): TCalendarContext => {
+  return { ...state, isAdd: !state.isAdd };
+};
+
+export const addNewCalendar = (
+  state: TCalendarContext,
+  payload: TCalendar,
+): TCalendarContext => {
+  const dataBase = [...state.dataBase, { ...payload }];
+  return {
+    ...state,
+    dataBase,
+    isAdd: false,
+  };
+};
+
+export const clickCurrentList = (
+  state: TCalendarContext,
+  payload: Date,
+): TCalendarContext => {
+  const boardList = state.dataBase.filter(
+    (ele) => ele.id.toLocaleDateString() === payload.toLocaleDateString(),
+  );
+  return { ...state, boardList, currentDate: payload };
 };
 
 export const reducer = (state: TCalendarContext, action: TAction) => {
@@ -91,6 +148,14 @@ export const reducer = (state: TCalendarContext, action: TAction) => {
       return prevMonth(state);
     case EAction.NEXT_MONTH:
       return nextMonth(state);
+    case EAction.BACK_TODAY:
+      return backToday(state);
+    case EAction.SHOW_FORM:
+      return showForm(state);
+    case EAction.ADD_NEW_CALENDAR:
+      return addNewCalendar(state, action.payload);
+    case EAction.CLICK_CURRENT_LIST:
+      return clickCurrentList(state, action.payload);
     default:
       return state;
   }

@@ -1,30 +1,20 @@
 import styled from 'styled-components';
 
 export const CalendarDiv = styled.div`
-  width: 600px;
-  margin: 10rem auto;
-  padding: 20px;
-  box-shadow: 5px 5px 15px #ccc;
-`;
+  flex: 0 1 700px;
+  min-height: 650px;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #ddd;
 
-export const CalendarDayList = styled.div`
-  width: 560px;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 2rem;
-`;
-
-export const CalendarDay = styled.div`
-  width: 80px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  text-align: center;
+  @media screen and (max-width: 960px) {
+    flex: unset;
+  }
 `;
 
 export const CalendarDateList = styled.div`
-  width: 560px;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-around;
   flex-flow: row wrap;
 `;

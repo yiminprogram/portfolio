@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 //style
-import { CalendarInfoDiv } from './style';
+import { CalendarInfoDiv, DateTitle } from './style';
+//components
+import InfoCard from '../../components/InfoCard';
+//context
+import Context from '../../context';
+
 const CalendarInfo = () => {
+  const {
+    context: { currentDate, boardList },
+  } = useContext(Context);
   return (
     <CalendarInfoDiv>
-      <h1>2020/01/28</h1>
+      <DateTitle>{currentDate.toLocaleDateString()}</DateTitle>
+      {boardList.map((ele) => (
+        <InfoCard {...ele} />
+      ))}
     </CalendarInfoDiv>
   );
 };

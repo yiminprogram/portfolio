@@ -38,7 +38,7 @@
     "id": 6,
     "path": "/react-calendar",
     "project": "日曆(建置中)",
-    "imageSrc": "",
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-calendar.png",
     "github": "https://github.com/yiminprogram/portfolio/tree/master/src/views/react-calendar"
   }
 ]

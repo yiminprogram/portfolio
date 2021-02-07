@@ -27,4 +27,17 @@ export const List = styled.div`
   &:hover {
     scrollbar-color: #527afeaa transparent;
   }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: #527afeaa;
+  }
 `;

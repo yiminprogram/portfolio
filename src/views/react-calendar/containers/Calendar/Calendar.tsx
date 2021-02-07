@@ -9,25 +9,24 @@ import Title from '../../components/CalendarTitle';
 import CalendarDay from '../../components/CalendarDay';
 
 const Calendar = () => {
+  const { context, dispatch } = useContext(Context);
   const {
-    context: {
-      month: { prevList, currentList, nextList },
-    },
-  } = useContext(Context);
+    month: { prevList, currentList, nextList },
+  } = context;
 
   return (
     <CalendarDiv>
-      <Title />
+      <Title context={context} dispatch={dispatch} />
       <CalendarDay />
       <CalendarDateList>
         {prevList.map((ele) => (
-          <PrevNextDate>{ele.id.getDate()}</PrevNextDate>
+          <PrevNextDate>{new Date(ele.id).getDate()}</PrevNextDate>
         ))}
         {currentList.map((ele) => (
-          <CurrentDate {...ele} />
+          <CurrentDate {...ele} context={context} dispatch={dispatch} />
         ))}
         {nextList.map((ele) => (
-          <PrevNextDate>{ele.id.getDate()}</PrevNextDate>
+          <PrevNextDate>{new Date(ele.id).getDate()}</PrevNextDate>
         ))}
       </CalendarDateList>
     </CalendarDiv>

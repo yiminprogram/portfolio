@@ -19,15 +19,17 @@ export type TMonth = {
 };
 
 export type TDate = {
-  id: Date;
+  id: string;
   list: TCalendar[];
 };
 
 export type TCalendar = {
-  id: Date;
+  id: string;
   title: string;
   content: string;
 };
+
+export type TDateProps = TContext & TDate;
 
 //action type
 type TInitialDate = {
@@ -57,7 +59,7 @@ type TAddNewCalendar = {
 
 type TClickCurrentList = {
   type: EAction.CLICK_CURRENT_LIST;
-  payload: Date;
+  payload: string;
 };
 
 export type TAction =

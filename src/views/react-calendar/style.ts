@@ -5,10 +5,9 @@ export const CalendarPage = styled.div`
 `;
 
 export const Container = styled.div`
-  min-height: 100vh;
+  padding-top: 5rem;
+  min-height: inherit;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-flow: row nowrap;
 
   @media screen and (max-width: 960px) {

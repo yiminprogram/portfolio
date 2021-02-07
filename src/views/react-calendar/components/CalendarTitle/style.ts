@@ -1,49 +1,40 @@
 import styled from 'styled-components';
 
 export const Title = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  padding: 0 2rem;
   margin-bottom: 2rem;
-`;
-
-export const Time = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
-  > span {
-    font-size: 1.3rem;
+  > h1 {
+    font-size: 1.8rem;
     font-weight: 700;
   }
 `;
 
-export const Arrow = styled.button`
+export const PrevNextBtn = styled.button`
   cursor: pointer;
+  margin: 0 1rem;
   padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background-color: #e0e0e0;
-  display: flex;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: ${(p) => p.theme.colors.primary};
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 
   &:hover {
-    background-color: #d0d0d0;
-  }
-
-  &:active {
-    background-color: #e0e0e0;
+    background-color: ${(p) => p.theme.colors.hover};
   }
 `;
 
 export const TodayBtn = styled.button`
   cursor: pointer;
-  color: #ff5500;
-  display: flex;
-  align-items: center;
-  margin-left: 1rem;
+  color: #fe80b0;
   padding: 0;
+  margin: 0 1rem;
   border: none;
   background-color: transparent;
 `;

@@ -1,24 +1,39 @@
-import React, { FC, useContext } from 'react';
+import React, { FC, memo } from 'react';
 //style
-import { CalendarCurrentDate } from './style';
+import {
+  CalendarCurrentDate,
+  Event,
+  DateSpan,
+  DateRadio,
+  DateLabel,
+} from './style';
 //type
-import { TDate, EAction } from '../../type';
-//context
-import Context from '../../context';
+import { EAction, TDateProps } from '../../type';
+//material ui
+import { EventNote } from '@material-ui/icons';
 
-const CurrentDate: FC<TDate> = React.memo(({ id }) => {
-  const {
-    context: { currentDate },
-    dispatch,
-  } = useContext(Context);
+const CurrentDate: FC<TDateProps> = memo(({ dispatch, id, list }) => {
+  const today = new Date();
+  const date = new Date(id);
+  const dateStr = date.getDate();
+  const isToday = today.toLocaleDateString() === date.toLocaleDateString();
   return (
-    <CalendarCurrentDate
-      onClick={() =>
-        dispatch({ type: EAction.CLICK_CURRENT_LIST, payload: id })
-      }
-      currentDate={currentDate.toLocaleDateString() === id.toLocaleDateString()}
-    >
-      {id.getDate()}
+    <CalendarCurrentDate>
+      <DateRadio type="radio" name="date" id={`${dateStr}`} />
+      <DateLabel
+        htmlFor={`${dateStr}`}
+        isToday={isToday}
+        onClick={() =>
+          dispatch({ type: EAction.CLICK_CURRENT_LIST, payload: id })
+        }
+      >
+        <DateSpan>{dateStr}</DateSpan>
+        {list.length > 0 && (
+          <Event isToday={isToday}>
+            <EventNote style={{ fontSize: '2rem' }} />
+          </Event>
+        )}
+      </DateLabel>
     </CalendarCurrentDate>
   );
 });

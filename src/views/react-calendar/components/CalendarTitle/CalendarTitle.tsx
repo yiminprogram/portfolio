@@ -1,37 +1,32 @@
-import React, { useContext } from 'react';
+import React, { FC } from 'react';
 //style
-import { Title, Arrow, TodayBtn, Time } from './style';
+import { Title, PrevNextBtn, TodayBtn } from './style';
 //material ui
 import { ArrowLeft, ArrowRight, Today } from '@material-ui/icons';
-//context
-import Context from '../../context';
 //type
-import { EAction } from '../../type';
+import { EAction, TContext } from '../../type';
 
-const CalendarTitle = () => {
-  const {
-    context: { firstDate },
-    dispatch,
-  } = useContext(Context);
-
+const CalendarTitle: FC<TContext> = ({ context: { firstDate }, dispatch }) => {
   return (
     <Title>
-      <Arrow onClick={() => dispatch({ type: EAction.PREV_MONTH })}>
-        <span>
-          <ArrowLeft style={{ fontSize: '25px' }} />
-        </span>
-      </Arrow>
-      <Time>
-        <span>{`${firstDate.getFullYear()}/${firstDate.getMonth() + 1}`}</span>
+      <h1>{`${firstDate.getFullYear()}/${firstDate.getMonth() + 1}`}</h1>
+      <div>
         <TodayBtn onClick={() => dispatch({ type: EAction.BACK_TODAY })}>
-          <Today />
+          <span>
+            <Today style={{ fontSize: '1.8rem' }} />
+          </span>
         </TodayBtn>
-      </Time>
-      <Arrow onClick={() => dispatch({ type: EAction.NEXT_MONTH })}>
-        <span>
-          <ArrowRight style={{ fontSize: '25px' }} />
-        </span>
-      </Arrow>
+        <PrevNextBtn onClick={() => dispatch({ type: EAction.PREV_MONTH })}>
+          <span>
+            <ArrowLeft style={{ fontSize: '1.8rem' }} />
+          </span>
+        </PrevNextBtn>
+        <PrevNextBtn onClick={() => dispatch({ type: EAction.NEXT_MONTH })}>
+          <span>
+            <ArrowRight style={{ fontSize: '1.8rem' }} />
+          </span>
+        </PrevNextBtn>
+      </div>
     </Title>
   );
 };

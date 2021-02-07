@@ -15,7 +15,7 @@ export const AddCalendarDiv = styled.div`
 export const Form = styled.form`
   flex: 0 1 500px;
   padding: 2rem;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #fff;
 
   > button {
@@ -30,43 +30,68 @@ export const Form = styled.form`
   }
 `;
 
-export const Group = styled.div`
+export const InputGroup = styled.div`
   margin-bottom: 1rem;
 
   > label {
-    display: block;
+    color: #666;
     font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 1rem;
-  }
+    transition: 0.5s;
 
-  > input {
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    background-color: #e6e6e6;
-    font-size: 1rem;
-    font-family: inherit;
-    padding: 0.5rem 1rem;
+    &:focus-within {
+      color: ${(p) => p.theme.colors.primary};
+    }
 
-    &:focus {
-      outline: none;
+    > input {
+      color: #666;
+      width: 100%;
+      font-size: 1rem;
+      padding: 1rem;
+      margin: 1rem 0;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      transition: 0.5s;
+
+      &:focus {
+        color: ${(p) => p.theme.colors.primary};
+        outline: none;
+        border: ${({ theme }) => `2px solid ${theme.colors.primary}`};
+      }
     }
   }
+`;
+export const TextAreaGroup = styled.div`
+  margin-bottom: 1rem;
 
-  > textarea {
-    width: 100%;
-    height: 150px;
-    padding: 1rem;
-    resize: none;
-    border: none;
-    border-radius: 5px;
-    background-color: #e6e6e6;
-    font-size: 1rem;
-    font-family: inherit;
+  > label {
+    color: #666;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: 0.5s;
 
-    &:focus {
-      outline: none;
+    &:focus-within {
+      color: ${(p) => p.theme.colors.primary};
+    }
+
+    > textarea {
+      width: 100%;
+      height: 200px;
+      resize: none;
+      color: #666;
+      font-size: 1rem;
+      font-family: inherit;
+      padding: 1rem;
+      margin: 1rem 0;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      transition: 0.5s;
+
+      &:focus {
+        color: ${(p) => p.theme.colors.primary};
+        outline: none;
+        border: ${({ theme }) => `2px solid ${theme.colors.primary}`};
+      }
     }
   }
 `;

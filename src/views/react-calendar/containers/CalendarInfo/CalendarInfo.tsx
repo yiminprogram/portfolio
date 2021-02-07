@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 //style
-import { CalendarInfoDiv, DateTitle } from './style';
+import { CalendarInfoDiv, DateTitle, List } from './style';
 //components
 import InfoCard from '../../components/InfoCard';
 //context
@@ -13,9 +13,11 @@ const CalendarInfo = () => {
   return (
     <CalendarInfoDiv>
       <DateTitle>{currentDate.toLocaleDateString()}</DateTitle>
-      {boardList.map((ele) => (
-        <InfoCard {...ele} />
-      ))}
+      <List>
+        {boardList.map((ele) => (
+          <InfoCard {...ele} />
+        ))}
+      </List>
     </CalendarInfoDiv>
   );
 };

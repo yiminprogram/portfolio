@@ -4,6 +4,7 @@ const theme = {
   colors: {
     primary: '#527afe',
     hover: '#3463fe',
+    light: '#809efe',
   },
   boxShadow: {
     card: '0 0 10px 1px #ddd',

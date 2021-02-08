@@ -150,7 +150,7 @@ export const addNewCalendar = (
 ): TCalendarContext => {
   const dataBase = [...state.dataBase, { ...payload }];
   const currentList = state.month.currentList.map((ele) =>
-    ele.id === payload.id
+    ele.id.toLocaleDateString() === payload.id.toLocaleDateString()
       ? { ...ele, list: [...ele.list, { ...payload }] }
       : { ...ele },
   );
@@ -168,7 +168,9 @@ export const clickCurrentList = (
   state: TCalendarContext,
   payload: Date,
 ): TCalendarContext => {
-  const boardList = state.dataBase.filter((ele) => ele.id === payload);
+  const boardList = state.dataBase.filter(
+    (ele) => ele.id.toLocaleDateString() === payload.toLocaleDateString(),
+  );
   return { ...state, boardList, currentDate: new Date(payload) };
 };
 

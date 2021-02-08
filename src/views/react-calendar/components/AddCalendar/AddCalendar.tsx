@@ -38,7 +38,6 @@ const AddCalendar: FC = () => {
   };
   return (
     <AddCalendarDiv onClick={closeForm}>
-      {console.log('form')}
       <Form onSubmit={handleSubmit}>
         <InputGroup>
           <label>

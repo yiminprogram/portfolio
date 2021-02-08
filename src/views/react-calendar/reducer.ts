@@ -155,7 +155,6 @@ export const addNewCalendar = (
       : { ...ele },
   );
   const boardList = dataBase.filter((ele) => ele.id === payload.id);
-  console.log(boardList);
   return {
     ...state,
     month: { ...state.month, currentList },

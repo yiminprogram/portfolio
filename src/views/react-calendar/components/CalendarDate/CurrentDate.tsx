@@ -8,28 +8,28 @@ import {
   DateLabel,
 } from './style';
 //type
-import { EAction, TDateProps } from '../../type';
+import { EAction, TCurrentDateProps } from '../../type';
 //material ui
 import { EventNote } from '@material-ui/icons';
 
-const CurrentDate: FC<TDateProps> = memo(({ dispatch, id, list }) => {
-  const today = new Date();
-  const date = new Date(id);
-  const dateStr = date.getDate();
-  const isToday = today.toLocaleDateString() === date.toLocaleDateString();
+const CurrentDate: FC<TCurrentDateProps> = memo(({ dispatch, id, list }) => {
   return (
     <CalendarCurrentDate>
-      <DateRadio type="radio" name="date" id={`${dateStr}`} />
+      <DateRadio type="radio" name="date" id={`${id.getDate()}`} />
       <DateLabel
-        htmlFor={`${dateStr}`}
-        isToday={isToday}
+        htmlFor={`${id.getDate()}`}
+        isToday={id.toLocaleDateString() === new Date().toLocaleDateString()}
         onClick={() =>
           dispatch({ type: EAction.CLICK_CURRENT_LIST, payload: id })
         }
       >
-        <DateSpan>{dateStr}</DateSpan>
+        <DateSpan>{id.getDate()}</DateSpan>
         {list.length > 0 && (
-          <Event isToday={isToday}>
+          <Event
+            isToday={
+              id.toLocaleDateString() === new Date().toLocaleDateString()
+            }
+          >
             <EventNote style={{ fontSize: '2rem' }} />
           </Event>
         )}

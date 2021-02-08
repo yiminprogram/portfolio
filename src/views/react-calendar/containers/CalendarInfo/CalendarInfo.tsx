@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 //style
 import { CalendarInfoDiv, DateTitle, List } from './style';
 //components
@@ -6,7 +6,7 @@ import InfoCard from '../../components/InfoCard';
 //context
 import Context from '../../context';
 
-const CalendarInfo = () => {
+const CalendarInfo: FC = () => {
   const {
     context: { currentDate, boardList },
   } = useContext(Context);

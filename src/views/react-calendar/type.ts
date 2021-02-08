@@ -1,7 +1,8 @@
-export type TContext = {
-  context: TCalendarContext;
+type TDispatch = {
   dispatch: React.Dispatch<TAction>;
 };
+
+export type TContext = TDispatch & { context: TCalendarContext };
 
 export type TCalendarContext = {
   firstDate: Date;
@@ -19,17 +20,20 @@ export type TMonth = {
 };
 
 export type TDate = {
-  id: string;
+  id: Date;
   list: TCalendar[];
 };
 
 export type TCalendar = {
-  id: string;
+  id: Date;
   title: string;
   content: string;
 };
 
-export type TDateProps = TContext & TDate;
+//props type
+
+export type TCalendarTitleProps = TDispatch & { firstDate: Date };
+export type TCurrentDateProps = TDispatch & TDate;
 
 //action type
 type TInitialDate = {
@@ -59,7 +63,7 @@ type TAddNewCalendar = {
 
 type TClickCurrentList = {
   type: EAction.CLICK_CURRENT_LIST;
-  payload: string;
+  payload: Date;
 };
 
 export type TAction =

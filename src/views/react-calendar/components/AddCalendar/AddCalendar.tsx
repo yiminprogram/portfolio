@@ -1,4 +1,4 @@
-import React, { useContext, MouseEvent, FormEvent, useState } from 'react';
+import React, { useContext, MouseEvent, FormEvent, useState, FC } from 'react';
 //style
 import { AddCalendarDiv, Form, InputGroup, TextAreaGroup } from './style';
 //context
@@ -9,23 +9,12 @@ import { EAction } from '../../type';
 const convertDate = (currentDate: Date): string => {
   const initial = currentDate.toLocaleDateString().split('/');
   let year = initial[0];
-  let month = '';
-  let date = '';
-  if (Number(initial[1]) < 10) {
-    month = `0${initial[1]}`;
-  } else {
-    month = initial[1];
-  }
-  if (Number(initial[2]) < 10) {
-    date = `0${initial[2]}`;
-  } else {
-    date = initial[2];
-  }
-
+  let month = Number(initial[1]) < 10 ? `0${initial[1]}` : initial[1];
+  let date = Number(initial[2]) < 10 ? `0${initial[2]}` : initial[2];
   return `${year}-${month}-${date}`;
 };
 
-const AddCalendar = () => {
+const AddCalendar: FC = () => {
   const {
     context: { currentDate },
     dispatch,
@@ -44,11 +33,12 @@ const AddCalendar = () => {
     e.preventDefault();
     dispatch({
       type: EAction.ADD_NEW_CALENDAR,
-      payload: { id: new Date(time).toLocaleDateString(), title, content },
+      payload: { id: new Date(time), title, content },
     });
   };
   return (
     <AddCalendarDiv onClick={closeForm}>
+      {console.log('form')}
       <Form onSubmit={handleSubmit}>
         <InputGroup>
           <label>

@@ -7,7 +7,7 @@ import { TCalendar } from '../../type';
 const InfoCard: FC<TCalendar> = ({ id, title, content }) => {
   return (
     <Card>
-      <time>{id}</time>
+      <time>{id.toLocaleDateString()}</time>
       <h1>{title}</h1>
       <p>{content}</p>
     </Card>

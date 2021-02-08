@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 //style
 import { CalendarDayList, Day } from './style';
 
-const CalendarDay: FC = () => {
+const CalendarDay: FC = memo(() => {
   return (
     <CalendarDayList>
       <Day>日</Day>
@@ -14,6 +14,6 @@ const CalendarDay: FC = () => {
       <Day>六</Day>
     </CalendarDayList>
   );
-};
+});
 
 export default CalendarDay;

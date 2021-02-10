@@ -1,0 +1,11 @@
+[
+  { "language": "React", "color": "#53c1de" },
+  { "language": "Vue", "color": "#41b883" },
+  { "language": "HTML", "color": "#dd4b25" },
+  { "language": "CSS", "color": "#0055a3" },
+  { "language": "styled-components", "color": "#eaad60" },
+  { "language": "Javascript", "color": "#efd81d" },
+  { "language": "Bootstrap", "color": "#7952b3" },
+  { "language": "Typescript", "color": "#3178c6" },
+  { "language": "Git/GitHub", "color": "#fff" }
+]

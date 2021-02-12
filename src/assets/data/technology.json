@@ -7,5 +7,5 @@
   { "language": "Javascript", "color": "#efd81d" },
   { "language": "Bootstrap", "color": "#7952b3" },
   { "language": "Typescript", "color": "#3178c6" },
-  { "language": "Git/GitHub", "color": "#fff" }
+  { "language": "Git/GitHub", "color": "#aaa" }
 ]

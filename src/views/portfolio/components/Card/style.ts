@@ -1,17 +1,162 @@
 import styled from 'styled-components';
 
-export const Card = styled.li`
+export const CardList = styled.li`
   flex: 0 1 300px;
-  margin: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ddd;
-  overflow: hidden;
+`;
 
-  &:hover {
-    box-shadow: 0 0 10px #aaa;
+export const Img = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -2;
+  filter: blur(3px);
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;
 
+export const Card = styled.article`
+  padding: 1rem;
+  height: 400px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  filter: brightness(1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #0006;
+    z-index: -1;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    box-shadow: 10px 10px 50px #aaa;
+  }
+
+  &:hover::before {
+    background-color: #0009;
+  }
+
+  &:hover .portfolio-link::before {
+    width: 200%;
+  }
+  &:hover .github-link::before {
+    width: 500%;
+  }
+  &:hover .portfolio-link::after {
+    height: 800%;
+  }
+  &:hover .github-link::after {
+    height: 800%;
+  }
+`;
+
+export const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  display: flex;
+  padding: 1rem;
+  overflow: hidden;
+`;
+
+export const Title = styled.div`
+  flex: 1;
+  align-self: flex-end;
+  line-height: 1.5;
+
+  > h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+`;
+export const LinkBtn = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 2rem;
+
+  > a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 0.5rem;
+    position: relative;
+
+    > span {
+      margin: 0 0.5rem;
+    }
+
+    &:hover {
+      color: #333;
+      background-color: #fff;
+    }
+  }
+
+  .portfolio-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    top: -2px;
+    background-color: #fff;
+    transition: 0.5s;
+  }
+  .portfolio-link::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 0;
+    right: -2px;
+    top: 0;
+    background-color: #fff;
+    transition: 0.5s;
+  }
+  .github-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    right: 0;
+    bottom: -2px;
+    background-color: #fff;
+    transition: 0.5s;
+  }
+  .github-link::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 0;
+    left: -2px;
+    bottom: 0;
+    background-color: #fff;
+    transition: 0.5s;
+  }
+`;
+
+//=========================================================
 export const CardImg = styled.div`
   height: 250px;
   margin-bottom: 1rem;

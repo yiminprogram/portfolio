@@ -3,14 +3,12 @@
     "id": 1,
     "path": "https://yiminprogram.github.io/react-tech-research/#/",
     "project": "空氣指標查詢",
-    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-aqi-search.png",
-    "lastEdit": "2020/11/08"
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-aqi-search.png"
   },
   {
     "id": 2,
     "path": "https://react-firebase-facebook-clone.web.app/#/",
     "project": "facebook模仿練習",
-    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-facebook-clone.png",
-    "lastEdit": "2020/11/08"
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-facebook-clone.png"
   }
 ]

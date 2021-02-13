@@ -1,44 +1,44 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 //components
-import { ImageHover } from 'src/components/image';
+import { Image } from 'src/components/image';
 //style
-import { Card, CardImg, CardTitle, CardInfoLink, CardInfo } from './style';
+import { CardList, Card, Content, Title, LinkBtn, Img } from './style';
 //type
 import { TProps } from '../../type';
 //material ui
 import { Language, GitHub } from '@material-ui/icons';
+//image
+import wallpaper from 'src/assets/image/wallpaper.jpg';
 
 const CardPortfolio: FC<TProps> = ({ imageSrc, project, path, github }) => {
   return (
-    <Card>
-      <article>
-        <Link to={`/portfolio/react${path}`}>
-          <CardImg>
-            <ImageHover src={imageSrc} />
-          </CardImg>
-        </Link>
-        <CardTitle>{project}</CardTitle>
-        <CardInfo>
-          <CardInfoLink>
-            <a target="_blank" rel="noopener noreferrer" href={path}>
+    <CardList>
+      <Card>
+        <Img>
+          <Image src={imageSrc} />
+        </Img>
+        <Content>
+          <Title>
+            <h1>{project}</h1>
+          </Title>
+          <LinkBtn>
+            <a className="portfolio-link" href={path}>
               <span>
-                <Language />
+                <Language style={{ fontSize: '1.1rem' }} />
               </span>
               作品
             </a>
-          </CardInfoLink>
-          <CardInfoLink>
-            <a target="_blank" rel="noopener noreferrer" href={github}>
+            <a className="github-link" href={github}>
               <span>
-                <GitHub />
+                <GitHub style={{ fontSize: '1.1rem' }} />
               </span>
               程式碼
             </a>
-          </CardInfoLink>
-        </CardInfo>
-      </article>
-    </Card>
+          </LinkBtn>
+        </Content>
+      </Card>
+    </CardList>
   );
 };
 

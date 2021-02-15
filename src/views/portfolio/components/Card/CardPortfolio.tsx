@@ -9,14 +9,14 @@ import { TProps } from '../../type';
 //material ui
 import { Language, GitHub } from '@material-ui/icons';
 //image
-import wallpaper from 'src/assets/image/wallpaper.jpg';
+import fixingImg from 'src/assets/image/fixing.svg';
 
 const CardPortfolio: FC<TProps> = ({ imageSrc, project, path, github }) => {
   return (
     <CardList>
       <Card>
         <Img>
-          <Image src={imageSrc} />
+          <Image src={imageSrc === '' ? fixingImg : imageSrc} />
         </Img>
         <Content>
           <Title>

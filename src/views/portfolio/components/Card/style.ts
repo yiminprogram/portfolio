@@ -26,7 +26,6 @@ export const Card = styled.article`
   border-radius: 10px;
   position: relative;
   overflow: hidden;
-  filter: brightness(1);
 
   &::before {
     content: '';
@@ -35,17 +34,13 @@ export const Card = styled.article`
     height: 100%;
     left: 0;
     top: 0;
-    background-color: #0006;
+    background-color: #00000051;
     z-index: -1;
     transition: 0.5s;
   }
 
-  &:hover {
-    box-shadow: 10px 10px 50px #aaa;
-  }
-
   &:hover::before {
-    background-color: #0009;
+    background-color: #000a;
   }
 
   &:hover .portfolio-link::before {

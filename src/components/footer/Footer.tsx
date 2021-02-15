@@ -15,6 +15,9 @@ const Footer: FC = () => {
           <GitHub />
         </span>
       </GitHubLogo>
+      <div>
+        <span>純屬練習網站，非原創</span>
+      </div>
     </FooterDiv>
   );
 };

@@ -4,7 +4,7 @@ export const FooterDiv = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25px;
+  flex-flow: column nowrap;
   padding: 1.1rem;
   color: #fff;
   background-color: #24292e;
@@ -17,4 +17,5 @@ export const GitHubLogo = styled.a`
   align-items: center;
   text-decoration: 0;
   color: #fff;
+  margin-bottom: 1rem;
 `;

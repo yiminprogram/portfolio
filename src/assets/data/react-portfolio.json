@@ -43,6 +43,13 @@
   },
   {
     "id": 7,
+    "path": "/react-form-control",
+    "project": "表單驗證(建置中)",
+    "imageSrc": "",
+    "github": ""
+  },
+  {
+    "id": 8,
     "path": "/react-gallery",
     "project": "相簿(建置中)",
     "imageSrc": "",

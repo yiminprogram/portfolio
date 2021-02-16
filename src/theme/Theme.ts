@@ -5,6 +5,8 @@ const theme = {
     primary: '#527afe',
     hover: '#3463fe',
     light: '#809efe',
+    correct: '#32c832',
+    error: '#c83232',
   },
   boxShadow: {
     card: '0 0 10px 1px #ddd',

@@ -15,6 +15,7 @@ import Weather from './views/react-weather';
 import ShoppingCart from './views/shopping-cart';
 import Calendar from './views/react-calendar';
 import Gallery from './views/react-gallery';
+import FormControl from './views/react-form-control';
 import { ReactPortfolio } from './views/portfolio';
 import { VuePortfolio } from './views/portfolio';
 import { IIIPortfolio } from './views/portfolio';
@@ -38,6 +39,10 @@ const Project = () => {
           />
           <Route path="/portfolio/react/react-calendar" component={Calendar} />
           <Route path="/portfolio/react/react-gallery" component={Gallery} />
+          <Route
+            path="/portfolio/react/react-form-control"
+            component={FormControl}
+          />
           <Route path="/portfolio/react" component={ReactPortfolio} />
           <Route path="/portfolio/vue" component={VuePortfolio} />
           <Route path="/portfolio/iii" component={IIIPortfolio} />

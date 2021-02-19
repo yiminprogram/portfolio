@@ -28,52 +28,43 @@ export const Form = styled.article`
   }
 `;
 
-export const FormGroup = styled.div<TValidation>`
-  position: relative;
+export const FormGroup = styled.div``;
 
-  > label {
-    font-size: 1.3rem;
-    font-weight: 700;
-    position: absolute;
-    left: 3%;
-    top: 13%;
-    display: inline-flex;
-    align-items: center;
+export const FormLabel = styled.label`
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background-color: #f0f0f0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-radius: 5px;
 
-    > span {
-      margin-left: 0.5rem;
-    }
+  > span {
+    margin: 0 0.5rem;
   }
 
   > input {
+    flex: 1;
     font-size: 1.3rem;
-    width: 100%;
     padding: 1rem;
-    padding-left: 7rem;
     border: none;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+    background-color: transparent;
 
     &:focus {
       outline: none;
-      background-color: transparent;
-      box-shadow: 0 0 5px #aaa;
     }
   }
+`;
+export const FormMessage = styled.div<TValidation>`
+  font-size: 1rem;
+  color: ${(p) => (p.validation ? correct : error)};
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  visibility: ${(p) => (p.validation === null ? 'hidden' : 'visible')};
 
-  .message {
-    font-size: 1rem;
-    color: ${(p) => (p.validation ? correct : error)};
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-
-    > span {
-      margin: 0 0.5rem;
-    }
-
-    .icon {
-      visibility: ${(p) => (p.validation === null ? 'hidden' : 'visible')};
-    }
+  > span {
+    margin: 0 0.5rem;
   }
 `;

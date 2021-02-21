@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
 //components
 import { Image } from 'src/components/image';
 //style
@@ -8,8 +7,6 @@ import { CardList, Card, Content, Title, LinkBtn, Img } from './style';
 import { TProps } from '../../type';
 //material ui
 import { Language, GitHub } from '@material-ui/icons';
-//image
-import wallpaper from 'src/assets/image/wallpaper.jpg';
 
 const CardPortfolio: FC<TProps> = ({ imageSrc, project, path, github }) => {
   return (

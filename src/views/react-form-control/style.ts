@@ -1,70 +1,125 @@
 import theme from 'src/theme/Theme';
 import styled from 'styled-components';
+//wallpaper
+import wallpaper from 'src/assets/image/lighthouse.jpg';
 
 type TValidation = {
-  validation: null | boolean;
+  valid: null | boolean;
 };
 
 const { correct, error } = theme.colors;
 
 export const FormPage = styled.div`
   ${(p) => p.theme.mixin.page};
+  display: flex;
+  overflow: hidden;
 `;
 
-export const Form = styled.article`
-  max-width: 800px;
-  margin: 0 auto;
-  padding-top: 5rem;
+export const Wallpaper = styled.div`
+  padding: 3rem;
+  flex: 0 1 30%;
+  background: url(${wallpaper});
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 25px #333;
+  position: relative;
+  z-index: 0;
 
   > h1 {
+    color: #fffa;
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 1rem;
   }
 
-  > form {
-    padding: 3rem 0;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #0003;
+    z-index: -1;
+  }
+
+  @media screen and (max-width: 992px) {
+    display: none;
   }
 `;
 
-export const FormGroup = styled.div``;
+export const Content = styled.div`
+  flex: 0 1 70%;
+  padding: 5rem 1rem;
+
+  @media screen and (max-width: 992px) {
+    flex: 0 1 100%;
+  }
+`;
+
+export const Title = styled.h1`
+  display: none;
+  color: ${(p) => p.theme.colors.primary};
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+
+  @media screen and (max-width: 992px) {
+    display: block;
+  }
+`;
+
+export const Form = styled.div`
+  max-width: 650px;
+  margin: 0 auto;
+`;
 
 export const FormLabel = styled.label`
-  width: 100%;
-  font-size: 1.3rem;
-  font-weight: 700;
-  background-color: #f0f0f0;
-  display: inline-flex;
-  align-items: center;
-  padding: 0 1rem;
-  border-radius: 5px;
-
-  > span {
-    margin: 0 0.5rem;
-  }
-
-  > input {
-    flex: 1;
-    font-size: 1.3rem;
-    padding: 1rem;
-    border: none;
-    background-color: transparent;
-
-    &:focus {
-      outline: none;
-    }
-  }
-`;
-export const FormMessage = styled.div<TValidation>`
-  font-size: 1rem;
-  color: ${(p) => (p.validation ? correct : error)};
   display: flex;
   align-items: center;
   padding: 1rem;
-  visibility: ${(p) => (p.validation === null ? 'hidden' : 'visible')};
+  background-color: #f0f0f0;
+  border-radius: 5px;
+`;
+
+export const FormInput = styled.input`
+  width: 100%;
+  padding: 0 1rem;
+  font-size: 1.3rem;
+  border: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const FormMessage = styled.div<TValidation>`
+  font-size: 1rem;
+  color: ${(p) => (p.valid ? correct : error)};
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  visibility: ${(p) => (p.valid === null ? 'hidden' : 'visible')};
 
   > span {
     margin: 0 0.5rem;
+  }
+`;
+
+export const ButtonGroup = styled.div`
+  padding: 1rem;
+  text-align: center;
+
+  > button {
+    cursor: pointer;
+    background-color: ${(p) => p.theme.colors.primary};
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
   }
 `;

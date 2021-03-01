@@ -1,25 +1,19 @@
-import React, { ChangeEvent, FC, useState, Fragment } from 'react';
+import React, { ChangeEvent, FC, Fragment } from 'react';
 //style
-import { FormLabel, FormInput, FormMessage } from '../style';
+import { FormLabel, FormInput, FormMessage, FormGroup } from '../style';
 //icons
 import { Person, CheckCircle, Cancel } from '@material-ui/icons';
 //type
 import { TNameProps, EAction } from '../type';
 
-const FormName: FC<TNameProps> = ({ dispatch, name }) => {
-  const [valid, setValid] = useState<boolean | null>(null);
+const FormName: FC<TNameProps> = ({ dispatch, name, valid }) => {
   const change = ({
     target: { value },
   }: ChangeEvent<HTMLInputElement>): void => {
-    if (/^[a-zA-Z\d]{8,12}$/.test(value)) {
-      setValid(true);
-    } else {
-      setValid(false);
-    }
     dispatch({ type: EAction.CHANGE_NAME, payload: value });
   };
   return (
-    <div>
+    <FormGroup>
       <FormLabel>
         <Person
           style={{
@@ -46,7 +40,7 @@ const FormName: FC<TNameProps> = ({ dispatch, name }) => {
           </Fragment>
         )}
       </FormMessage>
-    </div>
+    </FormGroup>
   );
 };
 

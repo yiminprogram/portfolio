@@ -123,3 +123,49 @@ export const ButtonGroup = styled.div`
     margin: 0 1rem;
   }
 `;
+
+export const FormCheckbox = styled.div`
+  margin-bottom: 2rem;
+
+  label {
+    padding-left: 1rem;
+  }
+  .check-area {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  .checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  .check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: ${(p) => p.theme.colors.primary};
+    opacity: 0;
+    transition: 0.1s;
+  }
+  .blank {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: ${(p) => p.theme.colors.primary};
+  }
+  .text {
+    font-size: 1.1rem;
+    margin: 0 1.5rem;
+  }
+  .checkbox:checked + .check {
+    opacity: 1;
+  }
+`;
+
+export const FormGroup = styled.div`
+  margin-bottom: 1rem;
+`;

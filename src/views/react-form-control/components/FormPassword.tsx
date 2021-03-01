@@ -1,25 +1,19 @@
-import React, { ChangeEvent, FC, Fragment, useState } from 'react';
+import React, { ChangeEvent, FC, Fragment } from 'react';
 //style
-import { FormLabel, FormInput, FormMessage } from '../style';
+import { FormLabel, FormInput, FormMessage, FormGroup } from '../style';
 //icons
 import { Email, CheckCircle, Cancel } from '@material-ui/icons';
 //type
 import { TPasswordProps, EAction } from '../type';
 
-const FormPassword: FC<TPasswordProps> = ({ dispatch, password }) => {
-  const [valid, setValid] = useState<boolean | null>(null);
+const FormPassword: FC<TPasswordProps> = ({ dispatch, password, valid }) => {
   const change = ({
     target: { value },
   }: ChangeEvent<HTMLInputElement>): void => {
-    if (/^[a-zA-Z\d]{8,12}$/.test(value)) {
-      setValid(true);
-    } else {
-      setValid(false);
-    }
     dispatch({ type: EAction.CHANGE_PASSWORD, payload: value });
   };
   return (
-    <div>
+    <FormGroup>
       <FormLabel>
         <Email
           style={{
@@ -46,7 +40,7 @@ const FormPassword: FC<TPasswordProps> = ({ dispatch, password }) => {
           </Fragment>
         )}
       </FormMessage>
-    </div>
+    </FormGroup>
   );
 };
 

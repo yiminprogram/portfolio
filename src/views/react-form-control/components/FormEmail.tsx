@@ -1,25 +1,19 @@
-import React, { ChangeEvent, FC, Fragment, useState } from 'react';
+import React, { ChangeEvent, FC, Fragment } from 'react';
 //style
-import { FormLabel, FormInput, FormMessage } from '../style';
+import { FormLabel, FormInput, FormMessage, FormGroup } from '../style';
 //icons
 import { Email, CheckCircle, Cancel } from '@material-ui/icons';
 //type
 import { TEmailProps, EAction } from '../type';
 
-const FormEmail: FC<TEmailProps> = ({ dispatch, email }) => {
-  const [valid, setValid] = useState<boolean | null>(null);
+const FormEmail: FC<TEmailProps> = ({ dispatch, email, valid }) => {
   const change = ({
     target: { value },
   }: ChangeEvent<HTMLInputElement>): void => {
-    if (/^[a-zA-Z\d]+@{1}[a-zA-Z\d]+\.+[a-zA-Z]{2,3}$/.test(value)) {
-      setValid(true);
-    } else {
-      setValid(false);
-    }
     dispatch({ type: EAction.CHANGE_EMAIL, payload: value });
   };
   return (
-    <div>
+    <FormGroup>
       <FormLabel>
         <Email
           style={{
@@ -46,7 +40,7 @@ const FormEmail: FC<TEmailProps> = ({ dispatch, email }) => {
           </Fragment>
         )}
       </FormMessage>
-    </div>
+    </FormGroup>
   );
 };
 

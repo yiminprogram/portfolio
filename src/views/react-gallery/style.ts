@@ -1,72 +1,45 @@
-import styled, { css } from 'styled-components';
-type TDirection = {
-  vertical: boolean;
-};
+import styled from 'styled-components';
 
 export const GalleryPage = styled.div`
   ${(p) => p.theme.mixin.page};
   background-color: #000;
-  /* background-color: #ffecde; */
+  padding-bottom: 5rem;
 `;
 
 export const ImageList = styled.ul`
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 0;
+  margin: 0 auto 5rem auto;
+  padding: 5rem 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-flow: row dense;
+  grid-auto-flow: dense;
   gap: 2rem;
 `;
 
-export const ImageListItem = styled.li<TDirection>`
-  ${({ vertical }) =>
-    vertical &&
-    css`
-      &:nth-child(2n) {
-        grid-row: span 1;
-      }
-      &:nth-child(4n) {
-        grid-row: span 2;
-      }
-    `}
+export const Logo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
 
-  ${({ vertical }) =>
-    !vertical &&
-    css`
-      &:nth-child(2n) {
-        grid-column: span 1;
-      }
-      &:nth-child(4n) {
-        grid-column: span 2;
-      }
-      &:nth-child(6n) {
-        grid-column: span 3;
-      }
-    `}
-
-    &:first-child {
-    grid-column: span 2;
-    grid-row: span 2;
+  > span {
+    margin: 0 1rem;
   }
-`;
 
-export const ImageWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  filter: brightness(0.6);
-  transition: 0.3s;
+  .text {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+  }
 
-  > img {
-    width: 100%;
+  .logo {
     height: 100%;
-    object-fit: cover;
-  }
+    background-color: #fffa;
+    padding: 1rem;
 
-  &:hover {
-    cursor: pointer;
-    transform: translate(5px, -5px);
-    box-shadow: -10px 10px 0 #f00;
-    filter: brightness(1);
+    > img {
+      width: 100%;
+      height: 100%;
+    }
   }
 `;

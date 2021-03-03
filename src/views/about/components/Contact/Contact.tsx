@@ -22,7 +22,7 @@ const Contact = () => {
           <span>
             <Language style={{ fontSize: '1.5rem' }} />
           </span>
-          <span>https://www.google.com</span>
+          <span>https://github.com/yiminprogram</span>
         </Info>
       </ContactWrapper>
     </ContactDiv>

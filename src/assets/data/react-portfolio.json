@@ -45,14 +45,14 @@
     "id": 7,
     "path": "/react-form-control",
     "project": "表單驗證(建置中)",
-    "imageSrc": "",
-    "github": ""
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-form-control.jpg",
+    "github": "https://github.com/yiminprogram/portfolio/tree/master/src/views/react-form-control"
   },
   {
     "id": 8,
     "path": "/react-gallery",
     "project": "相簿(建置中)",
-    "imageSrc": "",
-    "github": ""
+    "imageSrc": "https://raw.githubusercontent.com/yiminprogram/portfolio/master/src/assets/image/screenshot/react-gallery.jpg",
+    "github": "https://github.com/yiminprogram/portfolio/tree/master/src/views/react-gallery"
   }
 ]

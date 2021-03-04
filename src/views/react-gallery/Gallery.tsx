@@ -16,11 +16,14 @@ const Gallery = () => {
   const [photos, setPhotos] = useState<TImage[]>([]);
   //test hide
   useEffect(() => {
-    fetch('https://api.unsplash.com/photos?per_page=30&page=2', {
-      headers: {
-        Authorization: `Client-ID ${process.env.REACT_APP_API_KEY}`,
+    fetch(
+      'https://api.unsplash.com/photos?per_page=30&order_by=popular&page=3',
+      {
+        headers: {
+          Authorization: `Client-ID ${process.env.REACT_APP_API_KEY}`,
+        },
       },
-    })
+    )
       .then((res) => res.json())
       .then((data: any[]) => {
         const photos: TImage[] = [];

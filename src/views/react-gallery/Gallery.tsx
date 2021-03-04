@@ -13,11 +13,10 @@ const randomColor = (min: number, max: number): number => {
 };
 
 const Gallery = () => {
-  const key = process.env.REACT_APP_API_KEY;
   const [photos, setPhotos] = useState<TImage[]>([]);
   //test hide
   useEffect(() => {
-    fetch('https://api.unsplash.com/photos?per_page=30&page=1', {
+    fetch('https://api.unsplash.com/photos?per_page=30&page=2', {
       headers: {
         Authorization: `Client-ID ${process.env.REACT_APP_API_KEY}`,
       },
@@ -29,12 +28,12 @@ const Gallery = () => {
           const id = data[i].id;
           const src = data[i].urls.regular;
           const altDescription = data[i].alt_description;
-          const vertical = false;
-          const borderColor = `rgb(${randomColor(1, 255)},${randomColor(
+          const height = data[i].height / 25;
+          const color = `${randomColor(1, 255)},${randomColor(
             1,
             255,
-          )},${randomColor(1, 255)})`;
-          photos.push({ id, src, altDescription, vertical, borderColor });
+          )},${randomColor(1, 255)}`;
+          photos.push({ id, src, altDescription, color, height });
         }
         setPhotos(photos);
       })
@@ -49,13 +48,12 @@ const Gallery = () => {
             id={ele.id}
             src={ele.src}
             altDescription={ele.altDescription}
-            vertical={ele.vertical}
-            borderColor={ele.borderColor}
+            color={ele.color}
+            height={ele.height}
           />
         ))}
       </ImageList>
       <Logo>
-        <span className="text">Source By</span>
         <span className="logo">
           <img src={UnsplashLogo} alt="unsplash-logo" />
         </span>

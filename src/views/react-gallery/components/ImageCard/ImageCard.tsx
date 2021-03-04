@@ -3,12 +3,14 @@ import React from 'react';
 import { ImageListItem, ImageWrapper } from './style';
 //type
 import { TImage } from '../../type';
+//components
+import ImageLoad from '../ImageLoad';
 
-const ImageCard = ({ src, altDescription, vertical, borderColor }: TImage) => {
+const ImageCard = ({ src, altDescription, color, height }: TImage) => {
   return (
-    <ImageListItem vertical={vertical}>
-      <ImageWrapper borderColor={borderColor}>
-        <img src={src} alt={altDescription} />
+    <ImageListItem height={height}>
+      <ImageWrapper color={color}>
+        <ImageLoad src={src} alt={altDescription} />
       </ImageWrapper>
     </ImageListItem>
   );

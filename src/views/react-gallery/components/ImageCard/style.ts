@@ -23,21 +23,25 @@ export const ImageListItem = styled.li<TDirection>`
   ${({ vertical }) =>
     !vertical &&
     css`
-      &:nth-child(2n) {
-        grid-column: span 1;
+      &:first-child {
+        grid-column-start: span 2;
+        grid-row-start: span 2;
       }
-      &:nth-child(4n) {
-        grid-column: span 2;
+      &:nth-child(2n + 3) {
+        grid-row-start: span 2;
       }
-      &:nth-child(6n) {
-        grid-column: span 3;
+      &:nth-child(4n + 5) {
+        grid-column-start: span 2;
+        grid-row-start: span 2;
+      }
+      &:nth-child(6n + 7) {
+        grid-row-start: span 1;
+      }
+      &:nth-child(8n + 9) {
+        grid-column-start: span 1;
+        grid-row-start: span 1;
       }
     `}
-
-    &:first-child {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
 `;
 
 export const ImageWrapper = styled.div<TBorder>`

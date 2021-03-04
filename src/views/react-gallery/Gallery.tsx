@@ -7,19 +7,19 @@ import ImageCard from './components/ImageCard';
 import { TImage } from './type';
 //image
 import UnsplashLogo from 'src/assets/image/logo/unsplash-logo.svg';
-//key
-import { API_KEY } from 'src/authentication/unsplash';
 
 const randomColor = (min: number, max: number): number => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 const Gallery = () => {
+  const key = process.env.REACT_APP_API_KEY;
   const [photos, setPhotos] = useState<TImage[]>([]);
+  //test hide
   useEffect(() => {
     fetch('https://api.unsplash.com/photos?per_page=30&page=1', {
       headers: {
-        Authorization: `Client-ID ${API_KEY}`,
+        Authorization: `Client-ID ${process.env.REACT_APP_API_KEY}`,
       },
     })
       .then((res) => res.json())
@@ -29,7 +29,7 @@ const Gallery = () => {
           const id = data[i].id;
           const src = data[i].urls.regular;
           const altDescription = data[i].alt_description;
-          const vertical = data[i].width < data[i].height;
+          const vertical = false;
           const borderColor = `rgb(${randomColor(1, 255)},${randomColor(
             1,
             255,

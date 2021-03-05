@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 //style
-import { GalleryPage, ImageList, Logo } from './style';
+import {
+  GalleryPage,
+  ImageList,
+  Logo,
+  DataLoading,
+  LoadingDot,
+  LoadingText,
+} from './style';
 //components
 import ImageCard from './components/ImageCard';
 //type
@@ -14,6 +21,7 @@ const randomColor = (min: number, max: number): number => {
 
 const Gallery = () => {
   const [photos, setPhotos] = useState<TImage[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   //test hide
   useEffect(() => {
     fetch(
@@ -38,24 +46,43 @@ const Gallery = () => {
           )},${randomColor(1, 255)}`;
           photos.push({ id, src, altDescription, color, height });
         }
+        setLoading(false);
         setPhotos(photos);
       })
       .catch((error) => alert(error));
   }, []);
   return (
     <GalleryPage>
-      <ImageList>
-        {photos.map((ele, idx) => (
-          <ImageCard
-            key={idx}
-            id={ele.id}
-            src={ele.src}
-            altDescription={ele.altDescription}
-            color={ele.color}
-            height={ele.height}
-          />
-        ))}
-      </ImageList>
+      {loading ? (
+        <DataLoading>
+          <LoadingDot className="dot">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </LoadingDot>
+          <LoadingText className="text">Loading</LoadingText>
+        </DataLoading>
+      ) : (
+        <ImageList>
+          {photos.map((ele, idx) => (
+            <ImageCard
+              key={idx}
+              id={ele.id}
+              src={ele.src}
+              altDescription={ele.altDescription}
+              color={ele.color}
+              height={ele.height}
+            />
+          ))}
+        </ImageList>
+      )}
       <Logo>
         <span className="logo">
           <img src={UnsplashLogo} alt="unsplash-logo" />

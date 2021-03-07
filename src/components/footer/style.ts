@@ -5,10 +5,11 @@ export const FooterDiv = styled.footer`
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
-  padding: 1.1rem;
+  padding: 1rem;
   color: #fff;
   background-color: #24292e;
   font-weight: 700;
+  height: 100px;
 `;
 
 export const GitHubLogo = styled.a`

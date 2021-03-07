@@ -25,7 +25,7 @@ const ReactPortfolio: FC = () => {
       </Banner>
       <List>
         {portfolioData.map((ele) => (
-          <CardPortfolio {...ele} />
+          <CardPortfolio key={ele.id} {...ele} />
         ))}
       </List>
     </PortfolioDiv>

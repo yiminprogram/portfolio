@@ -1,87 +1,58 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 //style
-import {
-  GalleryPage,
-  ImageList,
-  Logo,
-  DataLoading,
-  LoadingDot,
-  LoadingText,
-} from './style';
+import { GalleryPage, ImageList, Logo } from './style';
 //components
 import ImageCard from './components/ImageCard';
+import DataLoad from './components/DataLoad';
+import ImageInfo from './components/ImageInfo';
 //type
-import { TImage } from './type';
+import { EAction } from './type';
 //image
 import UnsplashLogo from 'src/assets/image/logo/unsplash-logo.svg';
-
-const randomColor = (min: number, max: number): number => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
+//reducer
+import { reducer, initialState } from './reducer';
+//function
+import { fetchPhotos } from './function/fetchPhotos';
+import { fetchPhoto } from './function/fetchPhoto';
 
 const Gallery = () => {
-  const [photos, setPhotos] = useState<TImage[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  //test hide
+  const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
-    fetch(
-      'https://api.unsplash.com/photos?per_page=30&order_by=popular&page=3',
-      {
-        headers: {
-          Authorization: `Client-ID ${process.env.REACT_APP_API_KEY}`,
-        },
-      },
-    )
-      .then((res) => res.json())
-      .then((data: any[]) => {
-        const photos: TImage[] = [];
-        for (let i = 0; i < data.length; i++) {
-          const id = data[i].id;
-          const src = data[i].urls.regular;
-          const altDescription = data[i].alt_description;
-          const height = data[i].height / 25;
-          const color = `${randomColor(1, 255)},${randomColor(
-            1,
-            255,
-          )},${randomColor(1, 255)}`;
-          photos.push({ id, src, altDescription, color, height });
-        }
-        setLoading(false);
-        setPhotos(photos);
-      })
-      .catch((error) => alert(error));
+    window.scrollTo(0, 0);
+    fetchPhotos().then((data) => {
+      dispatch({ type: EAction.GET_PHOTOS, payload: data });
+    });
   }, []);
+  useEffect(() => {
+    if (state.currentID !== '') {
+      fetchPhoto(state.currentID).then((data) => {
+        dispatch({ type: EAction.GET_PHOTO, payload: data });
+      });
+    }
+  }, [state.currentID]);
   return (
     <GalleryPage>
-      {loading ? (
-        <DataLoading>
-          <LoadingDot className="dot">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </LoadingDot>
-          <LoadingText className="text">Loading</LoadingText>
-        </DataLoading>
+      {state.isDataLoad ? (
+        <DataLoad />
       ) : (
         <ImageList>
-          {photos.map((ele, idx) => (
+          {state.photos.map((ele) => (
             <ImageCard
-              key={idx}
+              key={ele.id}
               id={ele.id}
               src={ele.src}
               altDescription={ele.altDescription}
-              color={ele.color}
+              blurImage={ele.blurImage}
               height={ele.height}
+              vertical={ele.vertical}
+              color={ele.color}
+              dispatch={dispatch}
             />
           ))}
         </ImageList>
+      )}
+      {state.isShowInfo && (
+        <ImageInfo {...state.currentPhoto} dispatch={dispatch} />
       )}
       <Logo>
         <span className="logo">

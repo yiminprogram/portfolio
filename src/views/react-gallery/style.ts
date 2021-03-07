@@ -1,11 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-
-const anime = keyframes`
-50%{
-  opacity:1;
-}
-
-`;
+import styled from 'styled-components';
 
 export const GalleryPage = styled.div`
   ${(p) => p.theme.mixin.page};
@@ -49,36 +42,4 @@ export const Logo = styled.div`
       height: 100%;
     }
   }
-`;
-
-export const DataLoading = styled.div`
-  max-width: 1000px;
-  height: 500px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-`;
-
-export const LoadingDot = styled.div`
-  margin-bottom: 2rem;
-
-  > span {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 1rem;
-    background-color: #fff;
-    border-radius: 50%;
-    opacity: 0;
-    animation: ${anime} 1s linear infinite;
-  }
-`;
-export const LoadingText = styled.div`
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 700;
-  opacity: 0;
-  animation: ${anime} 1s linear infinite;
 `;

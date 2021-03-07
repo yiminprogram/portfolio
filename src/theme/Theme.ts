@@ -13,7 +13,7 @@ const theme = {
   },
   mixin: {
     page: css`
-      min-height: 100vh;
+      min-height: calc(100vh - 150px);
       margin-top: 50px;
     `,
     portfolio: css`

@@ -2,15 +2,32 @@ import React from 'react';
 //style
 import { ImageListItem, ImageWrapper } from './style';
 //type
-import { TImage } from '../../type';
+import { TPhotos, TDispatch, EAction } from '../../type';
 //components
 import ImageLoad from '../ImageLoad';
 
-const ImageCard = ({ src, altDescription, color, height }: TImage) => {
+const ImageCard = ({
+  id,
+  src,
+  altDescription,
+  blurImage,
+  height,
+  vertical,
+  color,
+  dispatch,
+}: TPhotos & TDispatch) => {
+  const getPhoto = () => {
+    dispatch({ type: EAction.CURRENT_PHOTO, payload: id });
+  };
   return (
-    <ImageListItem height={height}>
+    <ImageListItem vertical={vertical} height={height} onClick={getPhoto}>
       <ImageWrapper color={color}>
-        <ImageLoad src={src} alt={altDescription} />
+        <ImageLoad
+          src={src}
+          alt={altDescription}
+          blurImage={blurImage}
+          color={color}
+        />
       </ImageWrapper>
     </ImageListItem>
   );

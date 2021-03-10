@@ -17,10 +17,10 @@ export const initialState: TState = {
   },
   isDataLoad: true,
   isShowInfo: false,
+  page: 1,
 };
 
 const getPhotos = (state: TState, data: any[]): TState => {
-  let isDataLoad = data === [];
   let photos: TPhotos[] = data.map((ele) => ({
     id: ele.id,
     src: ele.urls.regular,
@@ -30,7 +30,7 @@ const getPhotos = (state: TState, data: any[]): TState => {
     blurImage: `${ele.urls.full}&w=10`,
     vertical: ele.width < ele.height,
   }));
-  return { ...state, photos, isDataLoad };
+  return { ...state, photos: [...state.photos, ...photos], isDataLoad: false };
 };
 
 const currentPhoto = (state: TState, currentID: string): TState => {
@@ -56,6 +56,10 @@ const closeInfo = (state: TState): TState => {
   return { ...state, isShowInfo: false };
 };
 
+const nextPage = (state: TState): TState => {
+  return { ...state, page: state.page + 1, isDataLoad: true };
+};
+
 export const reducer = (state: TState, action: TAction): TState => {
   switch (action.type) {
     case EAction.GET_PHOTOS:
@@ -66,6 +70,8 @@ export const reducer = (state: TState, action: TAction): TState => {
       return currentPhoto(state, action.payload);
     case EAction.CLOSE_INFO:
       return closeInfo(state);
+    case EAction.NEXT_PAGE:
+      return nextPage(state);
     default:
       return state;
   }

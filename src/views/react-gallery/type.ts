@@ -30,10 +30,12 @@ export type TState = {
   currentPhoto: TPhoto;
   isDataLoad: boolean;
   isShowInfo: boolean;
+  page: number;
 };
 
 export type TDispatch = {
   dispatch: React.Dispatch<TAction>;
+  lastItem?: (node: any) => void;
 };
 
 export type GetPhotos = {
@@ -55,11 +57,21 @@ export type CloseInfo = {
   type: EAction.CLOSE_INFO;
 };
 
-export type TAction = GetPhoto | GetPhotos | CurrentPhoto | CloseInfo;
+export type NextPage = {
+  type: EAction.NEXT_PAGE;
+};
+
+export type TAction =
+  | GetPhoto
+  | GetPhotos
+  | CurrentPhoto
+  | CloseInfo
+  | NextPage;
 
 export enum EAction {
   GET_PHOTOS = 'GET_PHOTOS',
   GET_PHOTO = 'GET_PHOTO',
   CURRENT_PHOTO = 'CURRENT_PHOTO',
   CLOSE_INFO = 'CLOSE_INFO',
+  NEXT_PAGE = 'NEXT_PAGE',
 }

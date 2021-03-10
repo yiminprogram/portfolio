@@ -1,6 +1,6 @@
-export const fetchPhotos = async (): Promise<any[]> => {
+export const fetchPhotos = async (page: number): Promise<any[]> => {
   const response = await fetch(
-    'https://api.unsplash.com/photos?per_page=30&page=1',
+    `https://api.unsplash.com/photos?per_page=30&page=${page}`,
     {
       headers: {
         Authorization: `Client-ID ${process.env.REACT_APP_API_KEY}`,

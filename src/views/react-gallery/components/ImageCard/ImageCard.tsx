@@ -15,12 +15,18 @@ const ImageCard = ({
   vertical,
   color,
   dispatch,
+  lastItem,
 }: TPhotos & TDispatch) => {
   const getPhoto = () => {
     dispatch({ type: EAction.CURRENT_PHOTO, payload: id });
   };
   return (
-    <ImageListItem vertical={vertical} height={height} onClick={getPhoto}>
+    <ImageListItem
+      ref={lastItem}
+      vertical={vertical}
+      height={height}
+      onClick={getPhoto}
+    >
       <ImageWrapper color={color}>
         <ImageLoad
           src={src}

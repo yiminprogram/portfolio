@@ -3,13 +3,12 @@ import styled from 'styled-components';
 export const GalleryPage = styled.div`
   ${(p) => p.theme.mixin.page};
   background-color: #000;
-  padding-bottom: 5rem;
+  padding-top: 60px;
 `;
 
 export const ImageList = styled.ul`
   max-width: 1200px;
-  margin: 0 auto 5rem auto;
-  padding: 5rem 0;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: dense;

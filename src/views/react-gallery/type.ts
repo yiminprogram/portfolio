@@ -53,8 +53,8 @@ export type GetPhoto = {
   payload: any;
 };
 
-export type CloseInfo = {
-  type: EAction.CLOSE_INFO;
+export type ToggleInfo = {
+  type: EAction.TOGGLE_INFO;
 };
 
 export type NextPage = {
@@ -65,13 +65,13 @@ export type TAction =
   | GetPhoto
   | GetPhotos
   | CurrentPhoto
-  | CloseInfo
+  | ToggleInfo
   | NextPage;
 
 export enum EAction {
   GET_PHOTOS = 'GET_PHOTOS',
   GET_PHOTO = 'GET_PHOTO',
   CURRENT_PHOTO = 'CURRENT_PHOTO',
-  CLOSE_INFO = 'CLOSE_INFO',
+  TOGGLE_INFO = 'TOGGLE_INFO',
   NEXT_PAGE = 'NEXT_PAGE',
 }

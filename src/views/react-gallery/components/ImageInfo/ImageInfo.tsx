@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 //style
 import {
   ImageInfoContainer,
@@ -13,6 +13,9 @@ import {
 import { TPhoto, TDispatch, EAction } from '../../type';
 //icon
 import { GetApp, ExitToApp, Close } from '@material-ui/icons';
+//components
+import PhotoLoading from '../PhotoLoading';
+import InfoLoading from '../InfoLoading';
 
 const ImageInfo = ({
   blurImage,
@@ -25,9 +28,10 @@ const ImageInfo = ({
   tags,
   website,
 }: TPhoto & TDispatch) => {
+  const [loading, setloading] = useState(true);
   return (
     <ImageInfoContainer>
-      <CloseBtn onClick={() => dispatch({ type: EAction.CLOSE_INFO })}>
+      <CloseBtn onClick={() => dispatch({ type: EAction.TOGGLE_INFO })}>
         <Close />
       </CloseBtn>
       <BackgroundImage>
@@ -35,13 +39,18 @@ const ImageInfo = ({
       </BackgroundImage>
       <Info>
         <Image>
-          <img src={photo} alt="" />
+          <PhotoLoading src={photo} alt="error" variant="rect" />
         </Image>
         <Detail>
-          <DetailWrapper>
+          {loading && <InfoLoading />}
+          <DetailWrapper load={loading}>
             <div className="user">
               <span className="user-avatar">
-                <img src={userPhoto} alt="user" />
+                <img
+                  src={userPhoto}
+                  alt="user"
+                  onLoad={() => setloading(false)}
+                />
               </span>
               <span>{userName}</span>
             </div>

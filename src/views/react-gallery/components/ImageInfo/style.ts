@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type TLoad = {
+  load: boolean;
+};
+
 export const ImageInfoContainer = styled.div`
   position: fixed;
   top: 0;
@@ -38,7 +42,6 @@ export const Info = styled.div`
 
 export const Image = styled.div`
   flex: 2;
-  padding: 2rem;
 
   > img {
     width: 100%;
@@ -51,10 +54,11 @@ export const Detail = styled.div`
   flex: 1;
 `;
 
-export const DetailWrapper = styled.div`
+export const DetailWrapper = styled.div<TLoad>`
   padding: 5rem 3rem;
   color: #fff;
   font-weight: 700;
+  display: ${(p) => p.load && 'none'};
 
   .user {
     display: flex;

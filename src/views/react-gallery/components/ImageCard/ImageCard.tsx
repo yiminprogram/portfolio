@@ -4,7 +4,7 @@ import { ImageListItem, ImageWrapper } from './style';
 //type
 import { TPhotos, TDispatch, EAction } from '../../type';
 //components
-import ImageLoad from '../ImageLoad';
+import ImageLoad from '../PhotosLoading';
 
 const ImageCard = ({
   id,
@@ -19,6 +19,7 @@ const ImageCard = ({
 }: TPhotos & TDispatch) => {
   const getPhoto = () => {
     dispatch({ type: EAction.CURRENT_PHOTO, payload: id });
+    dispatch({ type: EAction.TOGGLE_INFO });
   };
   return (
     <ImageListItem

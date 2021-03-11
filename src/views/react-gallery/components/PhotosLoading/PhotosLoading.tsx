@@ -51,7 +51,7 @@ const BlurBackGround = styled.div<TLoading>`
   z-index: 1;
 `;
 
-const ImageLoad = ({ src, alt, blurImage, color }: TProps) => {
+const PhotosLoading = ({ src, alt, blurImage, color }: TProps) => {
   const [loading, setLoading] = useState<boolean>(true);
   const complete = (): void => {
     setLoading(false);
@@ -68,4 +68,4 @@ const ImageLoad = ({ src, alt, blurImage, color }: TProps) => {
   );
 };
 
-export default ImageLoad;
+export default PhotosLoading;

@@ -34,7 +34,12 @@ const getPhotos = (state: TState, data: any[]): TState => {
 };
 
 const currentPhoto = (state: TState, currentID: string): TState => {
-  return { ...state, currentID };
+  const current = state.photos.find((ele) => ele.id === currentID);
+  let currentPhoto: TPhoto = initialState.currentPhoto;
+  if (current) {
+    currentPhoto = { ...currentPhoto, ...current };
+  }
+  return { ...state, currentID, currentPhoto };
 };
 
 const getPhoto = (state: TState, data: any): TState => {
@@ -52,8 +57,8 @@ const getPhoto = (state: TState, data: any): TState => {
   return { ...state, currentPhoto, isShowInfo: true };
 };
 
-const closeInfo = (state: TState): TState => {
-  return { ...state, isShowInfo: false };
+const toggleInfo = (state: TState): TState => {
+  return { ...state, isShowInfo: !state.isShowInfo };
 };
 
 const nextPage = (state: TState): TState => {
@@ -68,8 +73,8 @@ export const reducer = (state: TState, action: TAction): TState => {
       return getPhoto(state, action.payload);
     case EAction.CURRENT_PHOTO:
       return currentPhoto(state, action.payload);
-    case EAction.CLOSE_INFO:
-      return closeInfo(state);
+    case EAction.TOGGLE_INFO:
+      return toggleInfo(state);
     case EAction.NEXT_PAGE:
       return nextPage(state);
     default:

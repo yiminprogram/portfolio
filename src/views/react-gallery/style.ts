@@ -4,6 +4,7 @@ export const GalleryPage = styled.div`
   ${(p) => p.theme.mixin.page};
   background-color: #000;
   padding-top: 60px;
+  padding-bottom: 5rem;
 `;
 
 export const ImageList = styled.ul`
@@ -41,4 +42,13 @@ export const Logo = styled.div`
       height: 100%;
     }
   }
+`;
+
+export const Result = styled.div`
+  max-width: 1200px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: ${(p) => p.theme.colors.primary};
+  margin: 0 auto 3rem auto;
+  text-transform: capitalize;
 `;

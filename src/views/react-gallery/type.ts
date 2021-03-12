@@ -31,6 +31,8 @@ export type TState = {
   isDataLoad: boolean;
   isShowInfo: boolean;
   page: number;
+  searchPage: number;
+  query: string;
 };
 
 export type TDispatch = {
@@ -61,12 +63,23 @@ export type NextPage = {
   type: EAction.NEXT_PAGE;
 };
 
+export type GetQuery = {
+  type: EAction.GET_QUERY;
+  payload: string;
+};
+
+export type NextSearchPage = {
+  type: EAction.NEXT_SEARCH_PAGE;
+};
+
 export type TAction =
   | GetPhoto
   | GetPhotos
   | CurrentPhoto
   | ToggleInfo
-  | NextPage;
+  | NextPage
+  | GetQuery
+  | NextSearchPage;
 
 export enum EAction {
   GET_PHOTOS = 'GET_PHOTOS',
@@ -74,4 +87,6 @@ export enum EAction {
   CURRENT_PHOTO = 'CURRENT_PHOTO',
   TOGGLE_INFO = 'TOGGLE_INFO',
   NEXT_PAGE = 'NEXT_PAGE',
+  GET_QUERY = 'GET_QUERY',
+  NEXT_SEARCH_PAGE = 'NEXT_SEARCH_PAGE',
 }

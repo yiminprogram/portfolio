@@ -18,6 +18,8 @@ export const initialState: TState = {
   isDataLoad: true,
   isShowInfo: false,
   page: 1,
+  searchPage: 1,
+  query: '',
 };
 
 const getPhotos = (state: TState, data: any[]): TState => {
@@ -65,6 +67,14 @@ const nextPage = (state: TState): TState => {
   return { ...state, page: state.page + 1, isDataLoad: true };
 };
 
+const nextSearchPage = (state: TState): TState => {
+  return { ...state, searchPage: state.searchPage + 1, isDataLoad: true };
+};
+
+const getQuery = (state: TState, query: string): TState => {
+  return { ...state, photos: [], searchPage: 1, query };
+};
+
 export const reducer = (state: TState, action: TAction): TState => {
   switch (action.type) {
     case EAction.GET_PHOTOS:
@@ -77,6 +87,10 @@ export const reducer = (state: TState, action: TAction): TState => {
       return toggleInfo(state);
     case EAction.NEXT_PAGE:
       return nextPage(state);
+    case EAction.GET_QUERY:
+      return getQuery(state, action.payload);
+    case EAction.NEXT_SEARCH_PAGE:
+      return nextSearchPage(state);
     default:
       return state;
   }

@@ -1,11 +1,25 @@
 import React from 'react';
 //style
-import { DataLoadContainer, LoadImage, Wrapper, LoadText } from './style';
+import styled from 'styled-components';
+//components
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+
+  .progress {
+    color: ${(p) => p.theme.colors.primary};
+  }
+`;
 
 const DataLoad = () => {
   return (
-    <DataLoadContainer>
-      <Wrapper>
+    <Container>
+      <CircularProgress className="progress" size={60} thickness={6} />
+      {/* <Wrapper>
         <LoadText>Loading</LoadText>
         <LoadImage
           width="200"
@@ -81,8 +95,8 @@ const DataLoad = () => {
             />
           </g>
         </LoadImage>
-      </Wrapper>
-    </DataLoadContainer>
+      </Wrapper> */}
+    </Container>
   );
 };
 

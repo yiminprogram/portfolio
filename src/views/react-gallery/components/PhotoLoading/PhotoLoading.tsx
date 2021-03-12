@@ -24,7 +24,6 @@ const Image = styled.img<TStyle>`
 const PhotoLoading = ({ src, alt, variant }: TImageProps) => {
   const [loading, setLoading] = useState<boolean>(true);
   const completeLoad = (): void => {
-    console.log('complete');
     setLoading(false);
   };
   return (

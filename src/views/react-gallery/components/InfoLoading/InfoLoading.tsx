@@ -18,6 +18,9 @@ const Container = styled.div`
     flex: 2;
     margin-left: 1rem;
   }
+  .skeleton {
+    background-color: #ccc2;
+  }
 `;
 
 const InfoLoading = () => {
@@ -26,7 +29,7 @@ const InfoLoading = () => {
       <div className="user">
         <span>
           <Skeleton
-            style={{ backgroundColor: '#ccc5' }}
+            className="skeleton"
             width="50px"
             height="50px"
             variant="circle"
@@ -35,7 +38,7 @@ const InfoLoading = () => {
         </span>
         <span className="username">
           <Skeleton
-            style={{ backgroundColor: '#ccc5' }}
+            className="skeleton"
             width="100%"
             height="35px"
             variant="rect"
@@ -45,7 +48,7 @@ const InfoLoading = () => {
       </div>
       <div>
         <Skeleton
-          style={{ backgroundColor: '#ccc5' }}
+          className="skeleton"
           width="100%"
           height="150px"
           variant="rect"
@@ -54,7 +57,7 @@ const InfoLoading = () => {
       </div>
       <div>
         <Skeleton
-          style={{ backgroundColor: '#ccc5' }}
+          className="skeleton"
           width="100%"
           height="150px"
           variant="rect"
@@ -63,7 +66,7 @@ const InfoLoading = () => {
       </div>
       <div>
         <Skeleton
-          style={{ backgroundColor: '#ccc5' }}
+          className="skeleton"
           width="100%"
           height="50px"
           variant="rect"

@@ -21,13 +21,13 @@ const Calendar: FC = () => {
       <CalendarDay />
       <CalendarDateList>
         {prevList.map((ele) => (
-          <PrevNextDate>{ele.id.getDate()}</PrevNextDate>
+          <PrevNextDate key={ele.id.getDate()}>{ele.id.getDate()}</PrevNextDate>
         ))}
         {currentList.map((ele) => (
-          <CurrentDate {...ele} dispatch={dispatch} />
+          <CurrentDate key={ele.id.getDate()} {...ele} dispatch={dispatch} />
         ))}
         {nextList.map((ele) => (
-          <PrevNextDate>{ele.id.getDate()}</PrevNextDate>
+          <PrevNextDate key={ele.id.getDate()}>{ele.id.getDate()}</PrevNextDate>
         ))}
       </CalendarDateList>
     </CalendarDiv>

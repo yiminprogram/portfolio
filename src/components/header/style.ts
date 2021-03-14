@@ -10,7 +10,7 @@ type TIsAbout = {
   isAbout: boolean;
 };
 
-export const HeaderDiv = styled.header`
+export const HeaderContainer = styled.header`
   width: 100%;
   height: 50px;
   position: absolute;

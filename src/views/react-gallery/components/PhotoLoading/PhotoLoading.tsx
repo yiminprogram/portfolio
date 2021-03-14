@@ -31,6 +31,7 @@ const PhotoLoading = ({ src, alt, variant }: TImageProps) => {
       <Image load={loading} src={src} alt={alt} onLoad={completeLoad} />
       {loading && (
         <Skeleton
+          style={{ backgroundColor: '#ccc2' }}
           variant={variant}
           width="100%"
           height="100%"

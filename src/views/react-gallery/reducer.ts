@@ -1,5 +1,5 @@
 //type
-import { TState, TAction, EAction, TPhotos, TPhoto } from './type';
+import { TState, TAction, EAction, TPhotos, TPhoto, ECategory } from './type';
 
 export const initialState: TState = {
   photos: [],
@@ -15,15 +15,19 @@ export const initialState: TState = {
     website: '',
     userPhoto: '',
   },
+  currentCategory: ECategory.PHOTOS,
   isDataLoad: true,
   isShowInfo: false,
   page: 1,
   searchPage: 1,
   query: '',
+  isMore: true,
+  total: null,
+  totalPage: null,
 };
 
-const getPhotos = (state: TState, data: any[]): TState => {
-  let photos: TPhotos[] = data.map((ele) => ({
+const handlePhotosData = (data: any[]): TPhotos[] => {
+  return data.map((ele) => ({
     id: ele.id,
     src: ele.urls.regular,
     altDescription: ele.alt_description,
@@ -32,7 +36,28 @@ const getPhotos = (state: TState, data: any[]): TState => {
     blurImage: `${ele.urls.full}&w=10`,
     vertical: ele.width < ele.height,
   }));
-  return { ...state, photos: [...state.photos, ...photos], isDataLoad: false };
+};
+
+const getPhotos = (state: TState, data: any[]): TState => {
+  let photos: TPhotos[] = handlePhotosData(data);
+  return {
+    ...state,
+    photos: [...state.photos, ...photos],
+    isDataLoad: false,
+  };
+};
+
+const searchPhotos = (state: TState, data: any): TState => {
+  let photos: TPhotos[] = handlePhotosData(data.results);
+  const isMore = Boolean(Math.floor(data.total / 30));
+  return {
+    ...state,
+    photos: [...state.photos, ...photos],
+    isDataLoad: false,
+    total: data.total,
+    totalPage: data.total_pages,
+    isMore,
+  };
 };
 
 const currentPhoto = (state: TState, currentID: string): TState => {
@@ -64,7 +89,14 @@ const toggleInfo = (state: TState): TState => {
 };
 
 const nextPage = (state: TState): TState => {
-  return { ...state, page: state.page + 1, isDataLoad: true };
+  let page = state.page;
+  let isMore = true;
+  if (page === state.totalPage) {
+    isMore = false;
+  } else {
+    page++;
+  }
+  return { ...state, page, isDataLoad: true, isMore };
 };
 
 const nextSearchPage = (state: TState): TState => {
@@ -72,7 +104,19 @@ const nextSearchPage = (state: TState): TState => {
 };
 
 const getQuery = (state: TState, query: string): TState => {
-  return { ...state, photos: [], searchPage: 1, query };
+  return {
+    ...state,
+    photos: [],
+    searchPage: 1,
+    query,
+    isDataLoad: true,
+    total: null,
+    totalPage: null,
+  };
+};
+
+const changeCategory = (state: TState, currentCategory: string): TState => {
+  return { ...state, currentCategory };
 };
 
 export const reducer = (state: TState, action: TAction): TState => {
@@ -81,6 +125,8 @@ export const reducer = (state: TState, action: TAction): TState => {
       return getPhotos(state, action.payload);
     case EAction.GET_PHOTO:
       return getPhoto(state, action.payload);
+    case EAction.SEARCH_PHOTOS:
+      return searchPhotos(state, action.payload);
     case EAction.CURRENT_PHOTO:
       return currentPhoto(state, action.payload);
     case EAction.TOGGLE_INFO:
@@ -91,6 +137,8 @@ export const reducer = (state: TState, action: TAction): TState => {
       return getQuery(state, action.payload);
     case EAction.NEXT_SEARCH_PAGE:
       return nextSearchPage(state);
+    case EAction.CHANGE_CATEGORY:
+      return changeCategory(state, action.payload);
     default:
       return state;
   }

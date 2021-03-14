@@ -9,7 +9,7 @@ export const GalleryPage = styled.div`
 
 export const ImageList = styled.ul`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 5rem auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: dense;
@@ -34,7 +34,7 @@ export const Logo = styled.div`
 
   .logo {
     height: 100%;
-    background-color: #fffa;
+    background-color: #fff;
     padding: 1rem;
 
     > img {
@@ -48,7 +48,7 @@ export const Result = styled.div`
   max-width: 1200px;
   font-size: 3rem;
   font-weight: 700;
-  color: ${(p) => p.theme.colors.primary};
+  color: #fff;
   margin: 0 auto 3rem auto;
   text-transform: capitalize;
 `;

@@ -24,9 +24,16 @@ const ReactPortfolio: FC = () => {
         </Info>
       </Banner>
       <List>
-        {portfolioData.map((ele) => (
-          <CardPortfolio key={ele.id} {...ele} />
-        ))}
+        {portfolioData
+          .filter((ele) => ele.top === true)
+          .map((ele) => (
+            <CardPortfolio key={ele.id} {...ele} />
+          ))}
+        {portfolioData
+          .filter((ele) => ele.top === false)
+          .map((ele) => (
+            <CardPortfolio key={ele.id} {...ele} />
+          ))}
       </List>
     </PortfolioDiv>
   );

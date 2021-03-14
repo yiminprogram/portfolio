@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 //style
 import {
-  HeaderDiv,
+  HeaderContainer,
   Home,
   MenuLink,
   Hamburger,
@@ -23,7 +23,7 @@ const Header: FC = () => {
     setMenuState(false);
   };
   return (
-    <HeaderDiv>
+    <HeaderContainer>
       <Home isAbout={pathname === '/about'}>
         <Link to="/">
           <Logo style={{ fontSize: '2rem' }} />
@@ -47,7 +47,7 @@ const Header: FC = () => {
           </MenuList>
         </Hamburger>
       </Nav>
-    </HeaderDiv>
+    </HeaderContainer>
   );
 };
 

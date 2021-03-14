@@ -15,7 +15,7 @@ const CalendarInfo: FC = () => {
       <DateTitle>{currentDate.toLocaleDateString()}</DateTitle>
       <List>
         {boardList.map((ele) => (
-          <InfoCard {...ele} />
+          <InfoCard key={ele.id.toLocaleDateString()} {...ele} />
         ))}
       </List>
     </CalendarInfoDiv>

@@ -6,6 +6,7 @@ import ImageCard from './components/ImageCard';
 import DataLoad from './components/DataLoad';
 import ImageInfo from './components/ImageInfo';
 import Searchbar from './components/Searchbar';
+import Category from './components/Category';
 //type
 import { EAction } from './type';
 //image
@@ -24,7 +25,7 @@ const Gallery = () => {
     (item) => {
       if (state.isDataLoad) return;
       if (ob.current) ob.current.disconnect();
-      // if (state.query && ob.current) ob.current.disconnect();
+      if (!state.isMore) return;
       ob.current = new IntersectionObserver((e) => {
         if (e[0].isIntersecting) {
           if (state.query !== '') {
@@ -36,7 +37,7 @@ const Gallery = () => {
       });
       if (item) ob.current.observe(item);
     },
-    [state.isDataLoad, state.query],
+    [state.isDataLoad, state.query, state.isMore],
   );
 
   useEffect(() => {
@@ -46,7 +47,7 @@ const Gallery = () => {
   useEffect(() => {
     if (state.query !== '') {
       fetchSearch(state.query, state.searchPage).then((data) =>
-        dispatch({ type: EAction.GET_PHOTOS, payload: data }),
+        dispatch({ type: EAction.SEARCH_PHOTOS, payload: data }),
       );
     } else {
       fetchPhotos(state.page).then((data) => {
@@ -64,9 +65,12 @@ const Gallery = () => {
   }, [state.currentID]);
   return (
     <GalleryPage>
-      <Searchbar dispatch={dispatch} />
+      <Category category={state.currentCategory} dispatch={dispatch} />
+      <Searchbar category={state.currentCategory} dispatch={dispatch} />
       <Result>
-        <h1>{state.query}</h1>
+        <h1>
+          {state.query} {state.total && `(${state.total})`}
+        </h1>
       </Result>
       <ImageList>
         {state.photos.map((ele, idx) => {
@@ -74,31 +78,13 @@ const Gallery = () => {
             return (
               <ImageCard
                 key={idx}
-                id={ele.id}
-                src={ele.src}
-                altDescription={ele.altDescription}
-                blurImage={ele.blurImage}
-                height={ele.height}
-                vertical={ele.vertical}
-                color={ele.color}
                 dispatch={dispatch}
                 lastItem={lastItem}
+                {...ele}
               />
             );
           } else {
-            return (
-              <ImageCard
-                key={idx}
-                id={ele.id}
-                src={ele.src}
-                altDescription={ele.altDescription}
-                blurImage={ele.blurImage}
-                height={ele.height}
-                vertical={ele.vertical}
-                color={ele.color}
-                dispatch={dispatch}
-              />
-            );
+            return <ImageCard key={idx} dispatch={dispatch} {...ele} />;
           }
         })}
       </ImageList>

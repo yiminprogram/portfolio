@@ -26,7 +26,7 @@ const Table: FC<TTableFoods> = ({ header, foods, getSort }) => {
         <thead>
           <tr>
             {header.map((ele) => (
-              <th onClick={() => getSort(ele.title)}>
+              <th key={ele.title} onClick={() => getSort(ele.title)}>
                 <div>
                   {ele.title}
                   {arrowIcon(ele.sort)}
@@ -37,7 +37,7 @@ const Table: FC<TTableFoods> = ({ header, foods, getSort }) => {
         </thead>
         <tbody>
           {foods.map((ele) => (
-            <tr>
+            <tr key={ele.id}>
               <td>{ele.id}</td>
               <td>{ele.name}</td>
               <td>

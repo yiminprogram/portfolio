@@ -28,16 +28,19 @@ export type TState = {
   photos: TPhotos[];
   currentID: string;
   currentPhoto: TPhoto;
+  currentCategory: string;
   isDataLoad: boolean;
   isShowInfo: boolean;
   page: number;
   searchPage: number;
   query: string;
+  isMore: boolean;
+  total: number | null;
+  totalPage: number | null;
 };
 
 export type TDispatch = {
   dispatch: React.Dispatch<TAction>;
-  lastItem?: (node: any) => void;
 };
 
 export type GetPhotos = {
@@ -52,6 +55,11 @@ export type CurrentPhoto = {
 
 export type GetPhoto = {
   type: EAction.GET_PHOTO;
+  payload: any;
+};
+
+export type SearchPhoto = {
+  type: EAction.SEARCH_PHOTOS;
   payload: any;
 };
 
@@ -72,6 +80,11 @@ export type NextSearchPage = {
   type: EAction.NEXT_SEARCH_PAGE;
 };
 
+export type ChangeCategory = {
+  type: EAction.CHANGE_CATEGORY;
+  payload: string;
+};
+
 export type TAction =
   | GetPhoto
   | GetPhotos
@@ -79,7 +92,9 @@ export type TAction =
   | ToggleInfo
   | NextPage
   | GetQuery
-  | NextSearchPage;
+  | NextSearchPage
+  | ChangeCategory
+  | SearchPhoto;
 
 export enum EAction {
   GET_PHOTOS = 'GET_PHOTOS',
@@ -89,4 +104,11 @@ export enum EAction {
   NEXT_PAGE = 'NEXT_PAGE',
   GET_QUERY = 'GET_QUERY',
   NEXT_SEARCH_PAGE = 'NEXT_SEARCH_PAGE',
+  CHANGE_CATEGORY = 'CHANGE_CATEGORY',
+  SEARCH_PHOTOS = 'SEARCH_PHOTOS',
+}
+
+export enum ECategory {
+  PHOTOS = 'PHOTOS',
+  COLLECTIONS = 'COLLECTIONS',
 }

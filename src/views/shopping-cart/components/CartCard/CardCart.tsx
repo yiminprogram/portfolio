@@ -9,8 +9,6 @@ import {
   CardList,
   DeleteBtn,
 } from './style';
-//image
-import Img from 'src/assets/image/foods/burger.jpg';
 //type
 import { TCart, ECartAction } from '../../type';
 //context

@@ -16,7 +16,7 @@ const ImageCard = ({
   color,
   dispatch,
   lastItem,
-}: TPhotos & TDispatch) => {
+}: TPhotos & TDispatch & { lastItem?: (node: any) => void }) => {
   const getPhoto = () => {
     dispatch({ type: EAction.CURRENT_PHOTO, payload: id });
     dispatch({ type: EAction.TOGGLE_INFO });

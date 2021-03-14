@@ -36,7 +36,7 @@ const ShoppingCart: FC = () => {
           <Title>商品列表</Title>
           <List>
             {cartState.foods.map((ele) => (
-              <FoodCard {...ele} />
+              <FoodCard key={ele.id} {...ele} />
             ))}
           </List>
           <Cart />

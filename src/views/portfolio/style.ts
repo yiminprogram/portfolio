@@ -38,7 +38,6 @@ export const List = styled.ul`
   justify-content: center;
   padding: 5rem 0;
   margin: 0 auto;
-  gap: 3rem;
 `;
 
 export const CardDiv = styled.li`

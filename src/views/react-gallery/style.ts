@@ -10,10 +10,19 @@ export const GalleryPage = styled.div`
 export const ImageList = styled.ul`
   max-width: 1200px;
   margin: 0 auto 5rem auto;
+  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: dense;
   gap: 2rem;
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const Logo = styled.div`

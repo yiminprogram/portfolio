@@ -16,7 +16,6 @@ const Bar = styled.div`
     display: flex;
     align-items: center;
     box-shadow: 0 0 0 2px #ccc;
-    padding: 0 0.5rem;
 
     &:focus-within {
       box-shadow: ${(p) => `0 0 0 5px ${p.theme.colors.primary}`};
@@ -53,6 +52,7 @@ const Bar = styled.div`
       border: none;
       color: #ccc;
       background-color: transparent;
+      padding: 0;
 
       &:hover {
         color: ${(p) => p.theme.colors.primary};
@@ -62,6 +62,7 @@ const Bar = styled.div`
     > span {
       flex: 0 1 5%;
       color: #ccc;
+      padding-left: 0.5rem;
     }
   }
 `;

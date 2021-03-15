@@ -7,6 +7,8 @@ type THeight = {
 
 export const ImageListItem = styled.li<THeight>`
   min-height: ${(p) => `${p.height}px`};
+  position: relative;
+
   ${(p) =>
     p.vertical &&
     css`
@@ -28,13 +30,15 @@ export const ImageListItem = styled.li<THeight>`
 `;
 
 export const ImageWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   transition: 0.3s;
   background-position: center;
   background-size: cover;
   overflow: hidden;
-  position: relative;
 
   > img {
     width: 100%;

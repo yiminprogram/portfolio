@@ -46,21 +46,27 @@ const Gallery = () => {
 
   useEffect(() => {
     if (state.query !== '') {
-      fetchSearch(state.query, state.searchPage).then((data) =>
-        dispatch({ type: EAction.SEARCH_PHOTOS, payload: data }),
-      );
+      fetchSearch(state.query, state.searchPage)
+        .then((data) =>
+          dispatch({ type: EAction.SEARCH_PHOTOS, payload: data }),
+        )
+        .catch(() => alert('請稍後再試'));
     } else {
-      fetchPhotos(state.page).then((data) => {
-        dispatch({ type: EAction.GET_PHOTOS, payload: data });
-      });
+      fetchPhotos(state.page)
+        .then((data) => {
+          dispatch({ type: EAction.GET_PHOTOS, payload: data });
+        })
+        .catch(() => alert('請稍後再試'));
     }
   }, [state.page, state.query, state.searchPage]);
 
   useEffect(() => {
     if (state.currentID !== '') {
-      fetchPhoto(state.currentID).then((data) => {
-        dispatch({ type: EAction.GET_PHOTO, payload: data });
-      });
+      fetchPhoto(state.currentID)
+        .then((data) => {
+          dispatch({ type: EAction.GET_PHOTO, payload: data });
+        })
+        .catch(() => alert('請稍後再試'));
     }
   }, [state.currentID]);
   return (

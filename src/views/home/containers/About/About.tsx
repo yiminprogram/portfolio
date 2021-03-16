@@ -8,7 +8,7 @@ const About: FC = () => {
     <AboutDiv>
       <div className="about-title">
         <h1>關於我</h1>
-        <Link to="/about">進一步了解 {'\u2192'}</Link>
+        <Link to="/about">進一步了解</Link>
       </div>
       <div className="window">
         <div className="bar">

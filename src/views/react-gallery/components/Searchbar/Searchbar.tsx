@@ -2,11 +2,28 @@ import React, { FormEvent, useState } from 'react';
 //style
 import styled from 'styled-components';
 //icon
-import { Search, Photo, PhotoLibrary } from '@material-ui/icons';
+import { Search, Photo, PhotoLibrary, Stars } from '@material-ui/icons';
 //type
 import { EAction, ECategory, TDispatch } from '../../type';
 
-const Bar = styled.div`
+const color = (category: string) => {
+  switch (category) {
+    case ECategory.TOPICS:
+      return '#ebb34b';
+    case ECategory.PHOTOS:
+      return '#51c95d';
+    case ECategory.COLLECTIONS:
+      return '#a730ab';
+    default:
+      return;
+  }
+};
+
+type TStyle = {
+  category: string;
+};
+
+const Bar = styled.div<TStyle>`
   max-width: 500px;
   margin: 0 auto 3rem auto;
   padding: 1rem;
@@ -15,18 +32,18 @@ const Bar = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    box-shadow: 0 0 0 2px #ccc;
+    background-color: #333;
 
     &:focus-within {
-      box-shadow: ${(p) => `0 0 0 5px ${p.theme.colors.primary}`};
+      box-shadow: ${(p) => `0 0 0 5px ${color(p.category)}`};
     }
 
     &:focus-within span {
-      color: ${(p) => p.theme.colors.primary};
+      color: ${(p) => color(p.category)};
     }
 
     &:focus-within button {
-      color: ${(p) => p.theme.colors.primary};
+      color: ${(p) => color(p.category)};
     }
 
     > input {
@@ -39,7 +56,7 @@ const Bar = styled.div`
       color: #ccc;
 
       &:focus {
-        color: ${(p) => p.theme.colors.primary};
+        color: ${(p) => color(p.category)};
         outline: none;
       }
     }
@@ -53,9 +70,10 @@ const Bar = styled.div`
       color: #ccc;
       background-color: transparent;
       padding: 0;
+      padding-right: 0.5rem;
 
       &:hover {
-        color: ${(p) => p.theme.colors.primary};
+        color: ${(p) => color(p.category)};
       }
     }
 
@@ -74,15 +92,19 @@ const Searchbar = ({
   const [query, setQuery] = useState('');
   const getQuery = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (category === ECategory.COLLECTIONS || category === ECategory.TOPICS)
+      return;
     dispatch({ type: EAction.GET_QUERY, payload: query });
   };
 
   return (
-    <Bar>
+    <Bar category={category}>
       <form onSubmit={getQuery}>
         <span>
           {category === ECategory.PHOTOS ? (
             <Photo style={{ fontSize: '2rem' }} />
+          ) : category === ECategory.TOPICS ? (
+            <Stars style={{ fontSize: '2rem' }} />
           ) : (
             <PhotoLibrary style={{ fontSize: '2rem' }} />
           )}

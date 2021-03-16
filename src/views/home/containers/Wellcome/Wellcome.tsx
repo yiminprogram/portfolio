@@ -23,7 +23,7 @@ const Wellcome = () => {
           <h1>作品集</h1>
         </TitleBottom>
         <TitleBtn>
-          <Link to="/portfolio/react">作品集列表 {'\u2192'}</Link>
+          <Link to="/portfolio/react">作品集列表</Link>
         </TitleBtn>
       </WellcomeTitle>
       <ModelContainer>

@@ -24,15 +24,21 @@ type Tags = {
   title: string;
 };
 
+export type TTopics = {
+  id: string;
+  image: string;
+  title: string;
+};
+
 export type TState = {
   photos: TPhotos[];
   currentID: string;
   currentPhoto: TPhoto;
-  currentCategory: string;
+  category: string;
+  topics: TTopics[];
   isDataLoad: boolean;
   isShowInfo: boolean;
   page: number;
-  searchPage: number;
   query: string;
   isMore: boolean;
   total: number | null;
@@ -58,8 +64,8 @@ export type GetPhoto = {
   payload: any;
 };
 
-export type SearchPhoto = {
-  type: EAction.SEARCH_PHOTOS;
+export type GetSearchPhoto = {
+  type: EAction.GET_SEARCH_PHOTOS;
   payload: any;
 };
 
@@ -76,13 +82,23 @@ export type GetQuery = {
   payload: string;
 };
 
-export type NextSearchPage = {
-  type: EAction.NEXT_SEARCH_PAGE;
-};
-
 export type ChangeCategory = {
   type: EAction.CHANGE_CATEGORY;
   payload: string;
+};
+
+export type GetTopics = {
+  type: EAction.GET_TOPICS;
+  payload: any[];
+};
+
+export type Refresh = {
+  type: EAction.REFRESH;
+};
+
+export type GetCollections = {
+  type: EAction.GET_COLLECTIONS;
+  payload: any[];
 };
 
 export type TAction =
@@ -92,23 +108,28 @@ export type TAction =
   | ToggleInfo
   | NextPage
   | GetQuery
-  | NextSearchPage
   | ChangeCategory
-  | SearchPhoto;
+  | GetSearchPhoto
+  | GetTopics
+  | Refresh
+  | GetCollections;
 
 export enum EAction {
   GET_PHOTOS = 'GET_PHOTOS',
   GET_PHOTO = 'GET_PHOTO',
+  GET_QUERY = 'GET_QUERY',
+  GET_TOPICS = 'GET_TOPICS',
+  GET_COLLECTIONS = 'GET_COLLECTIONS',
+  GET_SEARCH_PHOTOS = 'GET_SEARCH_PHOTOS',
   CURRENT_PHOTO = 'CURRENT_PHOTO',
   TOGGLE_INFO = 'TOGGLE_INFO',
   NEXT_PAGE = 'NEXT_PAGE',
-  GET_QUERY = 'GET_QUERY',
-  NEXT_SEARCH_PAGE = 'NEXT_SEARCH_PAGE',
   CHANGE_CATEGORY = 'CHANGE_CATEGORY',
-  SEARCH_PHOTOS = 'SEARCH_PHOTOS',
+  REFRESH = 'REFRESH',
 }
 
 export enum ECategory {
   PHOTOS = 'PHOTOS',
   COLLECTIONS = 'COLLECTIONS',
+  TOPICS = 'TOPICS',
 }

@@ -40,7 +40,7 @@ const ReactPortfolio = () => {
           </p>
         </InfoContent>
         <InfoLink hover={hover}>
-          <Link to="/portfolio/react">前往作品集 {'\u2192'}</Link>
+          <Link to="/portfolio/react">前往作品集</Link>
         </InfoLink>
       </Info>
     </Portfolio>

@@ -96,7 +96,6 @@ export const TitleBtn = styled.div`
     font-size: 1.3rem;
     font-weight: 700;
     border: none;
-    border-radius: 10px;
     background-color: ${(p) => p.theme.colors.primary};
     color: #ffffff;
     padding: 1rem 1.5rem;
@@ -188,7 +187,6 @@ export const InfoLink = css`
     color: #ffffff;
     background-color: ${(p) => p.theme.colors.primary};
     text-decoration: none;
-    border-radius: 5px;
 
     &:hover {
       background-color: ${(p) => p.theme.colors.hover};

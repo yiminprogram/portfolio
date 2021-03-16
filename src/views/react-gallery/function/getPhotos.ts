@@ -1,4 +1,4 @@
-export const fetchPhotos = async (page: number): Promise<any[]> => {
+export const getPhotos = async (page: number): Promise<any[]> => {
   const response = await fetch(
     `https://api.unsplash.com/photos?per_page=30&page=${page}`,
     {

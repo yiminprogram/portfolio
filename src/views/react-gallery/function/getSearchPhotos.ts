@@ -1,4 +1,4 @@
-export const fetchSearch = async (
+export const getSearchPhotos = async (
   query: string,
   page: number,
 ): Promise<any> => {

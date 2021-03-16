@@ -1,5 +1,5 @@
-export const fetchPhoto = async (id: string): Promise<any[]> => {
-  const response = await fetch(`https://api.unsplash.com/photos/${id}`, {
+export const getTopics = async (): Promise<any[]> => {
+  const response = await fetch(`https://api.unsplash.com/topics?per_page=30`, {
     headers: {
       Authorization: `Client-ID ${process.env.REACT_APP_API_KEY}`,
     },

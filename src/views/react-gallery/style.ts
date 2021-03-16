@@ -9,7 +9,7 @@ export const GalleryPage = styled.div`
 
 export const ImageList = styled.ul`
   max-width: 1200px;
-  margin: 0 auto 5rem auto;
+  margin: 0 auto;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -30,6 +30,7 @@ export const Logo = styled.div`
   justify-content: center;
   align-items: center;
   height: 60px;
+  margin-top: 5rem;
 
   > span {
     margin: 0 1rem;
@@ -60,4 +61,15 @@ export const Result = styled.div`
   color: #fff;
   margin: 0 auto 3rem auto;
   text-transform: capitalize;
+`;
+
+export const TopicList = styled.ul`
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 1rem;
 `;

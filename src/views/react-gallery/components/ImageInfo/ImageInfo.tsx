@@ -39,7 +39,13 @@ const ImageInfo = ({
       </BackgroundImage>
       <Info>
         <Image>
-          <PhotoLoading src={photo} alt="error" variant="rect" />
+          <PhotoLoading
+            src={photo}
+            alt="error"
+            variant="rect"
+            color="#ccc2"
+            fit="contain"
+          />
         </Image>
         <Detail>
           {loading && <InfoLoading />}

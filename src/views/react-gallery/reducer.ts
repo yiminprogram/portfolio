@@ -1,5 +1,13 @@
 //type
-import { TState, TAction, EAction, TPhotos, TPhoto, ECategory } from './type';
+import {
+  TState,
+  TAction,
+  EAction,
+  TPhotos,
+  TPhoto,
+  ECategory,
+  TTopics,
+} from './type';
 
 export const initialState: TState = {
   photos: [],
@@ -15,15 +23,15 @@ export const initialState: TState = {
     website: '',
     userPhoto: '',
   },
-  currentCategory: ECategory.PHOTOS,
+  category: ECategory.PHOTOS,
   isDataLoad: true,
   isShowInfo: false,
   page: 1,
-  searchPage: 1,
   query: '',
   isMore: true,
   total: null,
   totalPage: null,
+  topics: [],
 };
 
 const handlePhotosData = (data: any[]): TPhotos[] => {
@@ -44,10 +52,11 @@ const getPhotos = (state: TState, data: any[]): TState => {
     ...state,
     photos: [...state.photos, ...photos],
     isDataLoad: false,
+    isMore: true,
   };
 };
 
-const searchPhotos = (state: TState, data: any): TState => {
+const getSearchPhotos = (state: TState, data: any): TState => {
   let photos: TPhotos[] = handlePhotosData(data.results);
   const isMore = Boolean(Math.floor(data.total / 30));
   return {
@@ -89,25 +98,15 @@ const toggleInfo = (state: TState): TState => {
 };
 
 const nextPage = (state: TState): TState => {
-  let page = state.page;
-  let isMore = true;
-  if (page === state.totalPage) {
-    isMore = false;
-  } else {
-    page++;
-  }
-  return { ...state, page, isDataLoad: true, isMore };
-};
-
-const nextSearchPage = (state: TState): TState => {
-  return { ...state, searchPage: state.searchPage + 1, isDataLoad: true };
+  let page = state.page + 1;
+  return { ...state, page, isDataLoad: true };
 };
 
 const getQuery = (state: TState, query: string): TState => {
   return {
     ...state,
     photos: [],
-    searchPage: 1,
+    page: 1,
     query,
     isDataLoad: true,
     total: null,
@@ -115,8 +114,40 @@ const getQuery = (state: TState, query: string): TState => {
   };
 };
 
-const changeCategory = (state: TState, currentCategory: string): TState => {
-  return { ...state, currentCategory };
+const changeCategory = (state: TState, category: string): TState => {
+  return {
+    ...state,
+    category,
+    topics: [],
+    photos: [],
+    isDataLoad: true,
+    total: null,
+    totalPage: null,
+    query: '',
+  };
+};
+
+const getTopics = (state: TState, data: any[]): TState => {
+  console.log(data);
+  const topics: TTopics[] = data.map((ele) => ({
+    id: ele.id,
+    title: ele.title,
+    image: ele.cover_photo.urls.regular,
+  }));
+  return {
+    ...state,
+    photos: [],
+    topics,
+    isDataLoad: false,
+  };
+};
+
+const refresh = (state: TState): TState => {
+  return { ...state, isDataLoad: true, photos: [], topics: [] };
+};
+
+const getCollections = (state: TState, collections: any): TState => {
+  return { ...state };
 };
 
 export const reducer = (state: TState, action: TAction): TState => {
@@ -125,8 +156,8 @@ export const reducer = (state: TState, action: TAction): TState => {
       return getPhotos(state, action.payload);
     case EAction.GET_PHOTO:
       return getPhoto(state, action.payload);
-    case EAction.SEARCH_PHOTOS:
-      return searchPhotos(state, action.payload);
+    case EAction.GET_SEARCH_PHOTOS:
+      return getSearchPhotos(state, action.payload);
     case EAction.CURRENT_PHOTO:
       return currentPhoto(state, action.payload);
     case EAction.TOGGLE_INFO:
@@ -135,10 +166,14 @@ export const reducer = (state: TState, action: TAction): TState => {
       return nextPage(state);
     case EAction.GET_QUERY:
       return getQuery(state, action.payload);
-    case EAction.NEXT_SEARCH_PAGE:
-      return nextSearchPage(state);
     case EAction.CHANGE_CATEGORY:
       return changeCategory(state, action.payload);
+    case EAction.GET_TOPICS:
+      return getTopics(state, action.payload);
+    case EAction.REFRESH:
+      return refresh(state);
+    case EAction.GET_COLLECTIONS:
+      return getCollections(state, action.payload);
     default:
       return state;
   }

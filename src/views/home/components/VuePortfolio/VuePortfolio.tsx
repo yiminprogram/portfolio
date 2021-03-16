@@ -36,7 +36,7 @@ const VuePortfolio = () => {
           </p>
         </InfoContent>
         <InfoLink hover={hover}>
-          <Link to="/portfolio/vue">前往作品集 {'\u2192'}</Link>
+          <Link to="/portfolio/vue">前往作品集</Link>
         </InfoLink>
       </Info>
       <Image hover={hover}>
